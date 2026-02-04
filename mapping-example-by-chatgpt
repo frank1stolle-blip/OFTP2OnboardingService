@@ -7,13 +7,13 @@ let $partner_encrypt_cert_id := generateUUID()
 let $demoim_cert_id := "a8e279ca-cfa9-11ec-8563-ea550a0b1393"
 let $listener_id := "26fcb4c0-37b1-11f0-8e28-c61e7f000101"
 let $sfid_personality_id := "273f6310-37b1-11f0-8e28-c61e7f000101"
-let $partner_auth_cert_alias := concat(getInputParameter("participantid"), "-partnerauth")
-let $partner_eerp_cert_alias := concat(getInputParameter("participantid"), "-partnereerp")
-let $partner_encrypt_cert_alias := concat(getInputParameter("participantid"), "-partnerencrypt")
+let $partner_auth_cert_alias := "test-partnerauth"
+let $partner_eerp_cert_alias := "test-partnereerp"
+let $partner_encrypt_cert_alias := "test-partnerencrypt"
 
 transport <- /transport
 {
-  @id := getInputParameter("participantid")
+  @id := "test-transport-id"
   @format := @format
   @security-level := @security-level
 
@@ -38,7 +38,7 @@ transport <- /transport
     (: Record 1: oftp-partner :)
     record
     {
-      @name := getInputParameter("participantid")
+      @name := "oftp-partner-record"
       @type := "oftp.oftp-partner"
       @rest-identifier := $oftp_partner_id
       @action := records/record[1]/@action
@@ -50,7 +50,7 @@ transport <- /transport
       oftp-v2-partner
       {
         @identifier := $oftp_partner_id
-        name := getInputParameter("participantid")
+        name := "oftp-partner-record"
 
         administrative-data
         {
@@ -76,7 +76,7 @@ transport <- /transport
           }
           ssid-partner
           {
-            name := getInputParameter("participantid")
+            name := "ssid-partner-name"
             odette-code := records/record[1]/oftp-v2-partner/ssid/ssid-partner/odette-code
             password := records/record[1]/oftp-v2-partner/ssid/ssid-partner/password
             session-authentication-certificates { }
@@ -116,7 +116,7 @@ transport <- /transport
             sfid-partner
             {
               sfid-partner-ref { @href := concat("https://dedcdbdmgr01:14000/api/oftp/v2/sfid-partners/", $sfid_partner_id) }
-              name := getInputParameter("participantid")
+              name := "sfid-partner-record"
               odette-code := records/record[2]/sfid-partner/odette-code
             }
           }
@@ -161,7 +161,7 @@ transport <- /transport
     (: Record 2: sfid-partner :)
     record
     {
-      @name := getInputParameter("participantid")
+      @name := "sfid-partner-record"
       @type := "oftp.sfid-partner"
       @rest-identifier := $sfid_partner_id
       @action := records/record[2]/@action
@@ -173,7 +173,7 @@ transport <- /transport
       sfid-partner
       {
         @identifier := $sfid_partner_id
-        name := getInputParameter("participantid")
+        name := "sfid-partner-record"
 
         administrative-data
         {
