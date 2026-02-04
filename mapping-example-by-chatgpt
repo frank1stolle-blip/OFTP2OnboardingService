@@ -1,23 +1,16 @@
 (: ============================================================================
-   BIS Mapping: Template-OFTP2 One-to-One Identity Mapping
+   BIS Mapping: Template-OFTP2 with participantid parameter
 
-   Purpose: Creates an identity transformation of the Template-OFTP2.xml file
-            All elements, attributes, and content are preserved exactly as-is
-
-   Source: Template-OFTP2.xml
-   Created: 2026-02-03
-   BIS Mapping Language Version: Based on W3C XPath/XQuery standards
+   Uses getInputParameter("participantid") for dynamic values
+   Fixed IDs for demoim, listener, and sfid-personality records
    ============================================================================ :)
 
-(: Root transport element with all attributes and child elements :)
 transport <- /transport
 {
-    (: Map root element attributes :)
     @id := @id
     @format := @format
     @security-level := @security-level
 
-    (: Administrative data with all attributes :)
     administrative-data
     {
         @created-at := administrative-data/@created-at
@@ -27,7 +20,6 @@ transport <- /transport
         @logical-system := administrative-data/@logical-system
     }
 
-    (: Simple root-level element mappings :)
     direction := direction
     state := state
     processing := processing
@@ -35,13 +27,12 @@ transport <- /transport
     revised-at := revised-at
     revised-by := revised-by
 
-    (: Records collection :)
     records
     {
-        (: OFTP Partner Record :)
+        (: Record 1: OFTP Partner - uses participantid :)
         record
         {
-            @name := records/record[1]/@name
+            @name := getInputParameter("participantid")
             @type := records/record[1]/@type
             @rest-identifier := records/record[1]/@rest-identifier
             @action := records/record[1]/@action
@@ -53,7 +44,7 @@ transport <- /transport
             oftp-v2-partner
             {
                 @identifier := records/record[1]/oftp-v2-partner/@identifier
-                name := records/record[1]/oftp-v2-partner/name
+                name := getInputParameter("participantid")
 
                 administrative-data
                 {
@@ -80,7 +71,7 @@ transport <- /transport
 
                     ssid-partner
                     {
-                        name := records/record[1]/oftp-v2-partner/ssid/ssid-partner/name
+                        name := getInputParameter("participantid")
                         odette-code := records/record[1]/oftp-v2-partner/ssid/ssid-partner/odette-code
                         password := records/record[1]/oftp-v2-partner/ssid/ssid-partner/password
                         session-authentication-certificates { }
@@ -120,7 +111,7 @@ transport <- /transport
                         sfid-partner
                         {
                             sfid-partner-ref { @href := records/record[1]/oftp-v2-partner/sfid/sfid-partners/sfid-partner/sfid-partner-ref/@href }
-                            name := records/record[1]/oftp-v2-partner/sfid/sfid-partners/sfid-partner/name
+                            name := getInputParameter("participantid")
                             odette-code := records/record[1]/oftp-v2-partner/sfid/sfid-partners/sfid-partner/odette-code
                         }
                     }
@@ -162,10 +153,10 @@ transport <- /transport
             }
         }
 
-        (: SFID Partner Record :)
+        (: Record 2: SFID Partner - uses participantid :)
         record
         {
-            @name := records/record[2]/@name
+            @name := getInputParameter("participantid")
             @type := records/record[2]/@type
             @rest-identifier := records/record[2]/@rest-identifier
             @action := records/record[2]/@action
@@ -177,7 +168,7 @@ transport <- /transport
             sfid-partner
             {
                 @identifier := records/record[2]/sfid-partner/@identifier
-                name := records/record[2]/sfid-partner/name
+                name := getInputParameter("participantid")
 
                 administrative-data
                 {
@@ -198,7 +189,7 @@ transport <- /transport
                 {
                     authentication-certificate
                     {
-                        certificate-ref { @href := records/record[2]/sfid-partner/authentication-certificates/authentication-certificate/certificate-ref/@href }
+                        certificate-ref { @href := concat("https://dedcdbdmgr01:14000/api/ksm/TRUSTED/TRUSTED_INSTANCES/", getInputParameter("participantid"), "-partnerauth") }
                     }
                 }
 
@@ -207,7 +198,7 @@ transport <- /transport
                     encryption-certificate
                     {
                         @effective-from-date-time := records/record[2]/sfid-partner/encryption-certificates/encryption-certificate/@effective-from-date-time
-                        certificate-ref { @href := records/record[2]/sfid-partner/encryption-certificates/encryption-certificate/certificate-ref/@href }
+                        certificate-ref { @href := concat("https://dedcdbdmgr01:14000/api/ksm/TRUSTED/TRUSTED_INSTANCES/", getInputParameter("participantid"), "-partnerencrypt") }
                     }
                 }
 
@@ -215,7 +206,7 @@ transport <- /transport
                 {
                     eerp-authentication-certificate
                     {
-                        certificate-ref { @href := records/record[2]/sfid-partner/eerp-authentication-certificates/eerp-authentication-certificate/certificate-ref/@href }
+                        certificate-ref { @href := concat("https://dedcdbdmgr01:14000/api/ksm/TRUSTED/TRUSTED_INSTANCES/", getInputParameter("participantid"), "-partnereerp") }
                     }
                 }
 
@@ -250,10 +241,10 @@ transport <- /transport
             }
         }
 
-        (: Keystore Entry Record 1 - Partner Auth Certificate :)
+        (: Record 3: Keystore Entry - Partner Auth Certificate :)
         record
         {
-            @name := records/record[3]/@name
+            @name := concat(getInputParameter("participantid"), "-partnerauth")
             @type := records/record[3]/@type
             @rest-identifier := records/record[3]/@rest-identifier
             @action := records/record[3]/@action
@@ -278,8 +269,8 @@ transport <- /transport
                 }
 
                 type := records/record[3]/keystore-entry/type
-                alias := records/record[3]/keystore-entry/alias
-                path := records/record[3]/keystore-entry/path
+                alias := concat(getInputParameter("participantid"), "-partnerauth")
+                path := "TRUSTED\TRUSTED_INSTANCES"
                 version := records/record[3]/keystore-entry/version
                 subject := records/record[3]/keystore-entry/subject
                 issuer := records/record[3]/keystore-entry/issuer
@@ -349,10 +340,10 @@ transport <- /transport
             }
         }
 
-        (: Keystore Entry Record 2 - Partner EERP Certificate :)
+        (: Record 4: Keystore Entry - Partner EERP Certificate :)
         record
         {
-            @name := records/record[4]/@name
+            @name := concat(getInputParameter("participantid"), "-partnereerp")
             @type := records/record[4]/@type
             @rest-identifier := records/record[4]/@rest-identifier
             @action := records/record[4]/@action
@@ -377,8 +368,8 @@ transport <- /transport
                 }
 
                 type := records/record[4]/keystore-entry/type
-                alias := records/record[4]/keystore-entry/alias
-                path := records/record[4]/keystore-entry/path
+                alias := concat(getInputParameter("participantid"), "-partnereerp")
+                path := "TRUSTED\TRUSTED_INSTANCES"
                 version := records/record[4]/keystore-entry/version
                 subject := records/record[4]/keystore-entry/subject
                 issuer := records/record[4]/keystore-entry/issuer
@@ -448,10 +439,10 @@ transport <- /transport
             }
         }
 
-        (: Keystore Entry Record 3 - Partner Encrypt Certificate :)
+        (: Record 5: Keystore Entry - Partner Encrypt Certificate :)
         record
         {
-            @name := records/record[5]/@name
+            @name := concat(getInputParameter("participantid"), "-partnerencrypt")
             @type := records/record[5]/@type
             @rest-identifier := records/record[5]/@rest-identifier
             @action := records/record[5]/@action
@@ -476,8 +467,8 @@ transport <- /transport
                 }
 
                 type := records/record[5]/keystore-entry/type
-                alias := records/record[5]/keystore-entry/alias
-                path := records/record[5]/keystore-entry/path
+                alias := concat(getInputParameter("participantid"), "-partnerencrypt")
+                path := "TRUSTED\TRUSTED_INSTANCES"
                 version := records/record[5]/keystore-entry/version
                 subject := records/record[5]/keystore-entry/subject
                 issuer := records/record[5]/keystore-entry/issuer
@@ -547,12 +538,12 @@ transport <- /transport
             }
         }
 
-        (: Keystore Entry Record 4 - Demoim Private Key :)
+        (: Record 6: Keystore Entry - Demoim Private Key - FIXED ID :)
         record
         {
-            @name := records/record[6]/@name
+            @name := "demoim"
             @type := records/record[6]/@type
-            @rest-identifier := records/record[6]/@rest-identifier
+            @rest-identifier := "a8e279ca-cfa9-11ec-8563-ea550a0b1393"
             @action := records/record[6]/@action
             @created-at := records/record[6]/@created-at
             @created-by := records/record[6]/@created-by
@@ -561,7 +552,7 @@ transport <- /transport
 
             keystore-entry
             {
-                @identifier := records/record[6]/keystore-entry/@identifier
+                @identifier := "a8e279ca-cfa9-11ec-8563-ea550a0b1393"
 
                 administrative-data
                 {
@@ -575,8 +566,8 @@ transport <- /transport
                 }
 
                 type := records/record[6]/keystore-entry/type
-                alias := records/record[6]/keystore-entry/alias
-                path := records/record[6]/keystore-entry/path
+                alias := "demoim"
+                path := "USERS\INSTANCES"
                 version := records/record[6]/keystore-entry/version
                 subject := records/record[6]/keystore-entry/subject
                 issuer := records/record[6]/keystore-entry/issuer
@@ -652,12 +643,12 @@ transport <- /transport
             }
         }
 
-        (: OFTP Listener Record :)
+        (: Record 7: OFTP Listener - FIXED ID :)
         record
         {
-            @name := records/record[7]/@name
+            @name := "REST Created Listener"
             @type := records/record[7]/@type
-            @rest-identifier := records/record[7]/@rest-identifier
+            @rest-identifier := "26fcb4c0-37b1-11f0-8e28-c61e7f000101"
             @action := records/record[7]/@action
             @created-at := records/record[7]/@created-at
             @created-by := records/record[7]/@created-by
@@ -666,8 +657,8 @@ transport <- /transport
 
             oftp-listener
             {
-                @identifier := records/record[7]/oftp-listener/@identifier
-                name := records/record[7]/oftp-listener/name
+                @identifier := "26fcb4c0-37b1-11f0-8e28-c61e7f000101"
+                name := "REST Created Listener"
 
                 administrative-data
                 {
@@ -700,12 +691,12 @@ transport <- /transport
             }
         }
 
-        (: SFID Personality Record :)
+        (: Record 8: SFID Personality - FIXED ID :)
         record
         {
-            @name := records/record[8]/@name
+            @name := "sfidPersonalityProcessCreated"
             @type := records/record[8]/@type
-            @rest-identifier := records/record[8]/@rest-identifier
+            @rest-identifier := "273f6310-37b1-11f0-8e28-c61e7f000101"
             @action := records/record[8]/@action
             @created-at := records/record[8]/@created-at
             @created-by := records/record[8]/@created-by
@@ -714,8 +705,8 @@ transport <- /transport
 
             sfid-personality
             {
-                @identifier := records/record[8]/sfid-personality/@identifier
-                name := records/record[8]/sfid-personality/name
+                @identifier := "273f6310-37b1-11f0-8e28-c61e7f000101"
+                name := "sfidPersonalityProcessCreated"
 
                 administrative-data
                 {
@@ -735,7 +726,7 @@ transport <- /transport
                     signature-certificate
                     {
                         @effective-from-date-time := records/record[8]/sfid-personality/signature-certificates/signature-certificate/@effective-from-date-time
-                        certificate-ref { @href := records/record[8]/sfid-personality/signature-certificates/signature-certificate/certificate-ref/@href }
+                        certificate-ref { @href := "https://dedcdbdmgr01:14000/api/ksm/USERS/INSTANCES/demoim" }
                     }
                 }
 
@@ -743,7 +734,7 @@ transport <- /transport
                 {
                     decryption-certificate
                     {
-                        certificate-ref { @href := records/record[8]/sfid-personality/decryption-certificates/decryption-certificate/certificate-ref/@href }
+                        certificate-ref { @href := "https://dedcdbdmgr01:14000/api/ksm/USERS/INSTANCES/demoim" }
                     }
                 }
 
@@ -752,7 +743,7 @@ transport <- /transport
                     eerp-signature-certificate
                     {
                         @effective-from-date-time := records/record[8]/sfid-personality/eerp-signature-certificates/eerp-signature-certificate/@effective-from-date-time
-                        certificate-ref { @href := records/record[8]/sfid-personality/eerp-signature-certificates/eerp-signature-certificate/certificate-ref/@href }
+                        certificate-ref { @href := "https://dedcdbdmgr01:14000/api/ksm/USERS/INSTANCES/demoim" }
                     }
                 }
             }
