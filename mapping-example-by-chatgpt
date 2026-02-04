@@ -601,18 +601,18 @@ transport <- /transport
         {
           key-usage
           {
-            digital-signature := false
-            data-encipherment := false
-            non-repudation := false
-            verify-certificate-signatures := false
-            key-encipherment := false
-            server-authentication := false
-            client-authentication := false
-            email-protection := false
-            key-agreement := false
-            encipher-only := false
-            decipher-only := false
-            verify-crl-signatures := false
+            digital-signature := "false"
+            data-encipherment := "false"
+            non-repudation := "false"
+            verify-certificate-signatures := "false"
+            key-encipherment := "false"
+            server-authentication := "false"
+            client-authentication := "false"
+            email-protection := "false"
+            key-agreement := "false"
+            encipher-only := "false"
+            decipher-only := "false"
+            verify-crl-signatures := "false"
           }
           basic-constraint := "END"
           ca-path-length-constraint := -1
