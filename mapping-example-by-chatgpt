@@ -274,7 +274,7 @@ transport <- /transport
 
         type := "CERTIFICATE"
         alias := $partner_auth_cert_alias
-        path := "TRUSTED\\TRUSTED_INSTANCES"
+        path := "TRUSTED\TRUSTED_INSTANCES"
         version := 3
         subject := records/record[3]/keystore-entry/subject
         issuer := records/record[3]/keystore-entry/issuer
@@ -372,7 +372,7 @@ transport <- /transport
 
         type := "CERTIFICATE"
         alias := $partner_eerp_cert_alias
-        path := "TRUSTED\\TRUSTED_INSTANCES"
+        path := "TRUSTED\TRUSTED_INSTANCES"
         version := 3
         subject := records/record[4]/keystore-entry/subject
         issuer := records/record[4]/keystore-entry/issuer
@@ -470,7 +470,7 @@ transport <- /transport
 
         type := "CERTIFICATE"
         alias := $partner_encrypt_cert_alias
-        path := "TRUSTED\\TRUSTED_INSTANCES"
+        path := "TRUSTED\TRUSTED_INSTANCES"
         version := 3
         subject := records/record[5]/keystore-entry/subject
         issuer := records/record[5]/keystore-entry/issuer
@@ -569,7 +569,7 @@ transport <- /transport
 
         type := "PRIVATE KEY"
         alias := "demoim"
-        path := "USERS\\INSTANCES"
+        path := "USERS\INSTANCES"
         version := 3
         subject := records/record[6]/keystore-entry/subject
         issuer := records/record[6]/keystore-entry/issuer
