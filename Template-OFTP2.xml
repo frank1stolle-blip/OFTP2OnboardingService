@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<transport id="Template-OFTP2" format="xml" security-level="plain">
+    <administrative-data created-at="2026-01-28T11:03:21Z" created-by="seeadmin" changed-at="2026-01-28T11:03:49Z" changed-by="seeadmin" logical-system="000"/>
+    <direction>outgoing</direction>
+    <state>changed</state>
+    <processing>manual</processing>
+    <version>2.0</version>
+    <revised-at>2026-01-28T11:03:21Z</revised-at>
+    <revised-by>seeadmin</revised-by>
+    <records>
+        <record name="1234-4567-8904" type="oftp.oftp-partner" rest-identifier="ad42eecd-e645-4c61-a140-8721df33b3d1" action="update" created-at="2026-01-28T11:03:21Z" created-by="seeadmin" last-modified-by="seeadmin" last-modified-at="2026-01-28T11:03:21Z">
+            <oftp-v2-partner identifier="ad42eecd-e645-4c61-a140-8721df33b3d1">
+                <name>1234-4567-8904</name>
+                <administrative-data changed-at="2026-01-28T09:59:05Z" changed-by="seeadmin" comment="" created-at="2025-12-17T17:32:13Z" created-by="seeadmin" logical-system="000" record-id="1454251e-6a46-46b1-b061-6b503b4137d7"/>
+                <active>true</active>
+                <ssid>
+                    <ssid-personality>
+                        <name>O0013000031SEE30532CL03</name>
+                        <odette-code>O0013000031SEE30532CL03</odette-code>
+                        <password>SEEBUR</password>
+                        <session-authentication-certificates/>
+                    </ssid-personality>
+                    <ssid-partner>
+                        <name>1234-4567-8904</name>
+                        <odette-code>O0013000031SEE30532CL07</odette-code>
+                        <password>12345678</password>
+                        <session-authentication-certificates/>
+                    </ssid-partner>
+                    <session-configuration>
+                        <protocol-version>1.4</protocol-version>
+                        <transfer-direction>both</transfer-direction>
+                        <enable-multiple-sessions>true</enable-multiple-sessions>
+                        <session-timeout>300</session-timeout>
+                        <call-timeout>60</call-timeout>
+                        <buffer-size>32765</buffer-size>
+                        <acknowledgement-interval>50</acknowledgement-interval>
+                        <enable-compression>false</enable-compression>
+                        <enable-restart>true</enable-restart>
+                        <character-encoding>UTF-8</character-encoding>
+                        <request-secure-authentication>false</request-secure-authentication>
+                        <sequence-processing>
+                            <use-sequence>false</use-sequence>
+                        </sequence-processing>
+                        <asynchronous-incoming-files-processing>
+                            <enable-asynchronous-processing>false</enable-asynchronous-processing>
+                            <minimum-file-size>128</minimum-file-size>
+                        </asynchronous-incoming-files-processing>
+                    </session-configuration>
+                </ssid>
+                <sfid>
+                    <sfid-partners>
+                        <sfid-partner>
+                            <sfid-partner-ref href="https://dedcdbdmgr01:14000/api/oftp/v2/sfid-partners/9ca9c8eb-68d4-47f1-b48e-2a11e1bc97ba"/>
+                            <name>1234-4567-8904</name>
+                            <odette-code>O0013000031SEE30532CL05</odette-code>
+                        </sfid-partner>
+                    </sfid-partners>
+                    <sfid-personalities>
+                        <sfid-personality>
+                            <sfid-personality-ref href="https://dedcdbdmgr01:14000/api/oftp/v2/sfid-personalities/273f6310-37b1-11f0-8e28-c61e7f000101"/>
+                            <name>sfidPersonalityProcessCreated</name>
+                            <odette-code>O0013000031SEE30532CL03</odette-code>
+                        </sfid-personality>
+                    </sfid-personalities>
+                </sfid>
+                <partner-tcp-configuration>
+                    <hostname>blubber.com</hostname>
+                    <port>6619</port>
+                    <use-tls>false</use-tls>
+                    <tls>
+                        <trust-model>CA</trust-model>
+                        <use-system-truststore>true</use-system-truststore>
+                        <disable-hostname-check>false</disable-hostname-check>
+                        <server-certificates/>
+                        <security-profile href="https://dedcdbdmgr01:14000/api/security-profile/profiles/DEFAULT"/>
+                        <use-client-authentication>false</use-client-authentication>
+                    </tls>
+                    <check-tls>false</check-tls>
+                </partner-tcp-configuration>
+                <listeners>
+                    <listener href="https://dedcdbdmgr01:14000/api/oftp/listeners/26fcb4c0-37b1-11f0-8e28-c61e7f000101"/>
+                </listeners>
+            </oftp-v2-partner>
+        </record>
+        <record name="1234-4567-8904" type="oftp.sfid-partner" rest-identifier="9ca9c8eb-68d4-47f1-b48e-2a11e1bc97ba" action="update" created-at="2026-01-28T11:03:21Z" created-by="seeadmin" last-modified-by="seeadmin" last-modified-at="2026-01-28T11:03:21Z">
+            <sfid-partner identifier="9ca9c8eb-68d4-47f1-b48e-2a11e1bc97ba">
+                <name>1234-4567-8904</name>
+                <administrative-data changed-at="2025-12-17T17:32:13Z" changed-by="seeadmin" comment="" created-at="2025-12-17T17:32:13Z" created-by="seeadmin" logical-system="000" record-id="97e748c2-fbd2-ba59-af70-c0b3f764acf6"/>
+                <odette-code>O0013000031SEE30532CL05</odette-code>
+                <sfid-user-field/>
+                <clearing-center>false</clearing-center>
+                <authentication-certificates>
+                    <authentication-certificate>
+                        <certificate-ref href="https://dedcdbdmgr01:14000/api/ksm/TRUSTED/TRUSTED_INSTANCES/1234-4567-8904-partnerauth"/>
+                    </authentication-certificate>
+                </authentication-certificates>
+                <encryption-certificates>
+                    <encryption-certificate effective-from-date-time="2025-12-17T17:32:13Z">
+                        <certificate-ref href="https://dedcdbdmgr01:14000/api/ksm/TRUSTED/TRUSTED_INSTANCES/1234-4567-8904-partnerencrypt"/>
+                    </encryption-certificate>
+                </encryption-certificates>
+                <eerp-authentication-certificates>
+                    <eerp-authentication-certificate>
+                        <certificate-ref href="https://dedcdbdmgr01:14000/api/ksm/TRUSTED/TRUSTED_INSTANCES/1234-4567-8904-partnereerp"/>
+                    </eerp-authentication-certificate>
+                </eerp-authentication-certificates>
+                <send>
+                    <sign>true</sign>
+                    <signature-algorithm>SHA1</signature-algorithm>
+                    <encrypt>true</encrypt>
+                    <encryption-algorithm>3DES</encryption-algorithm>
+                    <compress>false</compress>
+                    <send-eerp-immediately>true</send-eerp-immediately>
+                    <request-signed-eerp>false</request-signed-eerp>
+                    <disable-eerp-sending>false</disable-eerp-sending>
+                    <disable-eerp-sending-in-receiver-only-mode>false</disable-eerp-sending-in-receiver-only-mode>
+                    <eerp-user-field/>
+                    <report-queue>OFTP-TCP Client/Controller-ReportQueue</report-queue>
+                    <cipher-suite>01 3DES_EDE_CBC_3KEY RSA_PKCS1_15 SHA1</cipher-suite>
+                </send>
+                <receive>
+                    <disable-check-for-incoming-transfer-duplicates>false</disable-check-for-incoming-transfer-duplicates>
+                    <format-received-fix-files>false</format-received-fix-files>
+                    <accept-only-signed-files>false</accept-only-signed-files>
+                    <accept-only-encrypted-files>false</accept-only-encrypted-files>
+                    <partner-sends-eerp>true</partner-sends-eerp>
+                    <eerp-timeout>2</eerp-timeout>
+                    <eerp-timeout-unit>H</eerp-timeout-unit>
+                    <correlate-eerps-in-process-engine>true</correlate-eerps-in-process-engine>
+                    <accept-unsigned-eerp>false</accept-unsigned-eerp>
+                </receive>
+            </sfid-partner>
+        </record>
+        <record name="1234-4567-8904-partnerauth" type="ksm-entry" rest-identifier="472dc4fb-8fce-4c0e-9022-a48b575417e2" action="update" created-at="2026-01-28T11:03:21Z" created-by="seeadmin" last-modified-by="seeadmin" last-modified-at="2026-01-28T11:03:21Z">
+            <keystore-entry identifier="472dc4fb-8fce-4c0e-9022-a48b575417e2">
+                <administrative-data changed-at="2025-12-17T17:32:13Z" changed-by="seeadmin" created-at="2025-12-17T17:32:13Z" created-by="seeadmin" logical-system="ALL" record-id="6bafa599-1e24-043b-bb02-4b80a0b35bcc"/>
+                <type>CERTIFICATE</type>
+                <alias>1234-4567-8904-partnerauth</alias>
+                <path>TRUSTED\TRUSTED_INSTANCES</path>
+                <version>3</version>
+                <subject>CN=oftp2test</subject>
+                <issuer>CN=oftp2test</issuer>
+                <serial>6983048589661758437</serial>
+                <serial-hex>60e8c5b1cc14e3e5</serial-hex>
+                <valid-from>2025-06-30T09:58:40Z</valid-from>
+                <valid-to>2026-06-30T09:58:40Z</valid-to>
+                <fingerprint>15E483B05A94201FF05C12D24A7DBDC651D3F27B</fingerprint>
+                <fingerprint-algorithm>SHA1</fingerprint-algorithm>
+                <subject-details>
+                    <common-name>oftp2test</common-name>
+                </subject-details>
+                <key-settings>
+                    <sign-algorithm>SHA512WithRSA</sign-algorithm>
+                    <public-key-size>2048</public-key-size>
+                    <private-key-algorithm>RSA</private-key-algorithm>
+                </key-settings>
+                <extensions>
+                    <key-usage>
+                        <digital-signature>true</digital-signature>
+                        <data-encipherment>true</data-encipherment>
+                        <non-repudation>false</non-repudation>
+                        <verify-certificate-signatures>false</verify-certificate-signatures>
+                        <key-encipherment>true</key-encipherment>
+                        <server-authentication>false</server-authentication>
+                        <client-authentication>false</client-authentication>
+                        <email-protection>false</email-protection>
+                        <key-agreement>false</key-agreement>
+                        <encipher-only>false</encipher-only>
+                        <decipher-only>false</decipher-only>
+                        <verify-crl-signatures>false</verify-crl-signatures>
+                    </key-usage>
+                    <basic-constraint>END</basic-constraint>
+                    <ca-path-length-constraint>-1</ca-path-length-constraint>
+                    <alternative-subject-names/>
+                </extensions>
+                <raw-content>
+                    <payload>MIICzTCCAbWgAwIBAgIIYOjFscwU4+UwDQYJKoZIhvcNAQENBQAwFDESMBAGA1UEAwwJb2Z0cDJ0ZXN0MB4XDTI1MDYzMDA5NTg0MFoXDTI2MDYzMDA5NTg0MFowFDESMBAGA1UEAwwJb2Z0cDJ0ZXN0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnox/8kn3/Jl6/RYgvCItsY7l2wqVwmpT0NndZylTqVL+C4TX55vhmGVWMWc+0gKwngsNfwFgAheKWVC01LyJtRAhtvyOpR55ea8MBMYd0JxRo0g6FjKBteWnBWYYde/hjsTjAqLNaUoNHCshx1rYxxDUvMK12o6RkyQJznOiz4uXNCsWDcV5jxAUXi/5aHot6IYfjrRKLayyRCCmK9NRbPspeQwcgLft+0PSf0CVMLB1Vg/jGxObCI+A1/pXbyvpPXo3ahymM5ynCXsscqgVMXjZpJOk0TdEQ/hTWs/ryYtmUQ89GHDvHHe6e3D4xH7M2jerNrBwu3bdS8p5L+4F1QIDAQABoyMwITAOBgNVHQ8BAf8EBAMCBLAwDwYDVR0TAQH/BAUwAwEBADANBgkqhkiG9w0BAQ0FAAOCAQEAbqHZmq+6Xy82Xm0RtOYO25P4qFC4Paqq2IA7T8wKv04jF1VE/S4M2P58Q5Npm7yXwkUi08i1MRyyz+pDFpGw9yoVI3Av2xxsWobtDbF9a6aKwvZpB4RqjWieyyT/S7KZBop4TJGhkYzDc7usebZ4JN9qlq1O0BOclKMCDuwPlf76G7bSh8oXBA5n+ZuWe8pxq46kJxG+CWfEKSVhC60lQb62dQTuq8/63I5TApjqFhQts0Ze3tZvwO3ksTgXCzo+HCJ8q5looWI0xYfqrqGOhyNVlUlCON9L3gRku90UMs93/vD8IU5mNxX0hK39uw6F5GA0TfDxypVBbRYlk6DG6A==</payload>
+                </raw-content>
+                <validation>
+                    <validation-settings>
+                        <period>yes</period>
+                        <chain>yes</chain>
+                        <ocsp>no</ocsp>
+                        <ocsp-online>no</ocsp-online>
+                        <crl>no</crl>
+                        <force-valid>no</force-valid>
+                    </validation-settings>
+                    <validity-status>valid</validity-status>
+                    <validation-time>2026-01-28T00:00:02Z</validation-time>
+                </validation>
+                <validation-state>enabled</validation-state>
+                <provided-password>seeburger</provided-password>
+            </keystore-entry>
+        </record>
+        <record name="1234-4567-8904-partnereerp" type="ksm-entry" rest-identifier="edce838d-6792-42b9-aef2-e841409d4c62" action="update" created-at="2026-01-28T11:03:21Z" created-by="seeadmin" last-modified-by="seeadmin" last-modified-at="2026-01-28T11:03:21Z">
+            <keystore-entry identifier="edce838d-6792-42b9-aef2-e841409d4c62">
+                <administrative-data changed-at="2025-12-17T17:32:13Z" changed-by="seeadmin" created-at="2025-12-17T17:32:13Z" created-by="seeadmin" logical-system="ALL" record-id="277bf8d2-10c0-4352-1895-9427c75bd63b"/>
+                <type>CERTIFICATE</type>
+                <alias>1234-4567-8904-partnereerp</alias>
+                <path>TRUSTED\TRUSTED_INSTANCES</path>
+                <version>3</version>
+                <subject>CN=oftp2test</subject>
+                <issuer>CN=oftp2test</issuer>
+                <serial>6983048589661758437</serial>
+                <serial-hex>60e8c5b1cc14e3e5</serial-hex>
+                <valid-from>2025-06-30T09:58:40Z</valid-from>
+                <valid-to>2026-06-30T09:58:40Z</valid-to>
+                <fingerprint>15E483B05A94201FF05C12D24A7DBDC651D3F27B</fingerprint>
+                <fingerprint-algorithm>SHA1</fingerprint-algorithm>
+                <subject-details>
+                    <common-name>oftp2test</common-name>
+                </subject-details>
+                <key-settings>
+                    <sign-algorithm>SHA512WithRSA</sign-algorithm>
+                    <public-key-size>2048</public-key-size>
+                    <private-key-algorithm>RSA</private-key-algorithm>
+                </key-settings>
+                <extensions>
+                    <key-usage>
+                        <digital-signature>true</digital-signature>
+                        <data-encipherment>true</data-encipherment>
+                        <non-repudation>false</non-repudation>
+                        <verify-certificate-signatures>false</verify-certificate-signatures>
+                        <key-encipherment>true</key-encipherment>
+                        <server-authentication>false</server-authentication>
+                        <client-authentication>false</client-authentication>
+                        <email-protection>false</email-protection>
+                        <key-agreement>false</key-agreement>
+                        <encipher-only>false</encipher-only>
+                        <decipher-only>false</decipher-only>
+                        <verify-crl-signatures>false</verify-crl-signatures>
+                    </key-usage>
+                    <basic-constraint>END</basic-constraint>
+                    <ca-path-length-constraint>-1</ca-path-length-constraint>
+                    <alternative-subject-names/>
+                </extensions>
+                <raw-content>
+                    <payload>MIICzTCCAbWgAwIBAgIIYOjFscwU4+UwDQYJKoZIhvcNAQENBQAwFDESMBAGA1UEAwwJb2Z0cDJ0ZXN0MB4XDTI1MDYzMDA5NTg0MFoXDTI2MDYzMDA5NTg0MFowFDESMBAGA1UEAwwJb2Z0cDJ0ZXN0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnox/8kn3/Jl6/RYgvCItsY7l2wqVwmpT0NndZylTqVL+C4TX55vhmGVWMWc+0gKwngsNfwFgAheKWVC01LyJtRAhtvyOpR55ea8MBMYd0JxRo0g6FjKBteWnBWYYde/hjsTjAqLNaUoNHCshx1rYxxDUvMK12o6RkyQJznOiz4uXNCsWDcV5jxAUXi/5aHot6IYfjrRKLayyRCCmK9NRbPspeQwcgLft+0PSf0CVMLB1Vg/jGxObCI+A1/pXbyvpPXo3ahymM5ynCXsscqgVMXjZpJOk0TdEQ/hTWs/ryYtmUQ89GHDvHHe6e3D4xH7M2jerNrBwu3bdS8p5L+4F1QIDAQABoyMwITAOBgNVHQ8BAf8EBAMCBLAwDwYDVR0TAQH/BAUwAwEBADANBgkqhkiG9w0BAQ0FAAOCAQEAbqHZmq+6Xy82Xm0RtOYO25P4qFC4Paqq2IA7T8wKv04jF1VE/S4M2P58Q5Npm7yXwkUi08i1MRyyz+pDFpGw9yoVI3Av2xxsWobtDbF9a6aKwvZpB4RqjWieyyT/S7KZBop4TJGhkYzDc7usebZ4JN9qlq1O0BOclKMCDuwPlf76G7bSh8oXBA5n+ZuWe8pxq46kJxG+CWfEKSVhC60lQb62dQTuq8/63I5TApjqFhQts0Ze3tZvwO3ksTgXCzo+HCJ8q5looWI0xYfqrqGOhyNVlUlCON9L3gRku90UMs93/vD8IU5mNxX0hK39uw6F5GA0TfDxypVBbRYlk6DG6A==</payload>
+                </raw-content>
+                <validation>
+                    <validation-settings>
+                        <period>yes</period>
+                        <chain>yes</chain>
+                        <ocsp>no</ocsp>
+                        <ocsp-online>no</ocsp-online>
+                        <crl>no</crl>
+                        <force-valid>no</force-valid>
+                    </validation-settings>
+                    <validity-status>valid</validity-status>
+                    <validation-time>2026-01-28T00:00:02Z</validation-time>
+                </validation>
+                <validation-state>enabled</validation-state>
+                <provided-password>seeburger</provided-password>
+            </keystore-entry>
+        </record>
+        <record name="1234-4567-8904-partnerencrypt" type="ksm-entry" rest-identifier="7c712f25-9f4f-4489-8f29-1b4a8d7f65f4" action="update" created-at="2026-01-28T11:03:21Z" created-by="seeadmin" last-modified-by="seeadmin" last-modified-at="2026-01-28T11:03:21Z">
+            <keystore-entry identifier="7c712f25-9f4f-4489-8f29-1b4a8d7f65f4">
+                <administrative-data changed-at="2025-12-17T17:32:13Z" changed-by="seeadmin" created-at="2025-12-17T17:32:13Z" created-by="seeadmin" logical-system="ALL" record-id="afcb7872-a478-91e6-94ff-90852b2f4d6e"/>
+                <type>CERTIFICATE</type>
+                <alias>1234-4567-8904-partnerencrypt</alias>
+                <path>TRUSTED\TRUSTED_INSTANCES</path>
+                <version>3</version>
+                <subject>CN=oftp2test</subject>
+                <issuer>CN=oftp2test</issuer>
+                <serial>6983048589661758437</serial>
+                <serial-hex>60e8c5b1cc14e3e5</serial-hex>
+                <valid-from>2025-06-30T09:58:40Z</valid-from>
+                <valid-to>2026-06-30T09:58:40Z</valid-to>
+                <fingerprint>15E483B05A94201FF05C12D24A7DBDC651D3F27B</fingerprint>
+                <fingerprint-algorithm>SHA1</fingerprint-algorithm>
+                <subject-details>
+                    <common-name>oftp2test</common-name>
+                </subject-details>
+                <key-settings>
+                    <sign-algorithm>SHA512WithRSA</sign-algorithm>
+                    <public-key-size>2048</public-key-size>
+                    <private-key-algorithm>RSA</private-key-algorithm>
+                </key-settings>
+                <extensions>
+                    <key-usage>
+                        <digital-signature>true</digital-signature>
+                        <data-encipherment>true</data-encipherment>
+                        <non-repudation>false</non-repudation>
+                        <verify-certificate-signatures>false</verify-certificate-signatures>
+                        <key-encipherment>true</key-encipherment>
+                        <server-authentication>false</server-authentication>
+                        <client-authentication>false</client-authentication>
+                        <email-protection>false</email-protection>
+                        <key-agreement>false</key-agreement>
+                        <encipher-only>false</encipher-only>
+                        <decipher-only>false</decipher-only>
+                        <verify-crl-signatures>false</verify-crl-signatures>
+                    </key-usage>
+                    <basic-constraint>END</basic-constraint>
+                    <ca-path-length-constraint>-1</ca-path-length-constraint>
+                    <alternative-subject-names/>
+                </extensions>
+                <raw-content>
+                    <payload>MIICzTCCAbWgAwIBAgIIYOjFscwU4+UwDQYJKoZIhvcNAQENBQAwFDESMBAGA1UEAwwJb2Z0cDJ0ZXN0MB4XDTI1MDYzMDA5NTg0MFoXDTI2MDYzMDA5NTg0MFowFDESMBAGA1UEAwwJb2Z0cDJ0ZXN0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnox/8kn3/Jl6/RYgvCItsY7l2wqVwmpT0NndZylTqVL+C4TX55vhmGVWMWc+0gKwngsNfwFgAheKWVC01LyJtRAhtvyOpR55ea8MBMYd0JxRo0g6FjKBteWnBWYYde/hjsTjAqLNaUoNHCshx1rYxxDUvMK12o6RkyQJznOiz4uXNCsWDcV5jxAUXi/5aHot6IYfjrRKLayyRCCmK9NRbPspeQwcgLft+0PSf0CVMLB1Vg/jGxObCI+A1/pXbyvpPXo3ahymM5ynCXsscqgVMXjZpJOk0TdEQ/hTWs/ryYtmUQ89GHDvHHe6e3D4xH7M2jerNrBwu3bdS8p5L+4F1QIDAQABoyMwITAOBgNVHQ8BAf8EBAMCBLAwDwYDVR0TAQH/BAUwAwEBADANBgkqhkiG9w0BAQ0FAAOCAQEAbqHZmq+6Xy82Xm0RtOYO25P4qFC4Paqq2IA7T8wKv04jF1VE/S4M2P58Q5Npm7yXwkUi08i1MRyyz+pDFpGw9yoVI3Av2xxsWobtDbF9a6aKwvZpB4RqjWieyyT/S7KZBop4TJGhkYzDc7usebZ4JN9qlq1O0BOclKMCDuwPlf76G7bSh8oXBA5n+ZuWe8pxq46kJxG+CWfEKSVhC60lQb62dQTuq8/63I5TApjqFhQts0Ze3tZvwO3ksTgXCzo+HCJ8q5looWI0xYfqrqGOhyNVlUlCON9L3gRku90UMs93/vD8IU5mNxX0hK39uw6F5GA0TfDxypVBbRYlk6DG6A==</payload>
+                </raw-content>
+                <validation>
+                    <validation-settings>
+                        <period>yes</period>
+                        <chain>yes</chain>
+                        <ocsp>no</ocsp>
+                        <ocsp-online>no</ocsp-online>
+                        <crl>no</crl>
+                        <force-valid>no</force-valid>
+                    </validation-settings>
+                    <validity-status>valid</validity-status>
+                    <validation-time>2026-01-28T00:00:02Z</validation-time>
+                </validation>
+                <validation-state>enabled</validation-state>
+                <provided-password>seeburger</provided-password>
+            </keystore-entry>
+        </record>
+        <record name="demoim" type="ksm-entry" rest-identifier="a8e279ca-cfa9-11ec-8563-ea550a0b1393" action="update" created-at="2026-01-28T11:03:21Z" created-by="seeadmin" last-modified-by="seeadmin" last-modified-at="2026-01-28T11:03:21Z">
+            <keystore-entry identifier="a8e279ca-cfa9-11ec-8563-ea550a0b1393">
+                <administrative-data changed-at="2025-09-12T13:26:33Z" changed-by="seeburger" comment="" created-at="2022-05-09T15:06:53Z" created-by="seeburger" logical-system="ALL" record-id="a8e279ca-cfa9-11ec-8563-ea550a0b1393"/>
+                <type>PRIVATE KEY</type>
+                <alias>demoim</alias>
+                <path>USERS\INSTANCES</path>
+                <version>3</version>
+                <subject>C=DE,CN=dedcdemoim01,O=Seeburger AG,OU=BIS6,ST=Baden-Wuerttemberg,L=Bretten</subject>
+                <issuer>C=DE,CN=dedcdemoim01,O=Seeburger AG,OU=BIS6,ST=Baden-Wuerttemberg,L=Bretten</issuer>
+                <serial>2531946222921828895</serial>
+                <serial-hex>232347acc7a5ca1f</serial-hex>
+                <valid-from>2022-05-09T15:06:53Z</valid-from>
+                <valid-to>2032-05-09T15:06:53Z</valid-to>
+                <fingerprint>2A6144D2BFF1F11AC9C782F5EA903A1B2BF251CB</fingerprint>
+                <fingerprint-algorithm>SHA1</fingerprint-algorithm>
+                <subject-details>
+                    <common-name>dedcdemoim01</common-name>
+                    <organization-unit>BIS6</organization-unit>
+                    <organization>Seeburger AG</organization>
+                    <location>Bretten</location>
+                    <state>Baden-Wuerttemberg</state>
+                    <country>DE</country>
+                </subject-details>
+                <key-settings>
+                    <sign-algorithm>SHA256WithRSA</sign-algorithm>
+                    <public-key-size>2048</public-key-size>
+                    <private-key-algorithm>RSA</private-key-algorithm>
+                </key-settings>
+                <extensions>
+                    <key-usage>
+                        <digital-signature>false</digital-signature>
+                        <data-encipherment>false</data-encipherment>
+                        <non-repudation>false</non-repudation>
+                        <verify-certificate-signatures>false</verify-certificate-signatures>
+                        <key-encipherment>false</key-encipherment>
+                        <server-authentication>false</server-authentication>
+                        <client-authentication>false</client-authentication>
+                        <email-protection>false</email-protection>
+                        <key-agreement>false</key-agreement>
+                        <encipher-only>false</encipher-only>
+                        <decipher-only>false</decipher-only>
+                        <verify-crl-signatures>false</verify-crl-signatures>
+                    </key-usage>
+                    <basic-constraint>END</basic-constraint>
+                    <ca-path-length-constraint>-1</ca-path-length-constraint>
+                    <alternative-subject-names/>
+                </extensions>
+                <raw-content>
+                    <payload>MIIDcjCCAlqgAwIBAgIIIyNHrMelyh8wDQYJKoZIhvcNAQELBQAweTEQMA4GA1UEBwwHQnJldHRlbjEbMBkGA1UECAwSQmFkZW4tV3VlcnR0ZW1iZXJnMQ0wCwYDVQQLDARCSVM2MRUwEwYDVQQKDAxTZWVidXJnZXIgQUcxFTATBgNVBAMMDGRlZGNkZW1vaW0wMTELMAkGA1UEBhMCREUwHhcNMjIwNTA5MTUwNjUzWhcNMzIwNTA5MTUwNjUzWjB5MRAwDgYDVQQHDAdCcmV0dGVuMRswGQYDVQQIDBJCYWRlbi1XdWVydHRlbWJlcmcxDTALBgNVBAsMBEJJUzYxFTATBgNVBAoMDFNlZWJ1cmdlciBBRzEVMBMGA1UEAwwMZGVkY2RlbW9pbTAxMQswCQYDVQQGEwJERTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK20NnZTmo+UOqLWRrNRntfCTCdyv0/mnc6Lshj78RmZTmIQjCKKWRr1Uv5+xA9qLpZVXVhii23UGajboZX5qhlxHQR4cxBgc2OKa006B18YHfCw7GlLcsu3Ij0XWXurVgh8apsjhIO7ULNsdQwbOWeOb2YPGmhTXNq3/krDI+iHyapzS6RllfJLKcEzDpVbVhfHEPP0s85aCvzmOJo52uPJBOFacTRKZ9T8F3lYauOC9Sg8gkbiGrHITL9+pYkDLI1XDGdz1yQADUpe8LCePDZdUsgOyIUWSpu8FDKnAYab5/Ig1TAtzffhi0bOJIznZkPErX+j3ozIKfP9GEiZnwMCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAo3vuABJ0Gks9efvBiBD/YLnqPL97ubVNNoQM2Od0PzvzkpYujn8QRHbMr5K2MHd1MSbv/oYnUAR1WUAAfvWd3xz/ePIk2hHaw0VvI489VICHqglFiiEMMuJdNvBhPCBUB9pz3MQKzQlpN8/w1aF7rbRJfYFwMDbmdb+fSbx1hMC81cz5dIr/cAq3RKFkPMMKxfdQtHxYansf9GoXF7g0DjPZhxP2ogle09ZYd3DokpWBokLUv72fXT1YpEKjNe+IujvQ3mPvFVOOZGO5CLOFv4+1Fa8rerUssU5GxKlmZxhkHBK/OM2RdtgTNpvBHxeZeK3NJwmYu0PJcO45KplEAA==</payload>
+                    <private-key-payload>MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCttDZ2U5qPlDqi1kazUZ7Xwkwncr9P5p3Oi7IY+/EZmU5iEIwiilka9VL+fsQPai6WVV1YYott1Bmo26GV+aoZcR0EeHMQYHNjimtNOgdfGB3wsOxpS3LLtyI9F1l7q1YIfGqbI4SDu1CzbHUMGzlnjm9mDxpoU1zat/5KwyPoh8mqc0ukZZXySynBMw6VW1YXxxDz9LPOWgr85jiaOdrjyQThWnE0SmfU/Bd5WGrjgvUoPIJG4hqxyEy/fqWJAyyNVwxnc9ckAA1KXvCwnjw2XVLIDsiFFkqbvBQypwGGm+fyINUwLc334YtGziSM52ZDxK1/o96MyCnz/RhImZ8DAgMBAAECggEAOQYIvQaMHmdoam2SjyqTzTvNOUQLtwS7uIMWp+oJh8BSwZGyF2K4hseTg9WEspTGj3adqrbLE/aFp+/WF4B7DVgbUQzjpTQsnThjKlqK8fZeWdYS/iwVFvhbRpfkOduQ5j9F1gEubvpur0BDGoLTcQIK4wPBRQ9c07aERfHS13I0O3oCrzKFvoXmjkfVOJ8dKYmIjZP5RGorecWeTRoWSSrp2LzjKQx4FDoBG2857d9iPsUi1ilbKb4EK0qNddBBWnhJyszAP/lQpm7HLHVxS32RfD9cQAbY9Y6GB0d3i+NdmX2t5esdb9Dh6apvN36/1BR+BAZ53nB2JwVrQ9f7GQKBgQD1j2vbMcION+R9yrRqx6rViAInTfyCW0fE30gmMXF9XgiqhWyA/ikZfh80LHxCLp1UzucKI1x9xpdtwHe1zU4kvtDiXyPq29mUMhDA5UIfuJ3X49YvCzZMzALNdGauYT8FBSJqutd8/Y83uzn9cQ/f2Yf0wqPCWErW7To9V8+rGQKBgQC1FryRsmuwaPyY+1zYyLrEgj5jVOVLJAJxkkSJkZjv+8925yNxc+JV0kiih225+Utcan/gOizcW1ejkC+Lai3NiO5ufHCDfC8CURB0I55wYS4id3RhP7k/pkMVQf2V7LHzwi8bkS+/YhCTcq6WcrXpoWciYgbve9yJ5IbqtBz6ewKBgF5nK9TR1UO4ExyVEDU426FJr2JC5f+LbhTurgMY4QOMYhKERsl0bIKDbSWWsJKU7yFKhaHtJEKqVU75PkxjSFZyEUXlw54ntQb3FF/EA17Ej9IOoinlypNNnwozZMJHWn3okmmruOoxZJzNWqbnj23EaDMdnO07GlJ0Uv6AQrMJAoGBAK2Qk0AaAHlexuxhz8W/7rK2GtHd5r80TltIVAR+1lT9xwUx2Ji+92pGWHPe1d5wADkdol7po2G48rDEW62GIUxkOBMRlk2P0wanZ9vI3+zaV/uU/qjPCODmnFldnI38BTubHMeRSnBmr3iDbK6qV40Ls+wShI846lIIBQAjjbrNAoGAZhB0Tr74z+iAO27ewAs1Ntcdc+DTXUGQUO7r+UK2CMoZFvKd0lJlz0u1YvwRVIdhwtW/mogc68xN1s+JXd4yVJGtiuDWx9X6cNYoT7CE2UPu4h8/mHdlZOVV2R8g3MIiU0pWScblXyMjZK48UbiP96eFa2Qzosdpk2f6MAVWzUg=</private-key-payload>
+                </raw-content>
+                <validation>
+                    <validation-settings>
+                        <period>yes</period>
+                        <chain>yes</chain>
+                        <ocsp>no</ocsp>
+                        <ocsp-online>no</ocsp-online>
+                        <crl>no</crl>
+                        <force-valid>no</force-valid>
+                    </validation-settings>
+                    <validity-status>valid</validity-status>
+                    <validation-time>2026-01-28T00:00:01Z</validation-time>
+                </validation>
+                <validation-state>enabled</validation-state>
+                <provided-password>seeburger</provided-password>
+            </keystore-entry>
+        </record>
+        <record name="REST Created Listener" type="oftp.oftp-listener" rest-identifier="26fcb4c0-37b1-11f0-8e28-c61e7f000101" action="update" created-at="2026-01-28T11:03:21Z" created-by="seeadmin" last-modified-by="seeadmin" last-modified-at="2026-01-28T11:03:21Z">
+            <oftp-listener identifier="26fcb4c0-37b1-11f0-8e28-c61e7f000101">
+                <name>REST Created Listener</name>
+                <administrative-data changed-at="2026-01-28T09:59:05Z" changed-by="seeadmin" comment="" created-at="2025-12-04T08:14:58Z" created-by="seeadmin" logical-system="000" record-id="4ab45363-bbec-78be-5cb0-44cd3a230f85"/>
+                <listener-group>Role:AdapterEngine</listener-group>
+                <active>true</active>
+                <listener-tcp-configuration>
+                    <network-interface>oftp2.seeburger.cloud</network-interface>
+                    <port>6619</port>
+                    <use-tls>false</use-tls>
+                    <listener-tls>
+                        <ssl-server-certificates/>
+                        <security-profile href="https://dedcdbdmgr01:14000/api/security-profile/profiles/DEFAULT"/>
+                    </listener-tls>
+                    <check-tls>false</check-tls>
+                </listener-tcp-configuration>
+            </oftp-listener>
+        </record>
+        <record name="sfidPersonalityProcessCreated" type="oftp.sfid-personality" rest-identifier="273f6310-37b1-11f0-8e28-c61e7f000101" action="update" created-at="2026-01-28T11:03:21Z" created-by="seeadmin" last-modified-by="seeadmin" last-modified-at="2026-01-28T11:03:21Z">
+            <sfid-personality identifier="273f6310-37b1-11f0-8e28-c61e7f000101">
+                <name>sfidPersonalityProcessCreated</name>
+                <administrative-data changed-at="2026-01-28T09:59:05Z" changed-by="seeadmin" comment="" created-at="2025-12-17T08:32:12Z" created-by="seeadmin" logical-system="000" record-id="aa11e842-c5e9-812e-e75e-2fb2ce26631d"/>
+                <odette-code>O0013000031SEE30532CL03</odette-code>
+                <signature-certificates>
+                    <signature-certificate effective-from-date-time="2025-09-08T08:06:22Z">
+                        <certificate-ref href="https://dedcdbdmgr01:14000/api/ksm/USERS/INSTANCES/demoim"/>
+                    </signature-certificate>
+                </signature-certificates>
+                <decryption-certificates>
+                    <decryption-certificate>
+                        <certificate-ref href="https://dedcdbdmgr01:14000/api/ksm/USERS/INSTANCES/demoim"/>
+                    </decryption-certificate>
+                </decryption-certificates>
+                <eerp-signature-certificates>
+                    <eerp-signature-certificate effective-from-date-time="2025-09-08T08:06:41Z">
+                        <certificate-ref href="https://dedcdbdmgr01:14000/api/ksm/USERS/INSTANCES/demoim"/>
+                    </eerp-signature-certificate>
+                </eerp-signature-certificates>
+            </sfid-personality>
+        </record>
+    </records>
+</transport>
