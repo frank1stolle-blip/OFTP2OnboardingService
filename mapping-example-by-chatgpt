@@ -69,7 +69,7 @@ transport <- /transport
         {
           ssid-personality
           {
-            name := records/record[1]/oftp-v2-partner/ssid/ssid-personality/name
+            name := "O0013000031SEE30532CL03"
             odette-code := records/record[1]/oftp-v2-partner/ssid/ssid-personality/odette-code
             password := records/record[1]/oftp-v2-partner/ssid/ssid-personality/password
             session-authentication-certificates { }
@@ -126,8 +126,8 @@ transport <- /transport
             sfid-personality
             {
               sfid-personality-ref { @href := concat("https://dedcdbdmgr01:14000/api/oftp/v2/sfid-personalities/", $sfid_personality_id) }
-              name := records/record[8]/sfid-personality/name
-              odette-code := records/record[8]/sfid-personality/odette-code
+              name := "sfidPersonalityProcessCreated"
+              odette-code := "O0013000031SEE30532CL03"
             }
           }
         }
@@ -660,7 +660,7 @@ transport <- /transport
       oftp-listener
       {
         @identifier := $listener_id
-        name := records/record[7]/oftp-listener/name
+        name := "REST Created Listener"
 
         administrative-data
         {
@@ -708,7 +708,7 @@ transport <- /transport
       sfid-personality
       {
         @identifier := $sfid_personality_id
-        name := records/record[8]/sfid-personality/name
+        name := "sfidPersonalityProcessCreated"
 
         administrative-data
         {
