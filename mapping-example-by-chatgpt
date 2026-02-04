@@ -275,7 +275,7 @@ transport <- /transport
         type := "CERTIFICATE"
         alias := $partner_auth_cert_alias
         path := "TRUSTED\TRUSTED_INSTANCES"
-        version := 3
+        version := "3"
         subject := records/record[3]/keystore-entry/subject
         issuer := records/record[3]/keystore-entry/issuer
         serial := records/record[3]/keystore-entry/serial
@@ -315,7 +315,7 @@ transport <- /transport
             verify-crl-signatures := records/record[3]/keystore-entry/extensions/key-usage/verify-crl-signatures
           }
           basic-constraint := records/record[3]/keystore-entry/extensions/basic-constraint
-          ca-path-length-constraint := -1
+          ca-path-length-constraint := "-1"
           alternative-subject-names := ""
         }
 
@@ -373,7 +373,7 @@ transport <- /transport
         type := "CERTIFICATE"
         alias := $partner_eerp_cert_alias
         path := "TRUSTED\TRUSTED_INSTANCES"
-        version := 3
+        version := "3"
         subject := records/record[4]/keystore-entry/subject
         issuer := records/record[4]/keystore-entry/issuer
         serial := records/record[4]/keystore-entry/serial
@@ -413,7 +413,7 @@ transport <- /transport
             verify-crl-signatures := records/record[4]/keystore-entry/extensions/key-usage/verify-crl-signatures
           }
           basic-constraint := records/record[4]/keystore-entry/extensions/basic-constraint
-          ca-path-length-constraint := -1
+          ca-path-length-constraint := "-1"
           alternative-subject-names := ""
         }
 
@@ -471,7 +471,7 @@ transport <- /transport
         type := "CERTIFICATE"
         alias := $partner_encrypt_cert_alias
         path := "TRUSTED\TRUSTED_INSTANCES"
-        version := 3
+        version := "3"
         subject := records/record[5]/keystore-entry/subject
         issuer := records/record[5]/keystore-entry/issuer
         serial := records/record[5]/keystore-entry/serial
@@ -511,7 +511,7 @@ transport <- /transport
             verify-crl-signatures := records/record[5]/keystore-entry/extensions/key-usage/verify-crl-signatures
           }
           basic-constraint := records/record[5]/keystore-entry/extensions/basic-constraint
-          ca-path-length-constraint := -1
+          ca-path-length-constraint := "-1"
           alternative-subject-names := ""
         }
 
@@ -570,7 +570,7 @@ transport <- /transport
         type := "PRIVATE KEY"
         alias := "demoim"
         path := "USERS\INSTANCES"
-        version := 3
+        version := "3"
         subject := records/record[6]/keystore-entry/subject
         issuer := records/record[6]/keystore-entry/issuer
         serial := records/record[6]/keystore-entry/serial
@@ -615,7 +615,7 @@ transport <- /transport
             verify-crl-signatures := "false"
           }
           basic-constraint := "END"
-          ca-path-length-constraint := -1
+          ca-path-length-constraint := "-1"
           alternative-subject-names := ""
         }
 
