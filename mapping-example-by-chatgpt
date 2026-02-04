@@ -1,754 +1,761 @@
+(: ============================================================================
+   BIS Mapping: Template-OFTP2 One-to-One Identity Mapping
 
-let $sfid_partner_id := generateUUID()
-let $oftp_partner_id := generateUUID()
-let $partner_auth_cert_id := generateUUID()
-let $partner_eerp_cert_id := generateUUID()
-let $partner_encrypt_cert_id := generateUUID()
-let $demoim_cert_id := "a8e279ca-cfa9-11ec-8563-ea550a0b1393"
-let $listener_id := "26fcb4c0-37b1-11f0-8e28-c61e7f000101"
-let $sfid_personality_id := "273f6310-37b1-11f0-8e28-c61e7f000101"
-let $partner_auth_cert_alias := "test-partnerauth"
-let $partner_eerp_cert_alias := "test-partnereerp"
-let $partner_encrypt_cert_alias := "test-partnerencrypt"
+   Purpose: Creates an identity transformation of the Template-OFTP2.xml file
+            All elements, attributes, and content are preserved exactly as-is
 
+   Source: Template-OFTP2.xml
+   Created: 2026-02-03
+   BIS Mapping Language Version: Based on W3C XPath/XQuery standards
+   ============================================================================ :)
+
+(: Root transport element with all attributes and child elements :)
 transport <- /transport
 {
-  @id := "test-transport-id"
-  @format := @format
-  @security-level := @security-level
+    (: Map root element attributes :)
+    @id := @id
+    @format := @format
+    @security-level := @security-level
 
-  administrative-data
-  {
-    @created-at := administrative-data/@created-at
-    @created-by := administrative-data/@created-by
-    @changed-at := administrative-data/@changed-at
-    @changed-by := administrative-data/@changed-by
-    @logical-system := administrative-data/@logical-system
-  }
-
-  direction := direction
-  state := state
-  processing := processing
-  version := version
-  revised-at := revised-at
-  revised-by := revised-by
-
-  records
-  {
-    (: Record 1: oftp-partner :)
-    record
+    (: Administrative data with all attributes :)
+    administrative-data
     {
-      @name := "oftp-partner-record"
-      @type := "oftp.oftp-partner"
-      @rest-identifier := $oftp_partner_id
-      @action := records/record[1]/@action
-      @created-at := records/record[1]/@created-at
-      @created-by := records/record[1]/@created-by
-      @last-modified-by := records/record[1]/@last-modified-by
-      @last-modified-at := records/record[1]/@last-modified-at
+        @created-at := administrative-data/@created-at
+        @created-by := administrative-data/@created-by
+        @changed-at := administrative-data/@changed-at
+        @changed-by := administrative-data/@changed-by
+        @logical-system := administrative-data/@logical-system
+    }
 
-      oftp-v2-partner
-      {
-        @identifier := $oftp_partner_id
-        name := "oftp-partner-record"
+    (: Simple root-level element mappings :)
+    direction := direction
+    state := state
+    processing := processing
+    version := version
+    revised-at := revised-at
+    revised-by := revised-by
 
-        administrative-data
+    (: Records collection :)
+    records
+    {
+        (: OFTP Partner Record :)
+        record
         {
-          @changed-at := records/record[1]/oftp-v2-partner/administrative-data/@changed-at
-          @changed-by := records/record[1]/oftp-v2-partner/administrative-data/@changed-by
-          @comment := records/record[1]/oftp-v2-partner/administrative-data/@comment
-          @created-at := records/record[1]/oftp-v2-partner/administrative-data/@created-at
-          @created-by := records/record[1]/oftp-v2-partner/administrative-data/@created-by
-          @logical-system := records/record[1]/oftp-v2-partner/administrative-data/@logical-system
-          @record-id := generateUUID()
+            @name := records/record[1]/@name
+            @type := records/record[1]/@type
+            @rest-identifier := records/record[1]/@rest-identifier
+            @action := records/record[1]/@action
+            @created-at := records/record[1]/@created-at
+            @created-by := records/record[1]/@created-by
+            @last-modified-by := records/record[1]/@last-modified-by
+            @last-modified-at := records/record[1]/@last-modified-at
+
+            oftp-v2-partner
+            {
+                @identifier := records/record[1]/oftp-v2-partner/@identifier
+                name := records/record[1]/oftp-v2-partner/name
+
+                administrative-data
+                {
+                    @changed-at := records/record[1]/oftp-v2-partner/administrative-data/@changed-at
+                    @changed-by := records/record[1]/oftp-v2-partner/administrative-data/@changed-by
+                    @comment := records/record[1]/oftp-v2-partner/administrative-data/@comment
+                    @created-at := records/record[1]/oftp-v2-partner/administrative-data/@created-at
+                    @created-by := records/record[1]/oftp-v2-partner/administrative-data/@created-by
+                    @logical-system := records/record[1]/oftp-v2-partner/administrative-data/@logical-system
+                    @record-id := records/record[1]/oftp-v2-partner/administrative-data/@record-id
+                }
+
+                active := records/record[1]/oftp-v2-partner/active
+
+                ssid
+                {
+                    ssid-personality
+                    {
+                        name := records/record[1]/oftp-v2-partner/ssid/ssid-personality/name
+                        odette-code := records/record[1]/oftp-v2-partner/ssid/ssid-personality/odette-code
+                        password := records/record[1]/oftp-v2-partner/ssid/ssid-personality/password
+                        session-authentication-certificates { }
+                    }
+
+                    ssid-partner
+                    {
+                        name := records/record[1]/oftp-v2-partner/ssid/ssid-partner/name
+                        odette-code := records/record[1]/oftp-v2-partner/ssid/ssid-partner/odette-code
+                        password := records/record[1]/oftp-v2-partner/ssid/ssid-partner/password
+                        session-authentication-certificates { }
+                    }
+
+                    session-configuration
+                    {
+                        protocol-version := records/record[1]/oftp-v2-partner/ssid/session-configuration/protocol-version
+                        transfer-direction := records/record[1]/oftp-v2-partner/ssid/session-configuration/transfer-direction
+                        enable-multiple-sessions := records/record[1]/oftp-v2-partner/ssid/session-configuration/enable-multiple-sessions
+                        session-timeout := records/record[1]/oftp-v2-partner/ssid/session-configuration/session-timeout
+                        call-timeout := records/record[1]/oftp-v2-partner/ssid/session-configuration/call-timeout
+                        buffer-size := records/record[1]/oftp-v2-partner/ssid/session-configuration/buffer-size
+                        acknowledgement-interval := records/record[1]/oftp-v2-partner/ssid/session-configuration/acknowledgement-interval
+                        enable-compression := records/record[1]/oftp-v2-partner/ssid/session-configuration/enable-compression
+                        enable-restart := records/record[1]/oftp-v2-partner/ssid/session-configuration/enable-restart
+                        character-encoding := records/record[1]/oftp-v2-partner/ssid/session-configuration/character-encoding
+                        request-secure-authentication := records/record[1]/oftp-v2-partner/ssid/session-configuration/request-secure-authentication
+
+                        sequence-processing
+                        {
+                            use-sequence := records/record[1]/oftp-v2-partner/ssid/session-configuration/sequence-processing/use-sequence
+                        }
+
+                        asynchronous-incoming-files-processing
+                        {
+                            enable-asynchronous-processing := records/record[1]/oftp-v2-partner/ssid/session-configuration/asynchronous-incoming-files-processing/enable-asynchronous-processing
+                            minimum-file-size := records/record[1]/oftp-v2-partner/ssid/session-configuration/asynchronous-incoming-files-processing/minimum-file-size
+                        }
+                    }
+                }
+
+                sfid
+                {
+                    sfid-partners
+                    {
+                        sfid-partner
+                        {
+                            sfid-partner-ref { @href := records/record[1]/oftp-v2-partner/sfid/sfid-partners/sfid-partner/sfid-partner-ref/@href }
+                            name := records/record[1]/oftp-v2-partner/sfid/sfid-partners/sfid-partner/name
+                            odette-code := records/record[1]/oftp-v2-partner/sfid/sfid-partners/sfid-partner/odette-code
+                        }
+                    }
+
+                    sfid-personalities
+                    {
+                        sfid-personality
+                        {
+                            sfid-personality-ref { @href := records/record[1]/oftp-v2-partner/sfid/sfid-personalities/sfid-personality/sfid-personality-ref/@href }
+                            name := records/record[1]/oftp-v2-partner/sfid/sfid-personalities/sfid-personality/name
+                            odette-code := records/record[1]/oftp-v2-partner/sfid/sfid-personalities/sfid-personality/odette-code
+                        }
+                    }
+                }
+
+                partner-tcp-configuration
+                {
+                    hostname := records/record[1]/oftp-v2-partner/partner-tcp-configuration/hostname
+                    port := records/record[1]/oftp-v2-partner/partner-tcp-configuration/port
+                    use-tls := records/record[1]/oftp-v2-partner/partner-tcp-configuration/use-tls
+
+                    tls
+                    {
+                        trust-model := records/record[1]/oftp-v2-partner/partner-tcp-configuration/tls/trust-model
+                        use-system-truststore := records/record[1]/oftp-v2-partner/partner-tcp-configuration/tls/use-system-truststore
+                        disable-hostname-check := records/record[1]/oftp-v2-partner/partner-tcp-configuration/tls/disable-hostname-check
+                        server-certificates { }
+                        security-profile { @href := records/record[1]/oftp-v2-partner/partner-tcp-configuration/tls/security-profile/@href }
+                        use-client-authentication := records/record[1]/oftp-v2-partner/partner-tcp-configuration/tls/use-client-authentication
+                    }
+
+                    check-tls := records/record[1]/oftp-v2-partner/partner-tcp-configuration/check-tls
+                }
+
+                listeners
+                {
+                    listener { @href := records/record[1]/oftp-v2-partner/listeners/listener/@href }
+                }
+            }
         }
 
-        active := records/record[1]/oftp-v2-partner/active
-
-        ssid
+        (: SFID Partner Record :)
+        record
         {
-          ssid-personality
-          {
-            name := "O0013000031SEE30532CL03"
-            odette-code := records/record[1]/oftp-v2-partner/ssid/ssid-personality/odette-code
-            password := records/record[1]/oftp-v2-partner/ssid/ssid-personality/password
-            session-authentication-certificates { }
-          }
-          ssid-partner
-          {
-            name := "ssid-partner-name"
-            odette-code := records/record[1]/oftp-v2-partner/ssid/ssid-partner/odette-code
-            password := records/record[1]/oftp-v2-partner/ssid/ssid-partner/password
-            session-authentication-certificates { }
-          }
+            @name := records/record[2]/@name
+            @type := records/record[2]/@type
+            @rest-identifier := records/record[2]/@rest-identifier
+            @action := records/record[2]/@action
+            @created-at := records/record[2]/@created-at
+            @created-by := records/record[2]/@created-by
+            @last-modified-by := records/record[2]/@last-modified-by
+            @last-modified-at := records/record[2]/@last-modified-at
 
-          session-configuration
-          {
-            protocol-version := records/record[1]/oftp-v2-partner/ssid/session-configuration/protocol-version
-            transfer-direction := records/record[1]/oftp-v2-partner/ssid/session-configuration/transfer-direction
-            enable-multiple-sessions := records/record[1]/oftp-v2-partner/ssid/session-configuration/enable-multiple-sessions
-            session-timeout := records/record[1]/oftp-v2-partner/ssid/session-configuration/session-timeout
-            call-timeout := records/record[1]/oftp-v2-partner/ssid/session-configuration/call-timeout
-            buffer-size := records/record[1]/oftp-v2-partner/ssid/session-configuration/buffer-size
-            acknowledgement-interval := records/record[1]/oftp-v2-partner/ssid/session-configuration/acknowledgement-interval
-            enable-compression := records/record[1]/oftp-v2-partner/ssid/session-configuration/enable-compression
-            enable-restart := records/record[1]/oftp-v2-partner/ssid/session-configuration/enable-restart
-            character-encoding := records/record[1]/oftp-v2-partner/ssid/session-configuration/character-encoding
-            request-secure-authentication := records/record[1]/oftp-v2-partner/ssid/session-configuration/request-secure-authentication
-
-            sequence-processing
-            {
-              use-sequence := records/record[1]/oftp-v2-partner/ssid/session-configuration/sequence-processing/use-sequence
-            }
-
-            asynchronous-incoming-files-processing
-            {
-              enable-asynchronous-processing := records/record[1]/oftp-v2-partner/ssid/session-configuration/asynchronous-incoming-files-processing/enable-asynchronous-processing
-              minimum-file-size := records/record[1]/oftp-v2-partner/ssid/session-configuration/asynchronous-incoming-files-processing/minimum-file-size
-            }
-          }
-        }
-
-        sfid
-        {
-          sfid-partners
-          {
             sfid-partner
             {
-              sfid-partner-ref { @href := concat("https://dedcdbdmgr01:14000/api/oftp/v2/sfid-partners/", $sfid_partner_id) }
-              name := "sfid-partner-record"
-              odette-code := records/record[2]/sfid-partner/odette-code
-            }
-          }
+                @identifier := records/record[2]/sfid-partner/@identifier
+                name := records/record[2]/sfid-partner/name
 
-          sfid-personalities
-          {
+                administrative-data
+                {
+                    @changed-at := records/record[2]/sfid-partner/administrative-data/@changed-at
+                    @changed-by := records/record[2]/sfid-partner/administrative-data/@changed-by
+                    @comment := records/record[2]/sfid-partner/administrative-data/@comment
+                    @created-at := records/record[2]/sfid-partner/administrative-data/@created-at
+                    @created-by := records/record[2]/sfid-partner/administrative-data/@created-by
+                    @logical-system := records/record[2]/sfid-partner/administrative-data/@logical-system
+                    @record-id := records/record[2]/sfid-partner/administrative-data/@record-id
+                }
+
+                odette-code := records/record[2]/sfid-partner/odette-code
+                sfid-user-field { }
+                clearing-center := records/record[2]/sfid-partner/clearing-center
+
+                authentication-certificates
+                {
+                    authentication-certificate
+                    {
+                        certificate-ref { @href := records/record[2]/sfid-partner/authentication-certificates/authentication-certificate/certificate-ref/@href }
+                    }
+                }
+
+                encryption-certificates
+                {
+                    encryption-certificate
+                    {
+                        @effective-from-date-time := records/record[2]/sfid-partner/encryption-certificates/encryption-certificate/@effective-from-date-time
+                        certificate-ref { @href := records/record[2]/sfid-partner/encryption-certificates/encryption-certificate/certificate-ref/@href }
+                    }
+                }
+
+                eerp-authentication-certificates
+                {
+                    eerp-authentication-certificate
+                    {
+                        certificate-ref { @href := records/record[2]/sfid-partner/eerp-authentication-certificates/eerp-authentication-certificate/certificate-ref/@href }
+                    }
+                }
+
+                send
+                {
+                    sign := records/record[2]/sfid-partner/send/sign
+                    signature-algorithm := records/record[2]/sfid-partner/send/signature-algorithm
+                    encrypt := records/record[2]/sfid-partner/send/encrypt
+                    encryption-algorithm := records/record[2]/sfid-partner/send/encryption-algorithm
+                    compress := records/record[2]/sfid-partner/send/compress
+                    send-eerp-immediately := records/record[2]/sfid-partner/send/send-eerp-immediately
+                    request-signed-eerp := records/record[2]/sfid-partner/send/request-signed-eerp
+                    disable-eerp-sending := records/record[2]/sfid-partner/send/disable-eerp-sending
+                    disable-eerp-sending-in-receiver-only-mode := records/record[2]/sfid-partner/send/disable-eerp-sending-in-receiver-only-mode
+                    eerp-user-field { }
+                    report-queue := records/record[2]/sfid-partner/send/report-queue
+                    cipher-suite := records/record[2]/sfid-partner/send/cipher-suite
+                }
+
+                receive
+                {
+                    disable-check-for-incoming-transfer-duplicates := records/record[2]/sfid-partner/receive/disable-check-for-incoming-transfer-duplicates
+                    format-received-fix-files := records/record[2]/sfid-partner/receive/format-received-fix-files
+                    accept-only-signed-files := records/record[2]/sfid-partner/receive/accept-only-signed-files
+                    accept-only-encrypted-files := records/record[2]/sfid-partner/receive/accept-only-encrypted-files
+                    partner-sends-eerp := records/record[2]/sfid-partner/receive/partner-sends-eerp
+                    eerp-timeout := records/record[2]/sfid-partner/receive/eerp-timeout
+                    eerp-timeout-unit := records/record[2]/sfid-partner/receive/eerp-timeout-unit
+                    correlate-eerps-in-process-engine := records/record[2]/sfid-partner/receive/correlate-eerps-in-process-engine
+                    accept-unsigned-eerp := records/record[2]/sfid-partner/receive/accept-unsigned-eerp
+                }
+            }
+        }
+
+        (: Keystore Entry Record 1 - Partner Auth Certificate :)
+        record
+        {
+            @name := records/record[3]/@name
+            @type := records/record[3]/@type
+            @rest-identifier := records/record[3]/@rest-identifier
+            @action := records/record[3]/@action
+            @created-at := records/record[3]/@created-at
+            @created-by := records/record[3]/@created-by
+            @last-modified-by := records/record[3]/@last-modified-by
+            @last-modified-at := records/record[3]/@last-modified-at
+
+            keystore-entry
+            {
+                @identifier := records/record[3]/keystore-entry/@identifier
+
+                administrative-data
+                {
+                    @changed-at := records/record[3]/keystore-entry/administrative-data/@changed-at
+                    @changed-by := records/record[3]/keystore-entry/administrative-data/@changed-by
+                    @comment := records/record[3]/keystore-entry/administrative-data/@comment
+                    @created-at := records/record[3]/keystore-entry/administrative-data/@created-at
+                    @created-by := records/record[3]/keystore-entry/administrative-data/@created-by
+                    @logical-system := records/record[3]/keystore-entry/administrative-data/@logical-system
+                    @record-id := records/record[3]/keystore-entry/administrative-data/@record-id
+                }
+
+                type := records/record[3]/keystore-entry/type
+                alias := records/record[3]/keystore-entry/alias
+                path := records/record[3]/keystore-entry/path
+                version := records/record[3]/keystore-entry/version
+                subject := records/record[3]/keystore-entry/subject
+                issuer := records/record[3]/keystore-entry/issuer
+                serial := records/record[3]/keystore-entry/serial
+                serial-hex := records/record[3]/keystore-entry/serial-hex
+                valid-from := records/record[3]/keystore-entry/valid-from
+                valid-to := records/record[3]/keystore-entry/valid-to
+                fingerprint := records/record[3]/keystore-entry/fingerprint
+                fingerprint-algorithm := records/record[3]/keystore-entry/fingerprint-algorithm
+
+                subject-details
+                {
+                    common-name := records/record[3]/keystore-entry/subject-details/common-name
+                }
+
+                key-settings
+                {
+                    sign-algorithm := records/record[3]/keystore-entry/key-settings/sign-algorithm
+                    public-key-size := records/record[3]/keystore-entry/key-settings/public-key-size
+                    private-key-algorithm := records/record[3]/keystore-entry/key-settings/private-key-algorithm
+                }
+
+                extensions
+                {
+                    key-usage
+                    {
+                        digital-signature := records/record[3]/keystore-entry/extensions/key-usage/digital-signature
+                        data-encipherment := records/record[3]/keystore-entry/extensions/key-usage/data-encipherment
+                        non-repudation := records/record[3]/keystore-entry/extensions/key-usage/non-repudation
+                        verify-certificate-signatures := records/record[3]/keystore-entry/extensions/key-usage/verify-certificate-signatures
+                        key-encipherment := records/record[3]/keystore-entry/extensions/key-usage/key-encipherment
+                        server-authentication := records/record[3]/keystore-entry/extensions/key-usage/server-authentication
+                        client-authentication := records/record[3]/keystore-entry/extensions/key-usage/client-authentication
+                        email-protection := records/record[3]/keystore-entry/extensions/key-usage/email-protection
+                        key-agreement := records/record[3]/keystore-entry/extensions/key-usage/key-agreement
+                        encipher-only := records/record[3]/keystore-entry/extensions/key-usage/encipher-only
+                        decipher-only := records/record[3]/keystore-entry/extensions/key-usage/decipher-only
+                        verify-crl-signatures := records/record[3]/keystore-entry/extensions/key-usage/verify-crl-signatures
+                    }
+                    basic-constraint := records/record[3]/keystore-entry/extensions/basic-constraint
+                    ca-path-length-constraint := records/record[3]/keystore-entry/extensions/ca-path-length-constraint
+                    alternative-subject-names := ""
+                }
+
+                raw-content
+                {
+                    payload := records/record[3]/keystore-entry/raw-content/payload
+                }
+
+                validation
+                {
+                    validation-settings
+                    {
+                        period := records/record[3]/keystore-entry/validation/validation-settings/period
+                        chain := records/record[3]/keystore-entry/validation/validation-settings/chain
+                        ocsp := records/record[3]/keystore-entry/validation/validation-settings/ocsp
+                        ocsp-online := records/record[3]/keystore-entry/validation/validation-settings/ocsp-online
+                        crl := records/record[3]/keystore-entry/validation/validation-settings/crl
+                        force-valid := records/record[3]/keystore-entry/validation/validation-settings/force-valid
+                    }
+                    validity-status := records/record[3]/keystore-entry/validation/validity-status
+                    validation-time := records/record[3]/keystore-entry/validation/validation-time
+                }
+
+                validation-state := records/record[3]/keystore-entry/validation-state
+                provided-password := records/record[3]/keystore-entry/provided-password
+            }
+        }
+
+        (: Keystore Entry Record 2 - Partner EERP Certificate :)
+        record
+        {
+            @name := records/record[4]/@name
+            @type := records/record[4]/@type
+            @rest-identifier := records/record[4]/@rest-identifier
+            @action := records/record[4]/@action
+            @created-at := records/record[4]/@created-at
+            @created-by := records/record[4]/@created-by
+            @last-modified-by := records/record[4]/@last-modified-by
+            @last-modified-at := records/record[4]/@last-modified-at
+
+            keystore-entry
+            {
+                @identifier := records/record[4]/keystore-entry/@identifier
+
+                administrative-data
+                {
+                    @changed-at := records/record[4]/keystore-entry/administrative-data/@changed-at
+                    @changed-by := records/record[4]/keystore-entry/administrative-data/@changed-by
+                    @comment := records/record[4]/keystore-entry/administrative-data/@comment
+                    @created-at := records/record[4]/keystore-entry/administrative-data/@created-at
+                    @created-by := records/record[4]/keystore-entry/administrative-data/@created-by
+                    @logical-system := records/record[4]/keystore-entry/administrative-data/@logical-system
+                    @record-id := records/record[4]/keystore-entry/administrative-data/@record-id
+                }
+
+                type := records/record[4]/keystore-entry/type
+                alias := records/record[4]/keystore-entry/alias
+                path := records/record[4]/keystore-entry/path
+                version := records/record[4]/keystore-entry/version
+                subject := records/record[4]/keystore-entry/subject
+                issuer := records/record[4]/keystore-entry/issuer
+                serial := records/record[4]/keystore-entry/serial
+                serial-hex := records/record[4]/keystore-entry/serial-hex
+                valid-from := records/record[4]/keystore-entry/valid-from
+                valid-to := records/record[4]/keystore-entry/valid-to
+                fingerprint := records/record[4]/keystore-entry/fingerprint
+                fingerprint-algorithm := records/record[4]/keystore-entry/fingerprint-algorithm
+
+                subject-details
+                {
+                    common-name := records/record[4]/keystore-entry/subject-details/common-name
+                }
+
+                key-settings
+                {
+                    sign-algorithm := records/record[4]/keystore-entry/key-settings/sign-algorithm
+                    public-key-size := records/record[4]/keystore-entry/key-settings/public-key-size
+                    private-key-algorithm := records/record[4]/keystore-entry/key-settings/private-key-algorithm
+                }
+
+                extensions
+                {
+                    key-usage
+                    {
+                        digital-signature := records/record[4]/keystore-entry/extensions/key-usage/digital-signature
+                        data-encipherment := records/record[4]/keystore-entry/extensions/key-usage/data-encipherment
+                        non-repudation := records/record[4]/keystore-entry/extensions/key-usage/non-repudation
+                        verify-certificate-signatures := records/record[4]/keystore-entry/extensions/key-usage/verify-certificate-signatures
+                        key-encipherment := records/record[4]/keystore-entry/extensions/key-usage/key-encipherment
+                        server-authentication := records/record[4]/keystore-entry/extensions/key-usage/server-authentication
+                        client-authentication := records/record[4]/keystore-entry/extensions/key-usage/client-authentication
+                        email-protection := records/record[4]/keystore-entry/extensions/key-usage/email-protection
+                        key-agreement := records/record[4]/keystore-entry/extensions/key-usage/key-agreement
+                        encipher-only := records/record[4]/keystore-entry/extensions/key-usage/encipher-only
+                        decipher-only := records/record[4]/keystore-entry/extensions/key-usage/decipher-only
+                        verify-crl-signatures := records/record[4]/keystore-entry/extensions/key-usage/verify-crl-signatures
+                    }
+                    basic-constraint := records/record[4]/keystore-entry/extensions/basic-constraint
+                    ca-path-length-constraint := records/record[4]/keystore-entry/extensions/ca-path-length-constraint
+                    alternative-subject-names := ""
+                }
+
+                raw-content
+                {
+                    payload := records/record[4]/keystore-entry/raw-content/payload
+                }
+
+                validation
+                {
+                    validation-settings
+                    {
+                        period := records/record[4]/keystore-entry/validation/validation-settings/period
+                        chain := records/record[4]/keystore-entry/validation/validation-settings/chain
+                        ocsp := records/record[4]/keystore-entry/validation/validation-settings/ocsp
+                        ocsp-online := records/record[4]/keystore-entry/validation/validation-settings/ocsp-online
+                        crl := records/record[4]/keystore-entry/validation/validation-settings/crl
+                        force-valid := records/record[4]/keystore-entry/validation/validation-settings/force-valid
+                    }
+                    validity-status := records/record[4]/keystore-entry/validation/validity-status
+                    validation-time := records/record[4]/keystore-entry/validation/validation-time
+                }
+
+                validation-state := records/record[4]/keystore-entry/validation-state
+                provided-password := records/record[4]/keystore-entry/provided-password
+            }
+        }
+
+        (: Keystore Entry Record 3 - Partner Encrypt Certificate :)
+        record
+        {
+            @name := records/record[5]/@name
+            @type := records/record[5]/@type
+            @rest-identifier := records/record[5]/@rest-identifier
+            @action := records/record[5]/@action
+            @created-at := records/record[5]/@created-at
+            @created-by := records/record[5]/@created-by
+            @last-modified-by := records/record[5]/@last-modified-by
+            @last-modified-at := records/record[5]/@last-modified-at
+
+            keystore-entry
+            {
+                @identifier := records/record[5]/keystore-entry/@identifier
+
+                administrative-data
+                {
+                    @changed-at := records/record[5]/keystore-entry/administrative-data/@changed-at
+                    @changed-by := records/record[5]/keystore-entry/administrative-data/@changed-by
+                    @comment := records/record[5]/keystore-entry/administrative-data/@comment
+                    @created-at := records/record[5]/keystore-entry/administrative-data/@created-at
+                    @created-by := records/record[5]/keystore-entry/administrative-data/@created-by
+                    @logical-system := records/record[5]/keystore-entry/administrative-data/@logical-system
+                    @record-id := records/record[5]/keystore-entry/administrative-data/@record-id
+                }
+
+                type := records/record[5]/keystore-entry/type
+                alias := records/record[5]/keystore-entry/alias
+                path := records/record[5]/keystore-entry/path
+                version := records/record[5]/keystore-entry/version
+                subject := records/record[5]/keystore-entry/subject
+                issuer := records/record[5]/keystore-entry/issuer
+                serial := records/record[5]/keystore-entry/serial
+                serial-hex := records/record[5]/keystore-entry/serial-hex
+                valid-from := records/record[5]/keystore-entry/valid-from
+                valid-to := records/record[5]/keystore-entry/valid-to
+                fingerprint := records/record[5]/keystore-entry/fingerprint
+                fingerprint-algorithm := records/record[5]/keystore-entry/fingerprint-algorithm
+
+                subject-details
+                {
+                    common-name := records/record[5]/keystore-entry/subject-details/common-name
+                }
+
+                key-settings
+                {
+                    sign-algorithm := records/record[5]/keystore-entry/key-settings/sign-algorithm
+                    public-key-size := records/record[5]/keystore-entry/key-settings/public-key-size
+                    private-key-algorithm := records/record[5]/keystore-entry/key-settings/private-key-algorithm
+                }
+
+                extensions
+                {
+                    key-usage
+                    {
+                        digital-signature := records/record[5]/keystore-entry/extensions/key-usage/digital-signature
+                        data-encipherment := records/record[5]/keystore-entry/extensions/key-usage/data-encipherment
+                        non-repudation := records/record[5]/keystore-entry/extensions/key-usage/non-repudation
+                        verify-certificate-signatures := records/record[5]/keystore-entry/extensions/key-usage/verify-certificate-signatures
+                        key-encipherment := records/record[5]/keystore-entry/extensions/key-usage/key-encipherment
+                        server-authentication := records/record[5]/keystore-entry/extensions/key-usage/server-authentication
+                        client-authentication := records/record[5]/keystore-entry/extensions/key-usage/client-authentication
+                        email-protection := records/record[5]/keystore-entry/extensions/key-usage/email-protection
+                        key-agreement := records/record[5]/keystore-entry/extensions/key-usage/key-agreement
+                        encipher-only := records/record[5]/keystore-entry/extensions/key-usage/encipher-only
+                        decipher-only := records/record[5]/keystore-entry/extensions/key-usage/decipher-only
+                        verify-crl-signatures := records/record[5]/keystore-entry/extensions/key-usage/verify-crl-signatures
+                    }
+                    basic-constraint := records/record[5]/keystore-entry/extensions/basic-constraint
+                    ca-path-length-constraint := records/record[5]/keystore-entry/extensions/ca-path-length-constraint
+                    alternative-subject-names := ""
+                }
+
+                raw-content
+                {
+                    payload := records/record[5]/keystore-entry/raw-content/payload
+                }
+
+                validation
+                {
+                    validation-settings
+                    {
+                        period := records/record[5]/keystore-entry/validation/validation-settings/period
+                        chain := records/record[5]/keystore-entry/validation/validation-settings/chain
+                        ocsp := records/record[5]/keystore-entry/validation/validation-settings/ocsp
+                        ocsp-online := records/record[5]/keystore-entry/validation/validation-settings/ocsp-online
+                        crl := records/record[5]/keystore-entry/validation/validation-settings/crl
+                        force-valid := records/record[5]/keystore-entry/validation/validation-settings/force-valid
+                    }
+                    validity-status := records/record[5]/keystore-entry/validation/validity-status
+                    validation-time := records/record[5]/keystore-entry/validation/validation-time
+                }
+
+                validation-state := records/record[5]/keystore-entry/validation-state
+                provided-password := records/record[5]/keystore-entry/provided-password
+            }
+        }
+
+        (: Keystore Entry Record 4 - Demoim Private Key :)
+        record
+        {
+            @name := records/record[6]/@name
+            @type := records/record[6]/@type
+            @rest-identifier := records/record[6]/@rest-identifier
+            @action := records/record[6]/@action
+            @created-at := records/record[6]/@created-at
+            @created-by := records/record[6]/@created-by
+            @last-modified-by := records/record[6]/@last-modified-by
+            @last-modified-at := records/record[6]/@last-modified-at
+
+            keystore-entry
+            {
+                @identifier := records/record[6]/keystore-entry/@identifier
+
+                administrative-data
+                {
+                    @changed-at := records/record[6]/keystore-entry/administrative-data/@changed-at
+                    @changed-by := records/record[6]/keystore-entry/administrative-data/@changed-by
+                    @comment := records/record[6]/keystore-entry/administrative-data/@comment
+                    @created-at := records/record[6]/keystore-entry/administrative-data/@created-at
+                    @created-by := records/record[6]/keystore-entry/administrative-data/@created-by
+                    @logical-system := records/record[6]/keystore-entry/administrative-data/@logical-system
+                    @record-id := records/record[6]/keystore-entry/administrative-data/@record-id
+                }
+
+                type := records/record[6]/keystore-entry/type
+                alias := records/record[6]/keystore-entry/alias
+                path := records/record[6]/keystore-entry/path
+                version := records/record[6]/keystore-entry/version
+                subject := records/record[6]/keystore-entry/subject
+                issuer := records/record[6]/keystore-entry/issuer
+                serial := records/record[6]/keystore-entry/serial
+                serial-hex := records/record[6]/keystore-entry/serial-hex
+                valid-from := records/record[6]/keystore-entry/valid-from
+                valid-to := records/record[6]/keystore-entry/valid-to
+                fingerprint := records/record[6]/keystore-entry/fingerprint
+                fingerprint-algorithm := records/record[6]/keystore-entry/fingerprint-algorithm
+
+                subject-details
+                {
+                    common-name := records/record[6]/keystore-entry/subject-details/common-name
+                    organization-unit := records/record[6]/keystore-entry/subject-details/organization-unit
+                    organization := records/record[6]/keystore-entry/subject-details/organization
+                    location := records/record[6]/keystore-entry/subject-details/location
+                    state := records/record[6]/keystore-entry/subject-details/state
+                    country := records/record[6]/keystore-entry/subject-details/country
+                }
+
+                key-settings
+                {
+                    sign-algorithm := records/record[6]/keystore-entry/key-settings/sign-algorithm
+                    public-key-size := records/record[6]/keystore-entry/key-settings/public-key-size
+                    private-key-algorithm := records/record[6]/keystore-entry/key-settings/private-key-algorithm
+                }
+
+                extensions
+                {
+                    key-usage
+                    {
+                        digital-signature := records/record[6]/keystore-entry/extensions/key-usage/digital-signature
+                        data-encipherment := records/record[6]/keystore-entry/extensions/key-usage/data-encipherment
+                        non-repudation := records/record[6]/keystore-entry/extensions/key-usage/non-repudation
+                        verify-certificate-signatures := records/record[6]/keystore-entry/extensions/key-usage/verify-certificate-signatures
+                        key-encipherment := records/record[6]/keystore-entry/extensions/key-usage/key-encipherment
+                        server-authentication := records/record[6]/keystore-entry/extensions/key-usage/server-authentication
+                        client-authentication := records/record[6]/keystore-entry/extensions/key-usage/client-authentication
+                        email-protection := records/record[6]/keystore-entry/extensions/key-usage/email-protection
+                        key-agreement := records/record[6]/keystore-entry/extensions/key-usage/key-agreement
+                        encipher-only := records/record[6]/keystore-entry/extensions/key-usage/encipher-only
+                        decipher-only := records/record[6]/keystore-entry/extensions/key-usage/decipher-only
+                        verify-crl-signatures := records/record[6]/keystore-entry/extensions/key-usage/verify-crl-signatures
+                    }
+                    basic-constraint := records/record[6]/keystore-entry/extensions/basic-constraint
+                    ca-path-length-constraint := records/record[6]/keystore-entry/extensions/ca-path-length-constraint
+                    alternative-subject-names := ""
+                }
+
+                raw-content
+                {
+                    payload := records/record[6]/keystore-entry/raw-content/payload
+                    private-key-payload := records/record[6]/keystore-entry/raw-content/private-key-payload
+                }
+
+                validation
+                {
+                    validation-settings
+                    {
+                        period := records/record[6]/keystore-entry/validation/validation-settings/period
+                        chain := records/record[6]/keystore-entry/validation/validation-settings/chain
+                        ocsp := records/record[6]/keystore-entry/validation/validation-settings/ocsp
+                        ocsp-online := records/record[6]/keystore-entry/validation/validation-settings/ocsp-online
+                        crl := records/record[6]/keystore-entry/validation/validation-settings/crl
+                        force-valid := records/record[6]/keystore-entry/validation/validation-settings/force-valid
+                    }
+                    validity-status := records/record[6]/keystore-entry/validation/validity-status
+                    validation-time := records/record[6]/keystore-entry/validation/validation-time
+                }
+
+                validation-state := records/record[6]/keystore-entry/validation-state
+                provided-password := records/record[6]/keystore-entry/provided-password
+            }
+        }
+
+        (: OFTP Listener Record :)
+        record
+        {
+            @name := records/record[7]/@name
+            @type := records/record[7]/@type
+            @rest-identifier := records/record[7]/@rest-identifier
+            @action := records/record[7]/@action
+            @created-at := records/record[7]/@created-at
+            @created-by := records/record[7]/@created-by
+            @last-modified-by := records/record[7]/@last-modified-by
+            @last-modified-at := records/record[7]/@last-modified-at
+
+            oftp-listener
+            {
+                @identifier := records/record[7]/oftp-listener/@identifier
+                name := records/record[7]/oftp-listener/name
+
+                administrative-data
+                {
+                    @changed-at := records/record[7]/oftp-listener/administrative-data/@changed-at
+                    @changed-by := records/record[7]/oftp-listener/administrative-data/@changed-by
+                    @comment := records/record[7]/oftp-listener/administrative-data/@comment
+                    @created-at := records/record[7]/oftp-listener/administrative-data/@created-at
+                    @created-by := records/record[7]/oftp-listener/administrative-data/@created-by
+                    @logical-system := records/record[7]/oftp-listener/administrative-data/@logical-system
+                    @record-id := records/record[7]/oftp-listener/administrative-data/@record-id
+                }
+
+                listener-group := records/record[7]/oftp-listener/listener-group
+                active := records/record[7]/oftp-listener/active
+
+                listener-tcp-configuration
+                {
+                    network-interface := records/record[7]/oftp-listener/listener-tcp-configuration/network-interface
+                    port := records/record[7]/oftp-listener/listener-tcp-configuration/port
+                    use-tls := records/record[7]/oftp-listener/listener-tcp-configuration/use-tls
+
+                    listener-tls
+                    {
+                        ssl-server-certificates { }
+                        security-profile { @href := records/record[7]/oftp-listener/listener-tcp-configuration/listener-tls/security-profile/@href }
+                    }
+
+                    check-tls := records/record[7]/oftp-listener/listener-tcp-configuration/check-tls
+                }
+            }
+        }
+
+        (: SFID Personality Record :)
+        record
+        {
+            @name := records/record[8]/@name
+            @type := records/record[8]/@type
+            @rest-identifier := records/record[8]/@rest-identifier
+            @action := records/record[8]/@action
+            @created-at := records/record[8]/@created-at
+            @created-by := records/record[8]/@created-by
+            @last-modified-by := records/record[8]/@last-modified-by
+            @last-modified-at := records/record[8]/@last-modified-at
+
             sfid-personality
             {
-              sfid-personality-ref { @href := concat("https://dedcdbdmgr01:14000/api/oftp/v2/sfid-personalities/", $sfid_personality_id) }
-              name := "sfidPersonalityProcessCreated"
-              odette-code := "O0013000031SEE30532CL03"
+                @identifier := records/record[8]/sfid-personality/@identifier
+                name := records/record[8]/sfid-personality/name
+
+                administrative-data
+                {
+                    @changed-at := records/record[8]/sfid-personality/administrative-data/@changed-at
+                    @changed-by := records/record[8]/sfid-personality/administrative-data/@changed-by
+                    @comment := records/record[8]/sfid-personality/administrative-data/@comment
+                    @created-at := records/record[8]/sfid-personality/administrative-data/@created-at
+                    @created-by := records/record[8]/sfid-personality/administrative-data/@created-by
+                    @logical-system := records/record[8]/sfid-personality/administrative-data/@logical-system
+                    @record-id := records/record[8]/sfid-personality/administrative-data/@record-id
+                }
+
+                odette-code := records/record[8]/sfid-personality/odette-code
+
+                signature-certificates
+                {
+                    signature-certificate
+                    {
+                        @effective-from-date-time := records/record[8]/sfid-personality/signature-certificates/signature-certificate/@effective-from-date-time
+                        certificate-ref { @href := records/record[8]/sfid-personality/signature-certificates/signature-certificate/certificate-ref/@href }
+                    }
+                }
+
+                decryption-certificates
+                {
+                    decryption-certificate
+                    {
+                        certificate-ref { @href := records/record[8]/sfid-personality/decryption-certificates/decryption-certificate/certificate-ref/@href }
+                    }
+                }
+
+                eerp-signature-certificates
+                {
+                    eerp-signature-certificate
+                    {
+                        @effective-from-date-time := records/record[8]/sfid-personality/eerp-signature-certificates/eerp-signature-certificate/@effective-from-date-time
+                        certificate-ref { @href := records/record[8]/sfid-personality/eerp-signature-certificates/eerp-signature-certificate/certificate-ref/@href }
+                    }
+                }
             }
-          }
         }
-
-        partner-tcp-configuration
-        {
-          hostname := records/record[1]/oftp-v2-partner/partner-tcp-configuration/hostname
-          port := records/record[1]/oftp-v2-partner/partner-tcp-configuration/port
-          use-tls := records/record[1]/oftp-v2-partner/partner-tcp-configuration/use-tls
-
-          tls
-          {
-            trust-model := records/record[1]/oftp-v2-partner/partner-tcp-configuration/tls/trust-model
-            use-system-truststore := records/record[1]/oftp-v2-partner/partner-tcp-configuration/tls/use-system-truststore
-            disable-hostname-check := records/record[1]/oftp-v2-partner/partner-tcp-configuration/tls/disable-hostname-check
-            server-certificates { }
-            security-profile { @href := records/record[1]/oftp-v2-partner/partner-tcp-configuration/tls/security-profile/@href }
-            use-client-authentication := records/record[1]/oftp-v2-partner/partner-tcp-configuration/tls/use-client-authentication
-          }
-
-          check-tls := records/record[1]/oftp-v2-partner/partner-tcp-configuration/check-tls
-        }
-
-        listeners
-        {
-          listener { @href := concat("https://dedcdbdmgr01:14000/api/oftp/listeners/", $listener_id) }
-        }
-      }
     }
-
-    (: Record 2: sfid-partner :)
-    record
-    {
-      @name := "sfid-partner-record"
-      @type := "oftp.sfid-partner"
-      @rest-identifier := $sfid_partner_id
-      @action := records/record[2]/@action
-      @created-at := records/record[2]/@created-at
-      @created-by := records/record[2]/@created-by
-      @last-modified-by := records/record[2]/@last-modified-by
-      @last-modified-at := records/record[2]/@last-modified-at
-
-      sfid-partner
-      {
-        @identifier := $sfid_partner_id
-        name := "sfid-partner-record"
-
-        administrative-data
-        {
-          @changed-at := records/record[2]/sfid-partner/administrative-data/@changed-at
-          @changed-by := records/record[2]/sfid-partner/administrative-data/@changed-by
-          @comment := records/record[2]/sfid-partner/administrative-data/@comment
-          @created-at := records/record[2]/sfid-partner/administrative-data/@created-at
-          @created-by := records/record[2]/sfid-partner/administrative-data/@created-by
-          @logical-system := records/record[2]/sfid-partner/administrative-data/@logical-system
-          @record-id := generateUUID()
-        }
-
-        odette-code := records/record[2]/sfid-partner/odette-code
-        sfid-user-field := records/record[2]/sfid-partner/sfid-user-field
-        clearing-center := records/record[2]/sfid-partner/clearing-center
-
-        authentication-certificates
-        {
-          authentication-certificate
-          {
-            certificate-ref { @href := concat("https://dedcdbdmgr01:14000/api/ksm/TRUSTED/TRUSTED_INSTANCES/", $partner_auth_cert_alias) }
-          }
-        }
-
-        encryption-certificates
-        {
-          encryption-certificate
-          {
-            @effective-from-date-time := records/record[2]/sfid-partner/encryption-certificates/encryption-certificate/@effective-from-date-time
-            certificate-ref { @href := concat("https://dedcdbdmgr01:14000/api/ksm/TRUSTED/TRUSTED_INSTANCES/", $partner_encrypt_cert_alias) }
-          }
-        }
-
-        eerp-authentication-certificates
-        {
-          eerp-authentication-certificate
-          {
-            certificate-ref { @href := concat("https://dedcdbdmgr01:14000/api/ksm/TRUSTED/TRUSTED_INSTANCES/", $partner_eerp_cert_alias) }
-          }
-        }
-
-        send
-        {
-          sign := records/record[2]/sfid-partner/send/sign
-          signature-algorithm := records/record[2]/sfid-partner/send/signature-algorithm
-          encrypt := records/record[2]/sfid-partner/send/encrypt
-          encryption-algorithm := records/record[2]/sfid-partner/send/encryption-algorithm
-          compress := records/record[2]/sfid-partner/send/compress
-          send-eerp-immediately := records/record[2]/sfid-partner/send/send-eerp-immediately
-          request-signed-eerp := records/record[2]/sfid-partner/send/request-signed-eerp
-          disable-eerp-sending := records/record[2]/sfid-partner/send/disable-eerp-sending
-          disable-eerp-sending-in-receiver-only-mode := records/record[2]/sfid-partner/send/disable-eerp-sending-in-receiver-only-mode
-          eerp-user-field := records/record[2]/sfid-partner/send/eerp-user-field
-          report-queue := records/record[2]/sfid-partner/send/report-queue
-          cipher-suite := records/record[2]/sfid-partner/send/cipher-suite
-        }
-
-        receive
-        {
-          disable-check-for-incoming-transfer-duplicates := records/record[2]/sfid-partner/receive/disable-check-for-incoming-transfer-duplicates
-          format-received-fix-files := records/record[2]/sfid-partner/receive/format-received-fix-files
-          accept-only-signed-files := records/record[2]/sfid-partner/receive/accept-only-signed-files
-          accept-only-encrypted-files := records/record[2]/sfid-partner/receive/accept-only-encrypted-files
-          partner-sends-eerp := records/record[2]/sfid-partner/receive/partner-sends-eerp
-          eerp-timeout := records/record[2]/sfid-partner/receive/eerp-timeout
-          eerp-timeout-unit := records/record[2]/sfid-partner/receive/eerp-timeout-unit
-          correlate-eerps-in-process-engine := records/record[2]/sfid-partner/receive/correlate-eerps-in-process-engine
-          accept-unsigned-eerp := records/record[2]/sfid-partner/receive/accept-unsigned-eerp
-        }
-      }
-    }
-
-    (: Record 3: Partner Authentication Certificate :)
-    record
-    {
-      @name := $partner_auth_cert_alias
-      @type := "ksm-entry"
-      @rest-identifier := $partner_auth_cert_id
-      @action := records/record[3]/@action
-      @created-at := records/record[3]/@created-at
-      @created-by := records/record[3]/@created-by
-      @last-modified-by := records/record[3]/@last-modified-by
-      @last-modified-at := records/record[3]/@last-modified-at
-
-      keystore-entry
-      {
-        @identifier := $partner_auth_cert_id
-
-        administrative-data
-        {
-          @changed-at := records/record[3]/keystore-entry/administrative-data/@changed-at
-          @changed-by := records/record[3]/keystore-entry/administrative-data/@changed-by
-          @created-at := records/record[3]/keystore-entry/administrative-data/@created-at
-          @created-by := records/record[3]/keystore-entry/administrative-data/@created-by
-          @logical-system := records/record[3]/keystore-entry/administrative-data/@logical-system
-          @record-id := generateUUID()
-        }
-
-        type := "CERTIFICATE"
-        alias := $partner_auth_cert_alias
-        path := "TRUSTED\TRUSTED_INSTANCES"
-        version := "3"
-        subject := records/record[3]/keystore-entry/subject
-        issuer := records/record[3]/keystore-entry/issuer
-        serial := records/record[3]/keystore-entry/serial
-        serial-hex := records/record[3]/keystore-entry/serial-hex
-        valid-from := records/record[3]/keystore-entry/valid-from
-        valid-to := records/record[3]/keystore-entry/valid-to
-        fingerprint := records/record[3]/keystore-entry/fingerprint
-        fingerprint-algorithm := "SHA1"
-
-        subject-details
-        {
-          common-name := records/record[3]/keystore-entry/subject-details/common-name
-        }
-
-        key-settings
-        {
-          sign-algorithm := records/record[3]/keystore-entry/key-settings/sign-algorithm
-          public-key-size := records/record[3]/keystore-entry/key-settings/public-key-size
-          private-key-algorithm := records/record[3]/keystore-entry/key-settings/private-key-algorithm
-        }
-
-        extensions
-        {
-          key-usage
-          {
-            digital-signature := records/record[3]/keystore-entry/extensions/key-usage/digital-signature
-            data-encipherment := records/record[3]/keystore-entry/extensions/key-usage/data-encipherment
-            non-repudation := records/record[3]/keystore-entry/extensions/key-usage/non-repudation
-            verify-certificate-signatures := records/record[3]/keystore-entry/extensions/key-usage/verify-certificate-signatures
-            key-encipherment := records/record[3]/keystore-entry/extensions/key-usage/key-encipherment
-            server-authentication := records/record[3]/keystore-entry/extensions/key-usage/server-authentication
-            client-authentication := records/record[3]/keystore-entry/extensions/key-usage/client-authentication
-            email-protection := records/record[3]/keystore-entry/extensions/key-usage/email-protection
-            key-agreement := records/record[3]/keystore-entry/extensions/key-usage/key-agreement
-            encipher-only := records/record[3]/keystore-entry/extensions/key-usage/encipher-only
-            decipher-only := records/record[3]/keystore-entry/extensions/key-usage/decipher-only
-            verify-crl-signatures := records/record[3]/keystore-entry/extensions/key-usage/verify-crl-signatures
-          }
-          basic-constraint := records/record[3]/keystore-entry/extensions/basic-constraint
-          ca-path-length-constraint := "-1"
-          alternative-subject-names := ""
-        }
-
-        raw-content
-        {
-          payload := records/record[3]/keystore-entry/raw-content/payload
-        }
-
-        validation
-        {
-          validation-settings
-          {
-            period := "yes"
-            chain := "yes"
-            ocsp := "no"
-            ocsp-online := "no"
-            crl := "no"
-            force-valid := "no"
-          }
-          validity-status := "valid"
-          validation-time := records/record[3]/keystore-entry/validation/validation-time
-        }
-
-        validation-state := "enabled"
-        provided-password := "seeburger"
-      }
-    }
-
-    (: Record 4: Partner EERP Certificate :)
-    record
-    {
-      @name := $partner_eerp_cert_alias
-      @type := "ksm-entry"
-      @rest-identifier := $partner_eerp_cert_id
-      @action := records/record[4]/@action
-      @created-at := records/record[4]/@created-at
-      @created-by := records/record[4]/@created-by
-      @last-modified-by := records/record[4]/@last-modified-by
-      @last-modified-at := records/record[4]/@last-modified-at
-
-      keystore-entry
-      {
-        @identifier := $partner_eerp_cert_id
-
-        administrative-data
-        {
-          @changed-at := records/record[4]/keystore-entry/administrative-data/@changed-at
-          @changed-by := records/record[4]/keystore-entry/administrative-data/@changed-by
-          @created-at := records/record[4]/keystore-entry/administrative-data/@created-at
-          @created-by := records/record[4]/keystore-entry/administrative-data/@created-by
-          @logical-system := records/record[4]/keystore-entry/administrative-data/@logical-system
-          @record-id := generateUUID()
-        }
-
-        type := "CERTIFICATE"
-        alias := $partner_eerp_cert_alias
-        path := "TRUSTED\TRUSTED_INSTANCES"
-        version := "3"
-        subject := records/record[4]/keystore-entry/subject
-        issuer := records/record[4]/keystore-entry/issuer
-        serial := records/record[4]/keystore-entry/serial
-        serial-hex := records/record[4]/keystore-entry/serial-hex
-        valid-from := records/record[4]/keystore-entry/valid-from
-        valid-to := records/record[4]/keystore-entry/valid-to
-        fingerprint := records/record[4]/keystore-entry/fingerprint
-        fingerprint-algorithm := "SHA1"
-
-        subject-details
-        {
-          common-name := records/record[4]/keystore-entry/subject-details/common-name
-        }
-
-        key-settings
-        {
-          sign-algorithm := records/record[4]/keystore-entry/key-settings/sign-algorithm
-          public-key-size := records/record[4]/keystore-entry/key-settings/public-key-size
-          private-key-algorithm := records/record[4]/keystore-entry/key-settings/private-key-algorithm
-        }
-
-        extensions
-        {
-          key-usage
-          {
-            digital-signature := records/record[4]/keystore-entry/extensions/key-usage/digital-signature
-            data-encipherment := records/record[4]/keystore-entry/extensions/key-usage/data-encipherment
-            non-repudation := records/record[4]/keystore-entry/extensions/key-usage/non-repudation
-            verify-certificate-signatures := records/record[4]/keystore-entry/extensions/key-usage/verify-certificate-signatures
-            key-encipherment := records/record[4]/keystore-entry/extensions/key-usage/key-encipherment
-            server-authentication := records/record[4]/keystore-entry/extensions/key-usage/server-authentication
-            client-authentication := records/record[4]/keystore-entry/extensions/key-usage/client-authentication
-            email-protection := records/record[4]/keystore-entry/extensions/key-usage/email-protection
-            key-agreement := records/record[4]/keystore-entry/extensions/key-usage/key-agreement
-            encipher-only := records/record[4]/keystore-entry/extensions/key-usage/encipher-only
-            decipher-only := records/record[4]/keystore-entry/extensions/key-usage/decipher-only
-            verify-crl-signatures := records/record[4]/keystore-entry/extensions/key-usage/verify-crl-signatures
-          }
-          basic-constraint := records/record[4]/keystore-entry/extensions/basic-constraint
-          ca-path-length-constraint := "-1"
-          alternative-subject-names := ""
-        }
-
-        raw-content
-        {
-          payload := records/record[4]/keystore-entry/raw-content/payload
-        }
-
-        validation
-        {
-          validation-settings
-          {
-            period := "yes"
-            chain := "yes"
-            ocsp := "no"
-            ocsp-online := "no"
-            crl := "no"
-            force-valid := "no"
-          }
-          validity-status := "valid"
-          validation-time := records/record[4]/keystore-entry/validation/validation-time
-        }
-
-        validation-state := "enabled"
-        provided-password := "seeburger"
-      }
-    }
-
-    (: Record 5: Partner Encryption Certificate :)
-    record
-    {
-      @name := $partner_encrypt_cert_alias
-      @type := "ksm-entry"
-      @rest-identifier := $partner_encrypt_cert_id
-      @action := records/record[5]/@action
-      @created-at := records/record[5]/@created-at
-      @created-by := records/record[5]/@created-by
-      @last-modified-by := records/record[5]/@last-modified-by
-      @last-modified-at := records/record[5]/@last-modified-at
-
-      keystore-entry
-      {
-        @identifier := $partner_encrypt_cert_id
-
-        administrative-data
-        {
-          @changed-at := records/record[5]/keystore-entry/administrative-data/@changed-at
-          @changed-by := records/record[5]/keystore-entry/administrative-data/@changed-by
-          @created-at := records/record[5]/keystore-entry/administrative-data/@created-at
-          @created-by := records/record[5]/keystore-entry/administrative-data/@created-by
-          @logical-system := records/record[5]/keystore-entry/administrative-data/@logical-system
-          @record-id := generateUUID()
-        }
-
-        type := "CERTIFICATE"
-        alias := $partner_encrypt_cert_alias
-        path := "TRUSTED\TRUSTED_INSTANCES"
-        version := "3"
-        subject := records/record[5]/keystore-entry/subject
-        issuer := records/record[5]/keystore-entry/issuer
-        serial := records/record[5]/keystore-entry/serial
-        serial-hex := records/record[5]/keystore-entry/serial-hex
-        valid-from := records/record[5]/keystore-entry/valid-from
-        valid-to := records/record[5]/keystore-entry/valid-to
-        fingerprint := records/record[5]/keystore-entry/fingerprint
-        fingerprint-algorithm := "SHA1"
-
-        subject-details
-        {
-          common-name := records/record[5]/keystore-entry/subject-details/common-name
-        }
-
-        key-settings
-        {
-          sign-algorithm := records/record[5]/keystore-entry/key-settings/sign-algorithm
-          public-key-size := records/record[5]/keystore-entry/key-settings/public-key-size
-          private-key-algorithm := records/record[5]/keystore-entry/key-settings/private-key-algorithm
-        }
-
-        extensions
-        {
-          key-usage
-          {
-            digital-signature := records/record[5]/keystore-entry/extensions/key-usage/digital-signature
-            data-encipherment := records/record[5]/keystore-entry/extensions/key-usage/data-encipherment
-            non-repudation := records/record[5]/keystore-entry/extensions/key-usage/non-repudation
-            verify-certificate-signatures := records/record[5]/keystore-entry/extensions/key-usage/verify-certificate-signatures
-            key-encipherment := records/record[5]/keystore-entry/extensions/key-usage/key-encipherment
-            server-authentication := records/record[5]/keystore-entry/extensions/key-usage/server-authentication
-            client-authentication := records/record[5]/keystore-entry/extensions/key-usage/client-authentication
-            email-protection := records/record[5]/keystore-entry/extensions/key-usage/email-protection
-            key-agreement := records/record[5]/keystore-entry/extensions/key-usage/key-agreement
-            encipher-only := records/record[5]/keystore-entry/extensions/key-usage/encipher-only
-            decipher-only := records/record[5]/keystore-entry/extensions/key-usage/decipher-only
-            verify-crl-signatures := records/record[5]/keystore-entry/extensions/key-usage/verify-crl-signatures
-          }
-          basic-constraint := records/record[5]/keystore-entry/extensions/basic-constraint
-          ca-path-length-constraint := "-1"
-          alternative-subject-names := ""
-        }
-
-        raw-content
-        {
-          payload := records/record[5]/keystore-entry/raw-content/payload
-        }
-
-        validation
-        {
-          validation-settings
-          {
-            period := "yes"
-            chain := "yes"
-            ocsp := "no"
-            ocsp-online := "no"
-            crl := "no"
-            force-valid := "no"
-          }
-          validity-status := "valid"
-          validation-time := records/record[5]/keystore-entry/validation/validation-time
-        }
-
-        validation-state := "enabled"
-        provided-password := "seeburger"
-      }
-    }
-
-    (: Record 6: demoim Private Key Certificate :)
-    record
-    {
-      @name := "demoim"
-      @type := "ksm-entry"
-      @rest-identifier := $demoim_cert_id
-      @action := records/record[6]/@action
-      @created-at := records/record[6]/@created-at
-      @created-by := records/record[6]/@created-by
-      @last-modified-by := records/record[6]/@last-modified-by
-      @last-modified-at := records/record[6]/@last-modified-at
-
-      keystore-entry
-      {
-        @identifier := $demoim_cert_id
-
-        administrative-data
-        {
-          @changed-at := records/record[6]/keystore-entry/administrative-data/@changed-at
-          @changed-by := records/record[6]/keystore-entry/administrative-data/@changed-by
-          @comment := records/record[6]/keystore-entry/administrative-data/@comment
-          @created-at := records/record[6]/keystore-entry/administrative-data/@created-at
-          @created-by := records/record[6]/keystore-entry/administrative-data/@created-by
-          @logical-system := records/record[6]/keystore-entry/administrative-data/@logical-system
-          @record-id := records/record[6]/keystore-entry/administrative-data/@record-id
-        }
-
-        type := "PRIVATE KEY"
-        alias := "demoim"
-        path := "USERS\INSTANCES"
-        version := "3"
-        subject := records/record[6]/keystore-entry/subject
-        issuer := records/record[6]/keystore-entry/issuer
-        serial := records/record[6]/keystore-entry/serial
-        serial-hex := records/record[6]/keystore-entry/serial-hex
-        valid-from := records/record[6]/keystore-entry/valid-from
-        valid-to := records/record[6]/keystore-entry/valid-to
-        fingerprint := records/record[6]/keystore-entry/fingerprint
-        fingerprint-algorithm := "SHA1"
-
-        subject-details
-        {
-          common-name := records/record[6]/keystore-entry/subject-details/common-name
-          organization-unit := records/record[6]/keystore-entry/subject-details/organization-unit
-          organization := records/record[6]/keystore-entry/subject-details/organization
-          location := records/record[6]/keystore-entry/subject-details/location
-          state := records/record[6]/keystore-entry/subject-details/state
-          country := records/record[6]/keystore-entry/subject-details/country
-        }
-
-        key-settings
-        {
-          sign-algorithm := records/record[6]/keystore-entry/key-settings/sign-algorithm
-          public-key-size := records/record[6]/keystore-entry/key-settings/public-key-size
-          private-key-algorithm := records/record[6]/keystore-entry/key-settings/private-key-algorithm
-        }
-
-        extensions
-        {
-          key-usage
-          {
-            digital-signature := "false"
-            data-encipherment := "false"
-            non-repudation := "false"
-            verify-certificate-signatures := "false"
-            key-encipherment := "false"
-            server-authentication := "false"
-            client-authentication := "false"
-            email-protection := "false"
-            key-agreement := "false"
-            encipher-only := "false"
-            decipher-only := "false"
-            verify-crl-signatures := "false"
-          }
-          basic-constraint := "END"
-          ca-path-length-constraint := "-1"
-          alternative-subject-names := ""
-        }
-
-        raw-content
-        {
-          payload := records/record[6]/keystore-entry/raw-content/payload
-          private-key-payload := records/record[6]/keystore-entry/raw-content/private-key-payload
-        }
-
-        validation
-        {
-          validation-settings
-          {
-            period := "yes"
-            chain := "yes"
-            ocsp := "no"
-            ocsp-online := "no"
-            crl := "no"
-            force-valid := "no"
-          }
-          validity-status := "valid"
-          validation-time := records/record[6]/keystore-entry/validation/validation-time
-        }
-
-        validation-state := "enabled"
-        provided-password := "seeburger"
-      }
-    }
-
-    (: Record 7: OFTP Listener :)
-    record
-    {
-      @name := "REST Created Listener"
-      @type := "oftp.oftp-listener"
-      @rest-identifier := $listener_id
-      @action := records/record[7]/@action
-      @created-at := records/record[7]/@created-at
-      @created-by := records/record[7]/@created-by
-      @last-modified-by := records/record[7]/@last-modified-by
-      @last-modified-at := records/record[7]/@last-modified-at
-
-      oftp-listener
-      {
-        @identifier := $listener_id
-        name := "REST Created Listener"
-
-        administrative-data
-        {
-          @changed-at := records/record[7]/oftp-listener/administrative-data/@changed-at
-          @changed-by := records/record[7]/oftp-listener/administrative-data/@changed-by
-          @comment := records/record[7]/oftp-listener/administrative-data/@comment
-          @created-at := records/record[7]/oftp-listener/administrative-data/@created-at
-          @created-by := records/record[7]/oftp-listener/administrative-data/@created-by
-          @logical-system := records/record[7]/oftp-listener/administrative-data/@logical-system
-          @record-id := generateUUID()
-        }
-
-        listener-group := records/record[7]/oftp-listener/listener-group
-        active := records/record[7]/oftp-listener/active
-
-        listener-tcp-configuration
-        {
-          network-interface := records/record[7]/oftp-listener/listener-tcp-configuration/network-interface
-          port := records/record[7]/oftp-listener/listener-tcp-configuration/port
-          use-tls := records/record[7]/oftp-listener/listener-tcp-configuration/use-tls
-
-          listener-tls
-          {
-            ssl-server-certificates { }
-            security-profile { @href := records/record[7]/oftp-listener/listener-tcp-configuration/listener-tls/security-profile/@href }
-          }
-
-          check-tls := records/record[7]/oftp-listener/listener-tcp-configuration/check-tls
-        }
-      }
-    }
-
-    (: Record 8: SFID Personality :)
-    record
-    {
-      @name := "sfidPersonalityProcessCreated"
-      @type := "oftp.sfid-personality"
-      @rest-identifier := $sfid_personality_id
-      @action := records/record[8]/@action
-      @created-at := records/record[8]/@created-at
-      @created-by := records/record[8]/@created-by
-      @last-modified-by := records/record[8]/@last-modified-by
-      @last-modified-at := records/record[8]/@last-modified-at
-
-      sfid-personality
-      {
-        @identifier := $sfid_personality_id
-        name := "sfidPersonalityProcessCreated"
-
-        administrative-data
-        {
-          @changed-at := records/record[8]/sfid-personality/administrative-data/@changed-at
-          @changed-by := records/record[8]/sfid-personality/administrative-data/@changed-by
-          @comment := records/record[8]/sfid-personality/administrative-data/@comment
-          @created-at := records/record[8]/sfid-personality/administrative-data/@created-at
-          @created-by := records/record[8]/sfid-personality/administrative-data/@created-by
-          @logical-system := records/record[8]/sfid-personality/administrative-data/@logical-system
-          @record-id := generateUUID()
-        }
-
-        odette-code := records/record[8]/sfid-personality/odette-code
-
-        signature-certificates
-        {
-          signature-certificate
-          {
-            @effective-from-date-time := records/record[8]/sfid-personality/signature-certificates/signature-certificate/@effective-from-date-time
-            certificate-ref { @href := records/record[8]/sfid-personality/signature-certificates/signature-certificate/certificate-ref/@href }
-          }
-        }
-
-        decryption-certificates
-        {
-          decryption-certificate
-          {
-            certificate-ref { @href := records/record[8]/sfid-personality/decryption-certificates/decryption-certificate/certificate-ref/@href }
-          }
-        }
-
-        eerp-signature-certificates
-        {
-          eerp-signature-certificate
-          {
-            @effective-from-date-time := records/record[8]/sfid-personality/eerp-signature-certificates/eerp-signature-certificate/@effective-from-date-time
-            certificate-ref { @href := records/record[8]/sfid-personality/eerp-signature-certificates/eerp-signature-certificate/certificate-ref/@href }
-          }
-        }
-      }
-    }
-  }
 }
