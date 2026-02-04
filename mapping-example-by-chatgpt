@@ -272,10 +272,10 @@ transport <- /transport
           @record-id := generateUUID()
         }
 
-        type := records/record[3]/keystore-entry/type
+        type := "CERTIFICATE"
         alias := $partner_auth_cert_alias
-        path := records/record[3]/keystore-entry/path
-        version := records/record[3]/keystore-entry/version
+        path := "TRUSTED\\TRUSTED_INSTANCES"
+        version := 3
         subject := records/record[3]/keystore-entry/subject
         issuer := records/record[3]/keystore-entry/issuer
         serial := records/record[3]/keystore-entry/serial
@@ -283,7 +283,7 @@ transport <- /transport
         valid-from := records/record[3]/keystore-entry/valid-from
         valid-to := records/record[3]/keystore-entry/valid-to
         fingerprint := records/record[3]/keystore-entry/fingerprint
-        fingerprint-algorithm := records/record[3]/keystore-entry/fingerprint-algorithm
+        fingerprint-algorithm := "SHA1"
 
         subject-details
         {
@@ -315,8 +315,8 @@ transport <- /transport
             verify-crl-signatures := records/record[3]/keystore-entry/extensions/key-usage/verify-crl-signatures
           }
           basic-constraint := records/record[3]/keystore-entry/extensions/basic-constraint
-          ca-path-length-constraint := records/record[3]/keystore-entry/extensions/ca-path-length-constraint
-          alternative-subject-names := records/record[3]/keystore-entry/extensions/alternative-subject-names
+          ca-path-length-constraint := -1
+          alternative-subject-names := ""
         }
 
         raw-content
@@ -328,19 +328,19 @@ transport <- /transport
         {
           validation-settings
           {
-            period := records/record[3]/keystore-entry/validation/validation-settings/period
-            chain := records/record[3]/keystore-entry/validation/validation-settings/chain
-            ocsp := records/record[3]/keystore-entry/validation/validation-settings/ocsp
-            ocsp-online := records/record[3]/keystore-entry/validation/validation-settings/ocsp-online
-            crl := records/record[3]/keystore-entry/validation/validation-settings/crl
-            force-valid := records/record[3]/keystore-entry/validation/validation-settings/force-valid
+            period := "yes"
+            chain := "yes"
+            ocsp := "no"
+            ocsp-online := "no"
+            crl := "no"
+            force-valid := "no"
           }
-          validity-status := records/record[3]/keystore-entry/validation/validity-status
+          validity-status := "valid"
           validation-time := records/record[3]/keystore-entry/validation/validation-time
         }
 
-        validation-state := records/record[3]/keystore-entry/validation-state
-        provided-password := records/record[3]/keystore-entry/provided-password
+        validation-state := "enabled"
+        provided-password := "seeburger"
       }
     }
 
@@ -370,10 +370,10 @@ transport <- /transport
           @record-id := generateUUID()
         }
 
-        type := records/record[4]/keystore-entry/type
+        type := "CERTIFICATE"
         alias := $partner_eerp_cert_alias
-        path := records/record[4]/keystore-entry/path
-        version := records/record[4]/keystore-entry/version
+        path := "TRUSTED\\TRUSTED_INSTANCES"
+        version := 3
         subject := records/record[4]/keystore-entry/subject
         issuer := records/record[4]/keystore-entry/issuer
         serial := records/record[4]/keystore-entry/serial
@@ -381,7 +381,7 @@ transport <- /transport
         valid-from := records/record[4]/keystore-entry/valid-from
         valid-to := records/record[4]/keystore-entry/valid-to
         fingerprint := records/record[4]/keystore-entry/fingerprint
-        fingerprint-algorithm := records/record[4]/keystore-entry/fingerprint-algorithm
+        fingerprint-algorithm := "SHA1"
 
         subject-details
         {
@@ -413,8 +413,8 @@ transport <- /transport
             verify-crl-signatures := records/record[4]/keystore-entry/extensions/key-usage/verify-crl-signatures
           }
           basic-constraint := records/record[4]/keystore-entry/extensions/basic-constraint
-          ca-path-length-constraint := records/record[4]/keystore-entry/extensions/ca-path-length-constraint
-          alternative-subject-names := records/record[4]/keystore-entry/extensions/alternative-subject-names
+          ca-path-length-constraint := -1
+          alternative-subject-names := ""
         }
 
         raw-content
@@ -426,19 +426,19 @@ transport <- /transport
         {
           validation-settings
           {
-            period := records/record[4]/keystore-entry/validation/validation-settings/period
-            chain := records/record[4]/keystore-entry/validation/validation-settings/chain
-            ocsp := records/record[4]/keystore-entry/validation/validation-settings/ocsp
-            ocsp-online := records/record[4]/keystore-entry/validation/validation-settings/ocsp-online
-            crl := records/record[4]/keystore-entry/validation/validation-settings/crl
-            force-valid := records/record[4]/keystore-entry/validation/validation-settings/force-valid
+            period := "yes"
+            chain := "yes"
+            ocsp := "no"
+            ocsp-online := "no"
+            crl := "no"
+            force-valid := "no"
           }
-          validity-status := records/record[4]/keystore-entry/validation/validity-status
+          validity-status := "valid"
           validation-time := records/record[4]/keystore-entry/validation/validation-time
         }
 
-        validation-state := records/record[4]/keystore-entry/validation-state
-        provided-password := records/record[4]/keystore-entry/provided-password
+        validation-state := "enabled"
+        provided-password := "seeburger"
       }
     }
 
@@ -468,10 +468,10 @@ transport <- /transport
           @record-id := generateUUID()
         }
 
-        type := records/record[5]/keystore-entry/type
+        type := "CERTIFICATE"
         alias := $partner_encrypt_cert_alias
-        path := records/record[5]/keystore-entry/path
-        version := records/record[5]/keystore-entry/version
+        path := "TRUSTED\\TRUSTED_INSTANCES"
+        version := 3
         subject := records/record[5]/keystore-entry/subject
         issuer := records/record[5]/keystore-entry/issuer
         serial := records/record[5]/keystore-entry/serial
@@ -479,7 +479,7 @@ transport <- /transport
         valid-from := records/record[5]/keystore-entry/valid-from
         valid-to := records/record[5]/keystore-entry/valid-to
         fingerprint := records/record[5]/keystore-entry/fingerprint
-        fingerprint-algorithm := records/record[5]/keystore-entry/fingerprint-algorithm
+        fingerprint-algorithm := "SHA1"
 
         subject-details
         {
@@ -511,8 +511,8 @@ transport <- /transport
             verify-crl-signatures := records/record[5]/keystore-entry/extensions/key-usage/verify-crl-signatures
           }
           basic-constraint := records/record[5]/keystore-entry/extensions/basic-constraint
-          ca-path-length-constraint := records/record[5]/keystore-entry/extensions/ca-path-length-constraint
-          alternative-subject-names := records/record[5]/keystore-entry/extensions/alternative-subject-names
+          ca-path-length-constraint := -1
+          alternative-subject-names := ""
         }
 
         raw-content
@@ -524,19 +524,19 @@ transport <- /transport
         {
           validation-settings
           {
-            period := records/record[5]/keystore-entry/validation/validation-settings/period
-            chain := records/record[5]/keystore-entry/validation/validation-settings/chain
-            ocsp := records/record[5]/keystore-entry/validation/validation-settings/ocsp
-            ocsp-online := records/record[5]/keystore-entry/validation/validation-settings/ocsp-online
-            crl := records/record[5]/keystore-entry/validation/validation-settings/crl
-            force-valid := records/record[5]/keystore-entry/validation/validation-settings/force-valid
+            period := "yes"
+            chain := "yes"
+            ocsp := "no"
+            ocsp-online := "no"
+            crl := "no"
+            force-valid := "no"
           }
-          validity-status := records/record[5]/keystore-entry/validation/validity-status
+          validity-status := "valid"
           validation-time := records/record[5]/keystore-entry/validation/validation-time
         }
 
-        validation-state := records/record[5]/keystore-entry/validation-state
-        provided-password := records/record[5]/keystore-entry/provided-password
+        validation-state := "enabled"
+        provided-password := "seeburger"
       }
     }
 
@@ -567,10 +567,10 @@ transport <- /transport
           @record-id := records/record[6]/keystore-entry/administrative-data/@record-id
         }
 
-        type := records/record[6]/keystore-entry/type
-        alias := records/record[6]/keystore-entry/alias
-        path := records/record[6]/keystore-entry/path
-        version := records/record[6]/keystore-entry/version
+        type := "PRIVATE KEY"
+        alias := "demoim"
+        path := "USERS\\INSTANCES"
+        version := 3
         subject := records/record[6]/keystore-entry/subject
         issuer := records/record[6]/keystore-entry/issuer
         serial := records/record[6]/keystore-entry/serial
@@ -578,7 +578,7 @@ transport <- /transport
         valid-from := records/record[6]/keystore-entry/valid-from
         valid-to := records/record[6]/keystore-entry/valid-to
         fingerprint := records/record[6]/keystore-entry/fingerprint
-        fingerprint-algorithm := records/record[6]/keystore-entry/fingerprint-algorithm
+        fingerprint-algorithm := "SHA1"
 
         subject-details
         {
@@ -601,22 +601,22 @@ transport <- /transport
         {
           key-usage
           {
-            digital-signature := records/record[6]/keystore-entry/extensions/key-usage/digital-signature
-            data-encipherment := records/record[6]/keystore-entry/extensions/key-usage/data-encipherment
-            non-repudation := records/record[6]/keystore-entry/extensions/key-usage/non-repudation
-            verify-certificate-signatures := records/record[6]/keystore-entry/extensions/key-usage/verify-certificate-signatures
-            key-encipherment := records/record[6]/keystore-entry/extensions/key-usage/key-encipherment
-            server-authentication := records/record[6]/keystore-entry/extensions/key-usage/server-authentication
-            client-authentication := records/record[6]/keystore-entry/extensions/key-usage/client-authentication
-            email-protection := records/record[6]/keystore-entry/extensions/key-usage/email-protection
-            key-agreement := records/record[6]/keystore-entry/extensions/key-usage/key-agreement
-            encipher-only := records/record[6]/keystore-entry/extensions/key-usage/encipher-only
-            decipher-only := records/record[6]/keystore-entry/extensions/key-usage/decipher-only
-            verify-crl-signatures := records/record[6]/keystore-entry/extensions/key-usage/verify-crl-signatures
+            digital-signature := false
+            data-encipherment := false
+            non-repudation := false
+            verify-certificate-signatures := false
+            key-encipherment := false
+            server-authentication := false
+            client-authentication := false
+            email-protection := false
+            key-agreement := false
+            encipher-only := false
+            decipher-only := false
+            verify-crl-signatures := false
           }
-          basic-constraint := records/record[6]/keystore-entry/extensions/basic-constraint
-          ca-path-length-constraint := records/record[6]/keystore-entry/extensions/ca-path-length-constraint
-          alternative-subject-names := records/record[6]/keystore-entry/extensions/alternative-subject-names
+          basic-constraint := "END"
+          ca-path-length-constraint := -1
+          alternative-subject-names := ""
         }
 
         raw-content
@@ -629,19 +629,19 @@ transport <- /transport
         {
           validation-settings
           {
-            period := records/record[6]/keystore-entry/validation/validation-settings/period
-            chain := records/record[6]/keystore-entry/validation/validation-settings/chain
-            ocsp := records/record[6]/keystore-entry/validation/validation-settings/ocsp
-            ocsp-online := records/record[6]/keystore-entry/validation/validation-settings/ocsp-online
-            crl := records/record[6]/keystore-entry/validation/validation-settings/crl
-            force-valid := records/record[6]/keystore-entry/validation/validation-settings/force-valid
+            period := "yes"
+            chain := "yes"
+            ocsp := "no"
+            ocsp-online := "no"
+            crl := "no"
+            force-valid := "no"
           }
-          validity-status := records/record[6]/keystore-entry/validation/validity-status
+          validity-status := "valid"
           validation-time := records/record[6]/keystore-entry/validation/validation-time
         }
 
-        validation-state := records/record[6]/keystore-entry/validation-state
-        provided-password := records/record[6]/keystore-entry/provided-password
+        validation-state := "enabled"
+        provided-password := "seeburger"
       }
     }
 
