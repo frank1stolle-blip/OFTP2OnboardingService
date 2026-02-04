@@ -543,7 +543,7 @@ transport <- /transport
     (: Record 6: demoim Private Key Certificate :)
     record
     {
-      @name := records/record[6]/@name
+      @name := "demoim"
       @type := "ksm-entry"
       @rest-identifier := $demoim_cert_id
       @action := records/record[6]/@action
@@ -648,7 +648,7 @@ transport <- /transport
     (: Record 7: OFTP Listener :)
     record
     {
-      @name := records/record[7]/@name
+      @name := "REST Created Listener"
       @type := "oftp.oftp-listener"
       @rest-identifier := $listener_id
       @action := records/record[7]/@action
@@ -696,7 +696,7 @@ transport <- /transport
     (: Record 8: SFID Personality :)
     record
     {
-      @name := records/record[8]/@name
+      @name := "sfidPersonalityProcessCreated"
       @type := "oftp.sfid-personality"
       @rest-identifier := $sfid_personality_id
       @action := records/record[8]/@action
