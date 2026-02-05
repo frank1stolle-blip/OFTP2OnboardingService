@@ -76,11 +76,11 @@ transport <- /transport
             @name := $participantid
             @type := "oftp.oftp-partner"
             @rest-identifier := $oftp_partner_id
-            @action := records/record[1]/@action
-            @created-at := records/record[1]/@created-at
-            @created-by := records/record[1]/@created-by
-            @last-modified-by := records/record[1]/@last-modified-by
-            @last-modified-at := records/record[1]/@last-modified-at
+            @action := records/record[@type="oftp.oftp-partner"]/@action
+            @created-at := records/record[@type="oftp.oftp-partner"]/@created-at
+            @created-by := records/record[@type="oftp.oftp-partner"]/@created-by
+            @last-modified-by := records/record[@type="oftp.oftp-partner"]/@last-modified-by
+            @last-modified-at := records/record[@type="oftp.oftp-partner"]/@last-modified-at
 
             oftp-v2-partner
             {
@@ -89,58 +89,58 @@ transport <- /transport
 
                 administrative-data
                 {
-                    @changed-at := records/record[1]/oftp-v2-partner/administrative-data/@changed-at
-                    @changed-by := records/record[1]/oftp-v2-partner/administrative-data/@changed-by
-                    @comment := records/record[1]/oftp-v2-partner/administrative-data/@comment
-                    @created-at := records/record[1]/oftp-v2-partner/administrative-data/@created-at
-                    @created-by := records/record[1]/oftp-v2-partner/administrative-data/@created-by
-                    @logical-system := records/record[1]/oftp-v2-partner/administrative-data/@logical-system
-                    @record-id := records/record[1]/oftp-v2-partner/administrative-data/@record-id
+                    @changed-at := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/administrative-data/@changed-at
+                    @changed-by := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/administrative-data/@changed-by
+                    @comment := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/administrative-data/@comment
+                    @created-at := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/administrative-data/@created-at
+                    @created-by := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/administrative-data/@created-by
+                    @logical-system := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/administrative-data/@logical-system
+                    @record-id := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/administrative-data/@record-id
                 }
 
-                active := records/record[1]/oftp-v2-partner/active
+                active := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/active
 
                 ssid
                 {
                     ssid-personality
                     {
-                        name := records/record[1]/oftp-v2-partner/ssid/ssid-personality/name
-                        odette-code := records/record[1]/oftp-v2-partner/ssid/ssid-personality/odette-code
-                        password := records/record[1]/oftp-v2-partner/ssid/ssid-personality/password
+                        name := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/ssid/ssid-personality/name
+                        odette-code := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/ssid/ssid-personality/odette-code
+                        password := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/ssid/ssid-personality/password
                         session-authentication-certificates { }
                     }
 
                     ssid-partner
                     {
                         name := $participantid
-                        odette-code := records/record[1]/oftp-v2-partner/ssid/ssid-partner/odette-code
-                        password := records/record[1]/oftp-v2-partner/ssid/ssid-partner/password
+                        odette-code := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/ssid/ssid-partner/odette-code
+                        password := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/ssid/ssid-partner/password
                         session-authentication-certificates { }
                     }
 
                     session-configuration
                     {
-                        protocol-version := records/record[1]/oftp-v2-partner/ssid/session-configuration/protocol-version
-                        transfer-direction := records/record[1]/oftp-v2-partner/ssid/session-configuration/transfer-direction
-                        enable-multiple-sessions := records/record[1]/oftp-v2-partner/ssid/session-configuration/enable-multiple-sessions
-                        session-timeout := records/record[1]/oftp-v2-partner/ssid/session-configuration/session-timeout
-                        call-timeout := records/record[1]/oftp-v2-partner/ssid/session-configuration/call-timeout
-                        buffer-size := records/record[1]/oftp-v2-partner/ssid/session-configuration/buffer-size
-                        acknowledgement-interval := records/record[1]/oftp-v2-partner/ssid/session-configuration/acknowledgement-interval
-                        enable-compression := records/record[1]/oftp-v2-partner/ssid/session-configuration/enable-compression
-                        enable-restart := records/record[1]/oftp-v2-partner/ssid/session-configuration/enable-restart
-                        character-encoding := records/record[1]/oftp-v2-partner/ssid/session-configuration/character-encoding
-                        request-secure-authentication := records/record[1]/oftp-v2-partner/ssid/session-configuration/request-secure-authentication
+                        protocol-version := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/ssid/session-configuration/protocol-version
+                        transfer-direction := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/ssid/session-configuration/transfer-direction
+                        enable-multiple-sessions := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/ssid/session-configuration/enable-multiple-sessions
+                        session-timeout := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/ssid/session-configuration/session-timeout
+                        call-timeout := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/ssid/session-configuration/call-timeout
+                        buffer-size := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/ssid/session-configuration/buffer-size
+                        acknowledgement-interval := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/ssid/session-configuration/acknowledgement-interval
+                        enable-compression := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/ssid/session-configuration/enable-compression
+                        enable-restart := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/ssid/session-configuration/enable-restart
+                        character-encoding := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/ssid/session-configuration/character-encoding
+                        request-secure-authentication := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/ssid/session-configuration/request-secure-authentication
 
                         sequence-processing
                         {
-                            use-sequence := records/record[1]/oftp-v2-partner/ssid/session-configuration/sequence-processing/use-sequence
+                            use-sequence := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/ssid/session-configuration/sequence-processing/use-sequence
                         }
 
                         asynchronous-incoming-files-processing
                         {
-                            enable-asynchronous-processing := records/record[1]/oftp-v2-partner/ssid/session-configuration/asynchronous-incoming-files-processing/enable-asynchronous-processing
-                            minimum-file-size := records/record[1]/oftp-v2-partner/ssid/session-configuration/asynchronous-incoming-files-processing/minimum-file-size
+                            enable-asynchronous-processing := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/ssid/session-configuration/asynchronous-incoming-files-processing/enable-asynchronous-processing
+                            minimum-file-size := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/ssid/session-configuration/asynchronous-incoming-files-processing/minimum-file-size
                         }
                     }
                 }
@@ -153,7 +153,7 @@ transport <- /transport
                         {
                             sfid-partner-ref { @href := concat("https://dedcdbdmgr01:14000/api/oftp/v2/sfid-partners/", $sfid_partner_id) }
                             name := $participantid
-                            odette-code := records/record[1]/oftp-v2-partner/sfid/sfid-partners/sfid-partner/odette-code
+                            odette-code := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/sfid/sfid-partners/sfid-partner/odette-code
                         }
                     }
 
@@ -163,29 +163,29 @@ transport <- /transport
                         {
                             (: Fixed SFID personality reference :)
                             sfid-personality-ref { @href := "https://dedcdbdmgr01:14000/api/oftp/v2/sfid-personalities/273f6310-37b1-11f0-8e28-c61e7f000101" }
-                            name := records/record[1]/oftp-v2-partner/sfid/sfid-personalities/sfid-personality/name
-                            odette-code := records/record[1]/oftp-v2-partner/sfid/sfid-personalities/sfid-personality/odette-code
+                            name := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/sfid/sfid-personalities/sfid-personality/name
+                            odette-code := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/sfid/sfid-personalities/sfid-personality/odette-code
                         }
                     }
                 }
 
                 partner-tcp-configuration
                 {
-                    hostname := records/record[1]/oftp-v2-partner/partner-tcp-configuration/hostname
-                    port := records/record[1]/oftp-v2-partner/partner-tcp-configuration/port
-                    use-tls := records/record[1]/oftp-v2-partner/partner-tcp-configuration/use-tls
+                    hostname := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/partner-tcp-configuration/hostname
+                    port := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/partner-tcp-configuration/port
+                    use-tls := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/partner-tcp-configuration/use-tls
 
                     tls
                     {
-                        trust-model := records/record[1]/oftp-v2-partner/partner-tcp-configuration/tls/trust-model
-                        use-system-truststore := records/record[1]/oftp-v2-partner/partner-tcp-configuration/tls/use-system-truststore
-                        disable-hostname-check := records/record[1]/oftp-v2-partner/partner-tcp-configuration/tls/disable-hostname-check
+                        trust-model := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/partner-tcp-configuration/tls/trust-model
+                        use-system-truststore := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/partner-tcp-configuration/tls/use-system-truststore
+                        disable-hostname-check := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/partner-tcp-configuration/tls/disable-hostname-check
                         server-certificates { }
-                        security-profile { @href := records/record[1]/oftp-v2-partner/partner-tcp-configuration/tls/security-profile/@href }
-                        use-client-authentication := records/record[1]/oftp-v2-partner/partner-tcp-configuration/tls/use-client-authentication
+                        security-profile { @href := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/partner-tcp-configuration/tls/security-profile/@href }
+                        use-client-authentication := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/partner-tcp-configuration/tls/use-client-authentication
                     }
 
-                    check-tls := records/record[1]/oftp-v2-partner/partner-tcp-configuration/check-tls
+                    check-tls := records/record[@type="oftp.oftp-partner"]/oftp-v2-partner/partner-tcp-configuration/check-tls
                 }
 
                 listeners
@@ -204,11 +204,11 @@ transport <- /transport
             @name := $participantid
             @type := "oftp.sfid-partner"
             @rest-identifier := $sfid_partner_id
-            @action := records/record[2]/@action
-            @created-at := records/record[2]/@created-at
-            @created-by := records/record[2]/@created-by
-            @last-modified-by := records/record[2]/@last-modified-by
-            @last-modified-at := records/record[2]/@last-modified-at
+            @action := records/record[@type="oftp.sfid-partner"]/@action
+            @created-at := records/record[@type="oftp.sfid-partner"]/@created-at
+            @created-by := records/record[@type="oftp.sfid-partner"]/@created-by
+            @last-modified-by := records/record[@type="oftp.sfid-partner"]/@last-modified-by
+            @last-modified-at := records/record[@type="oftp.sfid-partner"]/@last-modified-at
 
             sfid-partner
             {
@@ -217,18 +217,18 @@ transport <- /transport
 
                 administrative-data
                 {
-                    @changed-at := records/record[2]/sfid-partner/administrative-data/@changed-at
-                    @changed-by := records/record[2]/sfid-partner/administrative-data/@changed-by
-                    @comment := records/record[2]/sfid-partner/administrative-data/@comment
-                    @created-at := records/record[2]/sfid-partner/administrative-data/@created-at
-                    @created-by := records/record[2]/sfid-partner/administrative-data/@created-by
-                    @logical-system := records/record[2]/sfid-partner/administrative-data/@logical-system
-                    @record-id := records/record[2]/sfid-partner/administrative-data/@record-id
+                    @changed-at := records/record[@type="oftp.sfid-partner"]/sfid-partner/administrative-data/@changed-at
+                    @changed-by := records/record[@type="oftp.sfid-partner"]/sfid-partner/administrative-data/@changed-by
+                    @comment := records/record[@type="oftp.sfid-partner"]/sfid-partner/administrative-data/@comment
+                    @created-at := records/record[@type="oftp.sfid-partner"]/sfid-partner/administrative-data/@created-at
+                    @created-by := records/record[@type="oftp.sfid-partner"]/sfid-partner/administrative-data/@created-by
+                    @logical-system := records/record[@type="oftp.sfid-partner"]/sfid-partner/administrative-data/@logical-system
+                    @record-id := records/record[@type="oftp.sfid-partner"]/sfid-partner/administrative-data/@record-id
                 }
 
-                odette-code := records/record[2]/sfid-partner/odette-code
+                odette-code := records/record[@type="oftp.sfid-partner"]/sfid-partner/odette-code
                 sfid-user-field { }
-                clearing-center := records/record[2]/sfid-partner/clearing-center
+                clearing-center := records/record[@type="oftp.sfid-partner"]/sfid-partner/clearing-center
 
                 authentication-certificates
                 {
@@ -243,7 +243,7 @@ transport <- /transport
                 {
                     encryption-certificate
                     {
-                        @effective-from-date-time := records/record[2]/sfid-partner/encryption-certificates/encryption-certificate/@effective-from-date-time
+                        @effective-from-date-time := records/record[@type="oftp.sfid-partner"]/sfid-partner/encryption-certificates/encryption-certificate/@effective-from-date-time
                         (: Dynamic certificate reference using participantid :)
                         certificate-ref { @href := concat("https://dedcdbdmgr01:14000/api/ksm/TRUSTED/TRUSTED_INSTANCES/", $partner_encrypt_cert_alias) }
                     }
@@ -260,31 +260,31 @@ transport <- /transport
 
                 send
                 {
-                    sign := records/record[2]/sfid-partner/send/sign
-                    signature-algorithm := records/record[2]/sfid-partner/send/signature-algorithm
-                    encrypt := records/record[2]/sfid-partner/send/encrypt
-                    encryption-algorithm := records/record[2]/sfid-partner/send/encryption-algorithm
-                    compress := records/record[2]/sfid-partner/send/compress
-                    send-eerp-immediately := records/record[2]/sfid-partner/send/send-eerp-immediately
-                    request-signed-eerp := records/record[2]/sfid-partner/send/request-signed-eerp
-                    disable-eerp-sending := records/record[2]/sfid-partner/send/disable-eerp-sending
-                    disable-eerp-sending-in-receiver-only-mode := records/record[2]/sfid-partner/send/disable-eerp-sending-in-receiver-only-mode
+                    sign := records/record[@type="oftp.sfid-partner"]/sfid-partner/send/sign
+                    signature-algorithm := records/record[@type="oftp.sfid-partner"]/sfid-partner/send/signature-algorithm
+                    encrypt := records/record[@type="oftp.sfid-partner"]/sfid-partner/send/encrypt
+                    encryption-algorithm := records/record[@type="oftp.sfid-partner"]/sfid-partner/send/encryption-algorithm
+                    compress := records/record[@type="oftp.sfid-partner"]/sfid-partner/send/compress
+                    send-eerp-immediately := records/record[@type="oftp.sfid-partner"]/sfid-partner/send/send-eerp-immediately
+                    request-signed-eerp := records/record[@type="oftp.sfid-partner"]/sfid-partner/send/request-signed-eerp
+                    disable-eerp-sending := records/record[@type="oftp.sfid-partner"]/sfid-partner/send/disable-eerp-sending
+                    disable-eerp-sending-in-receiver-only-mode := records/record[@type="oftp.sfid-partner"]/sfid-partner/send/disable-eerp-sending-in-receiver-only-mode
                     eerp-user-field { }
-                    report-queue := records/record[2]/sfid-partner/send/report-queue
-                    cipher-suite := records/record[2]/sfid-partner/send/cipher-suite
+                    report-queue := records/record[@type="oftp.sfid-partner"]/sfid-partner/send/report-queue
+                    cipher-suite := records/record[@type="oftp.sfid-partner"]/sfid-partner/send/cipher-suite
                 }
 
                 receive
                 {
-                    disable-check-for-incoming-transfer-duplicates := records/record[2]/sfid-partner/receive/disable-check-for-incoming-transfer-duplicates
-                    format-received-fix-files := records/record[2]/sfid-partner/receive/format-received-fix-files
-                    accept-only-signed-files := records/record[2]/sfid-partner/receive/accept-only-signed-files
-                    accept-only-encrypted-files := records/record[2]/sfid-partner/receive/accept-only-encrypted-files
-                    partner-sends-eerp := records/record[2]/sfid-partner/receive/partner-sends-eerp
-                    eerp-timeout := records/record[2]/sfid-partner/receive/eerp-timeout
-                    eerp-timeout-unit := records/record[2]/sfid-partner/receive/eerp-timeout-unit
-                    correlate-eerps-in-process-engine := records/record[2]/sfid-partner/receive/correlate-eerps-in-process-engine
-                    accept-unsigned-eerp := records/record[2]/sfid-partner/receive/accept-unsigned-eerp
+                    disable-check-for-incoming-transfer-duplicates := records/record[@type="oftp.sfid-partner"]/sfid-partner/receive/disable-check-for-incoming-transfer-duplicates
+                    format-received-fix-files := records/record[@type="oftp.sfid-partner"]/sfid-partner/receive/format-received-fix-files
+                    accept-only-signed-files := records/record[@type="oftp.sfid-partner"]/sfid-partner/receive/accept-only-signed-files
+                    accept-only-encrypted-files := records/record[@type="oftp.sfid-partner"]/sfid-partner/receive/accept-only-encrypted-files
+                    partner-sends-eerp := records/record[@type="oftp.sfid-partner"]/sfid-partner/receive/partner-sends-eerp
+                    eerp-timeout := records/record[@type="oftp.sfid-partner"]/sfid-partner/receive/eerp-timeout
+                    eerp-timeout-unit := records/record[@type="oftp.sfid-partner"]/sfid-partner/receive/eerp-timeout-unit
+                    correlate-eerps-in-process-engine := records/record[@type="oftp.sfid-partner"]/sfid-partner/receive/correlate-eerps-in-process-engine
+                    accept-unsigned-eerp := records/record[@type="oftp.sfid-partner"]/sfid-partner/receive/accept-unsigned-eerp
                 }
             }
         }
@@ -297,11 +297,11 @@ transport <- /transport
             @name := $partner_auth_cert_alias
             @type := "ksm-entry"
             @rest-identifier := $partner_auth_cert_id
-            @action := records/record[3]/@action
-            @created-at := records/record[3]/@created-at
-            @created-by := records/record[3]/@created-by
-            @last-modified-by := records/record[3]/@last-modified-by
-            @last-modified-at := records/record[3]/@last-modified-at
+            @action := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/@action
+            @created-at := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/@created-at
+            @created-by := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/@created-by
+            @last-modified-by := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/@last-modified-by
+            @last-modified-at := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/@last-modified-at
 
             keystore-entry
             {
@@ -309,83 +309,83 @@ transport <- /transport
 
                 administrative-data
                 {
-                    @changed-at := records/record[3]/keystore-entry/administrative-data/@changed-at
-                    @changed-by := records/record[3]/keystore-entry/administrative-data/@changed-by
-                    @created-at := records/record[3]/keystore-entry/administrative-data/@created-at
-                    @created-by := records/record[3]/keystore-entry/administrative-data/@created-by
-                    @logical-system := records/record[3]/keystore-entry/administrative-data/@logical-system
-                    @record-id := records/record[3]/keystore-entry/administrative-data/@record-id
+                    @changed-at := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/administrative-data/@changed-at
+                    @changed-by := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/administrative-data/@changed-by
+                    @created-at := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/administrative-data/@created-at
+                    @created-by := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/administrative-data/@created-by
+                    @logical-system := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/administrative-data/@logical-system
+                    @record-id := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/administrative-data/@record-id
                 }
 
-                type := records/record[3]/keystore-entry/type
+                type := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/type
                 alias := $partner_auth_cert_alias
                 path := "TRUSTED\\TRUSTED_INSTANCES"
-                version := records/record[3]/keystore-entry/version
-                subject := records/record[3]/keystore-entry/subject
-                issuer := records/record[3]/keystore-entry/issuer
-                serial := records/record[3]/keystore-entry/serial
-                serial-hex := records/record[3]/keystore-entry/serial-hex
-                valid-from := records/record[3]/keystore-entry/valid-from
-                valid-to := records/record[3]/keystore-entry/valid-to
-                fingerprint := records/record[3]/keystore-entry/fingerprint
-                fingerprint-algorithm := records/record[3]/keystore-entry/fingerprint-algorithm
+                version := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/version
+                subject := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/subject
+                issuer := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/issuer
+                serial := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/serial
+                serial-hex := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/serial-hex
+                valid-from := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/valid-from
+                valid-to := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/valid-to
+                fingerprint := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/fingerprint
+                fingerprint-algorithm := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/fingerprint-algorithm
 
                 subject-details
                 {
-                    common-name := records/record[3]/keystore-entry/subject-details/common-name
+                    common-name := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/subject-details/common-name
                 }
 
                 key-settings
                 {
-                    sign-algorithm := records/record[3]/keystore-entry/key-settings/sign-algorithm
-                    public-key-size := records/record[3]/keystore-entry/key-settings/public-key-size
-                    private-key-algorithm := records/record[3]/keystore-entry/key-settings/private-key-algorithm
+                    sign-algorithm := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/key-settings/sign-algorithm
+                    public-key-size := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/key-settings/public-key-size
+                    private-key-algorithm := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/key-settings/private-key-algorithm
                 }
 
                 extensions
                 {
                     key-usage
                     {
-                        digital-signature := records/record[3]/keystore-entry/extensions/key-usage/digital-signature
-                        data-encipherment := records/record[3]/keystore-entry/extensions/key-usage/data-encipherment
-                        non-repudation := records/record[3]/keystore-entry/extensions/key-usage/non-repudation
-                        verify-certificate-signatures := records/record[3]/keystore-entry/extensions/key-usage/verify-certificate-signatures
-                        key-encipherment := records/record[3]/keystore-entry/extensions/key-usage/key-encipherment
-                        server-authentication := records/record[3]/keystore-entry/extensions/key-usage/server-authentication
-                        client-authentication := records/record[3]/keystore-entry/extensions/key-usage/client-authentication
-                        email-protection := records/record[3]/keystore-entry/extensions/key-usage/email-protection
-                        key-agreement := records/record[3]/keystore-entry/extensions/key-usage/key-agreement
-                        encipher-only := records/record[3]/keystore-entry/extensions/key-usage/encipher-only
-                        decipher-only := records/record[3]/keystore-entry/extensions/key-usage/decipher-only
-                        verify-crl-signatures := records/record[3]/keystore-entry/extensions/key-usage/verify-crl-signatures
+                        digital-signature := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/extensions/key-usage/digital-signature
+                        data-encipherment := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/extensions/key-usage/data-encipherment
+                        non-repudation := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/extensions/key-usage/non-repudation
+                        verify-certificate-signatures := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/extensions/key-usage/verify-certificate-signatures
+                        key-encipherment := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/extensions/key-usage/key-encipherment
+                        server-authentication := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/extensions/key-usage/server-authentication
+                        client-authentication := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/extensions/key-usage/client-authentication
+                        email-protection := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/extensions/key-usage/email-protection
+                        key-agreement := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/extensions/key-usage/key-agreement
+                        encipher-only := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/extensions/key-usage/encipher-only
+                        decipher-only := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/extensions/key-usage/decipher-only
+                        verify-crl-signatures := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/extensions/key-usage/verify-crl-signatures
                     }
-                    basic-constraint := records/record[3]/keystore-entry/extensions/basic-constraint
-                    ca-path-length-constraint := records/record[3]/keystore-entry/extensions/ca-path-length-constraint
+                    basic-constraint := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/extensions/basic-constraint
+                    ca-path-length-constraint := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/extensions/ca-path-length-constraint
                     alternative-subject-names := ""
                 }
 
                 raw-content
                 {
-                    payload := records/record[3]/keystore-entry/raw-content/payload
+                    payload := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/raw-content/payload
                 }
 
                 validation
                 {
                     validation-settings
                     {
-                        period := records/record[3]/keystore-entry/validation/validation-settings/period
-                        chain := records/record[3]/keystore-entry/validation/validation-settings/chain
-                        ocsp := records/record[3]/keystore-entry/validation/validation-settings/ocsp
-                        ocsp-online := records/record[3]/keystore-entry/validation/validation-settings/ocsp-online
-                        crl := records/record[3]/keystore-entry/validation/validation-settings/crl
-                        force-valid := records/record[3]/keystore-entry/validation/validation-settings/force-valid
+                        period := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/validation/validation-settings/period
+                        chain := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/validation/validation-settings/chain
+                        ocsp := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/validation/validation-settings/ocsp
+                        ocsp-online := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/validation/validation-settings/ocsp-online
+                        crl := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/validation/validation-settings/crl
+                        force-valid := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/validation/validation-settings/force-valid
                     }
-                    validity-status := records/record[3]/keystore-entry/validation/validity-status
-                    validation-time := records/record[3]/keystore-entry/validation/validation-time
+                    validity-status := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/validation/validity-status
+                    validation-time := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/validation/validation-time
                 }
 
-                validation-state := records/record[3]/keystore-entry/validation-state
-                provided-password := records/record[3]/keystore-entry/provided-password
+                validation-state := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/validation-state
+                provided-password := records/record[@type="ksm-entry" and contains(@name, "-partnerauth")]/keystore-entry/provided-password
             }
         }
 
@@ -397,11 +397,11 @@ transport <- /transport
             @name := $partner_eerp_cert_alias
             @type := "ksm-entry"
             @rest-identifier := $partner_eerp_cert_id
-            @action := records/record[4]/@action
-            @created-at := records/record[4]/@created-at
-            @created-by := records/record[4]/@created-by
-            @last-modified-by := records/record[4]/@last-modified-by
-            @last-modified-at := records/record[4]/@last-modified-at
+            @action := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/@action
+            @created-at := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/@created-at
+            @created-by := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/@created-by
+            @last-modified-by := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/@last-modified-by
+            @last-modified-at := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/@last-modified-at
 
             keystore-entry
             {
@@ -409,83 +409,83 @@ transport <- /transport
 
                 administrative-data
                 {
-                    @changed-at := records/record[4]/keystore-entry/administrative-data/@changed-at
-                    @changed-by := records/record[4]/keystore-entry/administrative-data/@changed-by
-                    @created-at := records/record[4]/keystore-entry/administrative-data/@created-at
-                    @created-by := records/record[4]/keystore-entry/administrative-data/@created-by
-                    @logical-system := records/record[4]/keystore-entry/administrative-data/@logical-system
-                    @record-id := records/record[4]/keystore-entry/administrative-data/@record-id
+                    @changed-at := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/administrative-data/@changed-at
+                    @changed-by := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/administrative-data/@changed-by
+                    @created-at := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/administrative-data/@created-at
+                    @created-by := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/administrative-data/@created-by
+                    @logical-system := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/administrative-data/@logical-system
+                    @record-id := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/administrative-data/@record-id
                 }
 
-                type := records/record[4]/keystore-entry/type
+                type := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/type
                 alias := $partner_eerp_cert_alias
                 path := "TRUSTED\\TRUSTED_INSTANCES"
-                version := records/record[4]/keystore-entry/version
-                subject := records/record[4]/keystore-entry/subject
-                issuer := records/record[4]/keystore-entry/issuer
-                serial := records/record[4]/keystore-entry/serial
-                serial-hex := records/record[4]/keystore-entry/serial-hex
-                valid-from := records/record[4]/keystore-entry/valid-from
-                valid-to := records/record[4]/keystore-entry/valid-to
-                fingerprint := records/record[4]/keystore-entry/fingerprint
-                fingerprint-algorithm := records/record[4]/keystore-entry/fingerprint-algorithm
+                version := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/version
+                subject := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/subject
+                issuer := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/issuer
+                serial := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/serial
+                serial-hex := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/serial-hex
+                valid-from := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/valid-from
+                valid-to := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/valid-to
+                fingerprint := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/fingerprint
+                fingerprint-algorithm := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/fingerprint-algorithm
 
                 subject-details
                 {
-                    common-name := records/record[4]/keystore-entry/subject-details/common-name
+                    common-name := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/subject-details/common-name
                 }
 
                 key-settings
                 {
-                    sign-algorithm := records/record[4]/keystore-entry/key-settings/sign-algorithm
-                    public-key-size := records/record[4]/keystore-entry/key-settings/public-key-size
-                    private-key-algorithm := records/record[4]/keystore-entry/key-settings/private-key-algorithm
+                    sign-algorithm := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/key-settings/sign-algorithm
+                    public-key-size := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/key-settings/public-key-size
+                    private-key-algorithm := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/key-settings/private-key-algorithm
                 }
 
                 extensions
                 {
                     key-usage
                     {
-                        digital-signature := records/record[4]/keystore-entry/extensions/key-usage/digital-signature
-                        data-encipherment := records/record[4]/keystore-entry/extensions/key-usage/data-encipherment
-                        non-repudation := records/record[4]/keystore-entry/extensions/key-usage/non-repudation
-                        verify-certificate-signatures := records/record[4]/keystore-entry/extensions/key-usage/verify-certificate-signatures
-                        key-encipherment := records/record[4]/keystore-entry/extensions/key-usage/key-encipherment
-                        server-authentication := records/record[4]/keystore-entry/extensions/key-usage/server-authentication
-                        client-authentication := records/record[4]/keystore-entry/extensions/key-usage/client-authentication
-                        email-protection := records/record[4]/keystore-entry/extensions/key-usage/email-protection
-                        key-agreement := records/record[4]/keystore-entry/extensions/key-usage/key-agreement
-                        encipher-only := records/record[4]/keystore-entry/extensions/key-usage/encipher-only
-                        decipher-only := records/record[4]/keystore-entry/extensions/key-usage/decipher-only
-                        verify-crl-signatures := records/record[4]/keystore-entry/extensions/key-usage/verify-crl-signatures
+                        digital-signature := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/extensions/key-usage/digital-signature
+                        data-encipherment := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/extensions/key-usage/data-encipherment
+                        non-repudation := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/extensions/key-usage/non-repudation
+                        verify-certificate-signatures := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/extensions/key-usage/verify-certificate-signatures
+                        key-encipherment := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/extensions/key-usage/key-encipherment
+                        server-authentication := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/extensions/key-usage/server-authentication
+                        client-authentication := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/extensions/key-usage/client-authentication
+                        email-protection := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/extensions/key-usage/email-protection
+                        key-agreement := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/extensions/key-usage/key-agreement
+                        encipher-only := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/extensions/key-usage/encipher-only
+                        decipher-only := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/extensions/key-usage/decipher-only
+                        verify-crl-signatures := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/extensions/key-usage/verify-crl-signatures
                     }
-                    basic-constraint := records/record[4]/keystore-entry/extensions/basic-constraint
-                    ca-path-length-constraint := records/record[4]/keystore-entry/extensions/ca-path-length-constraint
+                    basic-constraint := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/extensions/basic-constraint
+                    ca-path-length-constraint := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/extensions/ca-path-length-constraint
                     alternative-subject-names := ""
                 }
 
                 raw-content
                 {
-                    payload := records/record[4]/keystore-entry/raw-content/payload
+                    payload := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/raw-content/payload
                 }
 
                 validation
                 {
                     validation-settings
                     {
-                        period := records/record[4]/keystore-entry/validation/validation-settings/period
-                        chain := records/record[4]/keystore-entry/validation/validation-settings/chain
-                        ocsp := records/record[4]/keystore-entry/validation/validation-settings/ocsp
-                        ocsp-online := records/record[4]/keystore-entry/validation/validation-settings/ocsp-online
-                        crl := records/record[4]/keystore-entry/validation/validation-settings/crl
-                        force-valid := records/record[4]/keystore-entry/validation/validation-settings/force-valid
+                        period := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/validation/validation-settings/period
+                        chain := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/validation/validation-settings/chain
+                        ocsp := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/validation/validation-settings/ocsp
+                        ocsp-online := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/validation/validation-settings/ocsp-online
+                        crl := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/validation/validation-settings/crl
+                        force-valid := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/validation/validation-settings/force-valid
                     }
-                    validity-status := records/record[4]/keystore-entry/validation/validity-status
-                    validation-time := records/record[4]/keystore-entry/validation/validation-time
+                    validity-status := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/validation/validity-status
+                    validation-time := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/validation/validation-time
                 }
 
-                validation-state := records/record[4]/keystore-entry/validation-state
-                provided-password := records/record[4]/keystore-entry/provided-password
+                validation-state := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/validation-state
+                provided-password := records/record[@type="ksm-entry" and contains(@name, "-partnereerp")]/keystore-entry/provided-password
             }
         }
 
@@ -497,11 +497,11 @@ transport <- /transport
             @name := $partner_encrypt_cert_alias
             @type := "ksm-entry"
             @rest-identifier := $partner_encrypt_cert_id
-            @action := records/record[5]/@action
-            @created-at := records/record[5]/@created-at
-            @created-by := records/record[5]/@created-by
-            @last-modified-by := records/record[5]/@last-modified-by
-            @last-modified-at := records/record[5]/@last-modified-at
+            @action := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/@action
+            @created-at := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/@created-at
+            @created-by := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/@created-by
+            @last-modified-by := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/@last-modified-by
+            @last-modified-at := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/@last-modified-at
 
             keystore-entry
             {
@@ -509,83 +509,83 @@ transport <- /transport
 
                 administrative-data
                 {
-                    @changed-at := records/record[5]/keystore-entry/administrative-data/@changed-at
-                    @changed-by := records/record[5]/keystore-entry/administrative-data/@changed-by
-                    @created-at := records/record[5]/keystore-entry/administrative-data/@created-at
-                    @created-by := records/record[5]/keystore-entry/administrative-data/@created-by
-                    @logical-system := records/record[5]/keystore-entry/administrative-data/@logical-system
-                    @record-id := records/record[5]/keystore-entry/administrative-data/@record-id
+                    @changed-at := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/administrative-data/@changed-at
+                    @changed-by := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/administrative-data/@changed-by
+                    @created-at := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/administrative-data/@created-at
+                    @created-by := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/administrative-data/@created-by
+                    @logical-system := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/administrative-data/@logical-system
+                    @record-id := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/administrative-data/@record-id
                 }
 
-                type := records/record[5]/keystore-entry/type
+                type := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/type
                 alias := $partner_encrypt_cert_alias
                 path := "TRUSTED\\TRUSTED_INSTANCES"
-                version := records/record[5]/keystore-entry/version
-                subject := records/record[5]/keystore-entry/subject
-                issuer := records/record[5]/keystore-entry/issuer
-                serial := records/record[5]/keystore-entry/serial
-                serial-hex := records/record[5]/keystore-entry/serial-hex
-                valid-from := records/record[5]/keystore-entry/valid-from
-                valid-to := records/record[5]/keystore-entry/valid-to
-                fingerprint := records/record[5]/keystore-entry/fingerprint
-                fingerprint-algorithm := records/record[5]/keystore-entry/fingerprint-algorithm
+                version := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/version
+                subject := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/subject
+                issuer := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/issuer
+                serial := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/serial
+                serial-hex := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/serial-hex
+                valid-from := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/valid-from
+                valid-to := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/valid-to
+                fingerprint := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/fingerprint
+                fingerprint-algorithm := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/fingerprint-algorithm
 
                 subject-details
                 {
-                    common-name := records/record[5]/keystore-entry/subject-details/common-name
+                    common-name := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/subject-details/common-name
                 }
 
                 key-settings
                 {
-                    sign-algorithm := records/record[5]/keystore-entry/key-settings/sign-algorithm
-                    public-key-size := records/record[5]/keystore-entry/key-settings/public-key-size
-                    private-key-algorithm := records/record[5]/keystore-entry/key-settings/private-key-algorithm
+                    sign-algorithm := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/key-settings/sign-algorithm
+                    public-key-size := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/key-settings/public-key-size
+                    private-key-algorithm := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/key-settings/private-key-algorithm
                 }
 
                 extensions
                 {
                     key-usage
                     {
-                        digital-signature := records/record[5]/keystore-entry/extensions/key-usage/digital-signature
-                        data-encipherment := records/record[5]/keystore-entry/extensions/key-usage/data-encipherment
-                        non-repudation := records/record[5]/keystore-entry/extensions/key-usage/non-repudation
-                        verify-certificate-signatures := records/record[5]/keystore-entry/extensions/key-usage/verify-certificate-signatures
-                        key-encipherment := records/record[5]/keystore-entry/extensions/key-usage/key-encipherment
-                        server-authentication := records/record[5]/keystore-entry/extensions/key-usage/server-authentication
-                        client-authentication := records/record[5]/keystore-entry/extensions/key-usage/client-authentication
-                        email-protection := records/record[5]/keystore-entry/extensions/key-usage/email-protection
-                        key-agreement := records/record[5]/keystore-entry/extensions/key-usage/key-agreement
-                        encipher-only := records/record[5]/keystore-entry/extensions/key-usage/encipher-only
-                        decipher-only := records/record[5]/keystore-entry/extensions/key-usage/decipher-only
-                        verify-crl-signatures := records/record[5]/keystore-entry/extensions/key-usage/verify-crl-signatures
+                        digital-signature := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/extensions/key-usage/digital-signature
+                        data-encipherment := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/extensions/key-usage/data-encipherment
+                        non-repudation := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/extensions/key-usage/non-repudation
+                        verify-certificate-signatures := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/extensions/key-usage/verify-certificate-signatures
+                        key-encipherment := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/extensions/key-usage/key-encipherment
+                        server-authentication := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/extensions/key-usage/server-authentication
+                        client-authentication := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/extensions/key-usage/client-authentication
+                        email-protection := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/extensions/key-usage/email-protection
+                        key-agreement := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/extensions/key-usage/key-agreement
+                        encipher-only := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/extensions/key-usage/encipher-only
+                        decipher-only := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/extensions/key-usage/decipher-only
+                        verify-crl-signatures := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/extensions/key-usage/verify-crl-signatures
                     }
-                    basic-constraint := records/record[5]/keystore-entry/extensions/basic-constraint
-                    ca-path-length-constraint := records/record[5]/keystore-entry/extensions/ca-path-length-constraint
+                    basic-constraint := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/extensions/basic-constraint
+                    ca-path-length-constraint := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/extensions/ca-path-length-constraint
                     alternative-subject-names := ""
                 }
 
                 raw-content
                 {
-                    payload := records/record[5]/keystore-entry/raw-content/payload
+                    payload := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/raw-content/payload
                 }
 
                 validation
                 {
                     validation-settings
                     {
-                        period := records/record[5]/keystore-entry/validation/validation-settings/period
-                        chain := records/record[5]/keystore-entry/validation/validation-settings/chain
-                        ocsp := records/record[5]/keystore-entry/validation/validation-settings/ocsp
-                        ocsp-online := records/record[5]/keystore-entry/validation/validation-settings/ocsp-online
-                        crl := records/record[5]/keystore-entry/validation/validation-settings/crl
-                        force-valid := records/record[5]/keystore-entry/validation/validation-settings/force-valid
+                        period := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/validation/validation-settings/period
+                        chain := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/validation/validation-settings/chain
+                        ocsp := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/validation/validation-settings/ocsp
+                        ocsp-online := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/validation/validation-settings/ocsp-online
+                        crl := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/validation/validation-settings/crl
+                        force-valid := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/validation/validation-settings/force-valid
                     }
-                    validity-status := records/record[5]/keystore-entry/validation/validity-status
-                    validation-time := records/record[5]/keystore-entry/validation/validation-time
+                    validity-status := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/validation/validity-status
+                    validation-time := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/validation/validation-time
                 }
 
-                validation-state := records/record[5]/keystore-entry/validation-state
-                provided-password := records/record[5]/keystore-entry/provided-password
+                validation-state := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/validation-state
+                provided-password := records/record[@type="ksm-entry" and contains(@name, "-partnerencrypt")]/keystore-entry/provided-password
             }
         }
 
@@ -594,14 +594,14 @@ transport <- /transport
            ================================================================ :)
         record
         {
-            @name := records/record[6]/@name
-            @type := records/record[6]/@type
+            @name := records/record[@type="ksm-entry" and @name="demoim"]/@name
+            @type := records/record[@type="ksm-entry" and @name="demoim"]/@type
             @rest-identifier := "a8e279ca-cfa9-11ec-8563-ea550a0b1393"
-            @action := records/record[6]/@action
-            @created-at := records/record[6]/@created-at
-            @created-by := records/record[6]/@created-by
-            @last-modified-by := records/record[6]/@last-modified-by
-            @last-modified-at := records/record[6]/@last-modified-at
+            @action := records/record[@type="ksm-entry" and @name="demoim"]/@action
+            @created-at := records/record[@type="ksm-entry" and @name="demoim"]/@created-at
+            @created-by := records/record[@type="ksm-entry" and @name="demoim"]/@created-by
+            @last-modified-by := records/record[@type="ksm-entry" and @name="demoim"]/@last-modified-by
+            @last-modified-at := records/record[@type="ksm-entry" and @name="demoim"]/@last-modified-at
 
             keystore-entry
             {
@@ -609,90 +609,90 @@ transport <- /transport
 
                 administrative-data
                 {
-                    @changed-at := records/record[6]/keystore-entry/administrative-data/@changed-at
-                    @changed-by := records/record[6]/keystore-entry/administrative-data/@changed-by
-                    @comment := records/record[6]/keystore-entry/administrative-data/@comment
-                    @created-at := records/record[6]/keystore-entry/administrative-data/@created-at
-                    @created-by := records/record[6]/keystore-entry/administrative-data/@created-by
-                    @logical-system := records/record[6]/keystore-entry/administrative-data/@logical-system
-                    @record-id := records/record[6]/keystore-entry/administrative-data/@record-id
+                    @changed-at := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/administrative-data/@changed-at
+                    @changed-by := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/administrative-data/@changed-by
+                    @comment := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/administrative-data/@comment
+                    @created-at := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/administrative-data/@created-at
+                    @created-by := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/administrative-data/@created-by
+                    @logical-system := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/administrative-data/@logical-system
+                    @record-id := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/administrative-data/@record-id
                 }
 
-                type := records/record[6]/keystore-entry/type
-                alias := records/record[6]/keystore-entry/alias
+                type := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/type
+                alias := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/alias
                 path := "USERS\\INSTANCES"
-                version := records/record[6]/keystore-entry/version
-                subject := records/record[6]/keystore-entry/subject
-                issuer := records/record[6]/keystore-entry/issuer
-                serial := records/record[6]/keystore-entry/serial
-                serial-hex := records/record[6]/keystore-entry/serial-hex
-                valid-from := records/record[6]/keystore-entry/valid-from
-                valid-to := records/record[6]/keystore-entry/valid-to
-                fingerprint := records/record[6]/keystore-entry/fingerprint
-                fingerprint-algorithm := records/record[6]/keystore-entry/fingerprint-algorithm
+                version := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/version
+                subject := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/subject
+                issuer := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/issuer
+                serial := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/serial
+                serial-hex := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/serial-hex
+                valid-from := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/valid-from
+                valid-to := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/valid-to
+                fingerprint := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/fingerprint
+                fingerprint-algorithm := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/fingerprint-algorithm
 
                 subject-details
                 {
-                    common-name := records/record[6]/keystore-entry/subject-details/common-name
-                    organization-unit := records/record[6]/keystore-entry/subject-details/organization-unit
-                    organization := records/record[6]/keystore-entry/subject-details/organization
-                    location := records/record[6]/keystore-entry/subject-details/location
-                    state := records/record[6]/keystore-entry/subject-details/state
-                    country := records/record[6]/keystore-entry/subject-details/country
+                    common-name := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/subject-details/common-name
+                    organization-unit := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/subject-details/organization-unit
+                    organization := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/subject-details/organization
+                    location := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/subject-details/location
+                    state := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/subject-details/state
+                    country := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/subject-details/country
                 }
 
                 key-settings
                 {
-                    sign-algorithm := records/record[6]/keystore-entry/key-settings/sign-algorithm
-                    public-key-size := records/record[6]/keystore-entry/key-settings/public-key-size
-                    private-key-algorithm := records/record[6]/keystore-entry/key-settings/private-key-algorithm
+                    sign-algorithm := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/key-settings/sign-algorithm
+                    public-key-size := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/key-settings/public-key-size
+                    private-key-algorithm := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/key-settings/private-key-algorithm
                 }
 
                 extensions
                 {
                     key-usage
                     {
-                        digital-signature := records/record[6]/keystore-entry/extensions/key-usage/digital-signature
-                        data-encipherment := records/record[6]/keystore-entry/extensions/key-usage/data-encipherment
-                        non-repudation := records/record[6]/keystore-entry/extensions/key-usage/non-repudation
-                        verify-certificate-signatures := records/record[6]/keystore-entry/extensions/key-usage/verify-certificate-signatures
-                        key-encipherment := records/record[6]/keystore-entry/extensions/key-usage/key-encipherment
-                        server-authentication := records/record[6]/keystore-entry/extensions/key-usage/server-authentication
-                        client-authentication := records/record[6]/keystore-entry/extensions/key-usage/client-authentication
-                        email-protection := records/record[6]/keystore-entry/extensions/key-usage/email-protection
-                        key-agreement := records/record[6]/keystore-entry/extensions/key-usage/key-agreement
-                        encipher-only := records/record[6]/keystore-entry/extensions/key-usage/encipher-only
-                        decipher-only := records/record[6]/keystore-entry/extensions/key-usage/decipher-only
-                        verify-crl-signatures := records/record[6]/keystore-entry/extensions/key-usage/verify-crl-signatures
+                        digital-signature := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/extensions/key-usage/digital-signature
+                        data-encipherment := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/extensions/key-usage/data-encipherment
+                        non-repudation := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/extensions/key-usage/non-repudation
+                        verify-certificate-signatures := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/extensions/key-usage/verify-certificate-signatures
+                        key-encipherment := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/extensions/key-usage/key-encipherment
+                        server-authentication := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/extensions/key-usage/server-authentication
+                        client-authentication := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/extensions/key-usage/client-authentication
+                        email-protection := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/extensions/key-usage/email-protection
+                        key-agreement := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/extensions/key-usage/key-agreement
+                        encipher-only := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/extensions/key-usage/encipher-only
+                        decipher-only := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/extensions/key-usage/decipher-only
+                        verify-crl-signatures := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/extensions/key-usage/verify-crl-signatures
                     }
-                    basic-constraint := records/record[6]/keystore-entry/extensions/basic-constraint
-                    ca-path-length-constraint := records/record[6]/keystore-entry/extensions/ca-path-length-constraint
+                    basic-constraint := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/extensions/basic-constraint
+                    ca-path-length-constraint := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/extensions/ca-path-length-constraint
                     alternative-subject-names := ""
                 }
 
                 raw-content
                 {
-                    payload := records/record[6]/keystore-entry/raw-content/payload
-                    private-key-payload := records/record[6]/keystore-entry/raw-content/private-key-payload
+                    payload := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/raw-content/payload
+                    private-key-payload := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/raw-content/private-key-payload
                 }
 
                 validation
                 {
                     validation-settings
                     {
-                        period := records/record[6]/keystore-entry/validation/validation-settings/period
-                        chain := records/record[6]/keystore-entry/validation/validation-settings/chain
-                        ocsp := records/record[6]/keystore-entry/validation/validation-settings/ocsp
-                        ocsp-online := records/record[6]/keystore-entry/validation/validation-settings/ocsp-online
-                        crl := records/record[6]/keystore-entry/validation/validation-settings/crl
-                        force-valid := records/record[6]/keystore-entry/validation/validation-settings/force-valid
+                        period := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/validation/validation-settings/period
+                        chain := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/validation/validation-settings/chain
+                        ocsp := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/validation/validation-settings/ocsp
+                        ocsp-online := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/validation/validation-settings/ocsp-online
+                        crl := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/validation/validation-settings/crl
+                        force-valid := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/validation/validation-settings/force-valid
                     }
-                    validity-status := records/record[6]/keystore-entry/validation/validity-status
-                    validation-time := records/record[6]/keystore-entry/validation/validation-time
+                    validity-status := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/validation/validity-status
+                    validation-time := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/validation/validation-time
                 }
 
-                validation-state := records/record[6]/keystore-entry/validation-state
-                provided-password := records/record[6]/keystore-entry/provided-password
+                validation-state := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/validation-state
+                provided-password := records/record[@type="ksm-entry" and @name="demoim"]/keystore-entry/provided-password
             }
         }
 
@@ -701,47 +701,47 @@ transport <- /transport
            ================================================================ :)
         record
         {
-            @name := records/record[7]/@name
-            @type := records/record[7]/@type
+            @name := records/record[@type="oftp.oftp-listener"]/@name
+            @type := records/record[@type="oftp.oftp-listener"]/@type
             @rest-identifier := "26fcb4c0-37b1-11f0-8e28-c61e7f000101"
-            @action := records/record[7]/@action
-            @created-at := records/record[7]/@created-at
-            @created-by := records/record[7]/@created-by
-            @last-modified-by := records/record[7]/@last-modified-by
-            @last-modified-at := records/record[7]/@last-modified-at
+            @action := records/record[@type="oftp.oftp-listener"]/@action
+            @created-at := records/record[@type="oftp.oftp-listener"]/@created-at
+            @created-by := records/record[@type="oftp.oftp-listener"]/@created-by
+            @last-modified-by := records/record[@type="oftp.oftp-listener"]/@last-modified-by
+            @last-modified-at := records/record[@type="oftp.oftp-listener"]/@last-modified-at
 
             oftp-listener
             {
                 @identifier := "26fcb4c0-37b1-11f0-8e28-c61e7f000101"
-                name := records/record[7]/oftp-listener/name
+                name := records/record[@type="oftp.oftp-listener"]/oftp-listener/name
 
                 administrative-data
                 {
-                    @changed-at := records/record[7]/oftp-listener/administrative-data/@changed-at
-                    @changed-by := records/record[7]/oftp-listener/administrative-data/@changed-by
-                    @comment := records/record[7]/oftp-listener/administrative-data/@comment
-                    @created-at := records/record[7]/oftp-listener/administrative-data/@created-at
-                    @created-by := records/record[7]/oftp-listener/administrative-data/@created-by
-                    @logical-system := records/record[7]/oftp-listener/administrative-data/@logical-system
-                    @record-id := records/record[7]/oftp-listener/administrative-data/@record-id
+                    @changed-at := records/record[@type="oftp.oftp-listener"]/oftp-listener/administrative-data/@changed-at
+                    @changed-by := records/record[@type="oftp.oftp-listener"]/oftp-listener/administrative-data/@changed-by
+                    @comment := records/record[@type="oftp.oftp-listener"]/oftp-listener/administrative-data/@comment
+                    @created-at := records/record[@type="oftp.oftp-listener"]/oftp-listener/administrative-data/@created-at
+                    @created-by := records/record[@type="oftp.oftp-listener"]/oftp-listener/administrative-data/@created-by
+                    @logical-system := records/record[@type="oftp.oftp-listener"]/oftp-listener/administrative-data/@logical-system
+                    @record-id := records/record[@type="oftp.oftp-listener"]/oftp-listener/administrative-data/@record-id
                 }
 
-                listener-group := records/record[7]/oftp-listener/listener-group
-                active := records/record[7]/oftp-listener/active
+                listener-group := records/record[@type="oftp.oftp-listener"]/oftp-listener/listener-group
+                active := records/record[@type="oftp.oftp-listener"]/oftp-listener/active
 
                 listener-tcp-configuration
                 {
-                    network-interface := records/record[7]/oftp-listener/listener-tcp-configuration/network-interface
-                    port := records/record[7]/oftp-listener/listener-tcp-configuration/port
-                    use-tls := records/record[7]/oftp-listener/listener-tcp-configuration/use-tls
+                    network-interface := records/record[@type="oftp.oftp-listener"]/oftp-listener/listener-tcp-configuration/network-interface
+                    port := records/record[@type="oftp.oftp-listener"]/oftp-listener/listener-tcp-configuration/port
+                    use-tls := records/record[@type="oftp.oftp-listener"]/oftp-listener/listener-tcp-configuration/use-tls
 
                     listener-tls
                     {
                         ssl-server-certificates { }
-                        security-profile { @href := records/record[7]/oftp-listener/listener-tcp-configuration/listener-tls/security-profile/@href }
+                        security-profile { @href := records/record[@type="oftp.oftp-listener"]/oftp-listener/listener-tcp-configuration/listener-tls/security-profile/@href }
                     }
 
-                    check-tls := records/record[7]/oftp-listener/listener-tcp-configuration/check-tls
+                    check-tls := records/record[@type="oftp.oftp-listener"]/oftp-listener/listener-tcp-configuration/check-tls
                 }
             }
         }
@@ -752,38 +752,38 @@ transport <- /transport
            ================================================================ :)
         record
         {
-            @name := records/record[8]/@name
-            @type := records/record[8]/@type
+            @name := records/record[@type="oftp.sfid-personality"]/@name
+            @type := records/record[@type="oftp.sfid-personality"]/@type
             @rest-identifier := "273f6310-37b1-11f0-8e28-c61e7f000101"
-            @action := records/record[8]/@action
-            @created-at := records/record[8]/@created-at
-            @created-by := records/record[8]/@created-by
-            @last-modified-by := records/record[8]/@last-modified-by
-            @last-modified-at := records/record[8]/@last-modified-at
+            @action := records/record[@type="oftp.sfid-personality"]/@action
+            @created-at := records/record[@type="oftp.sfid-personality"]/@created-at
+            @created-by := records/record[@type="oftp.sfid-personality"]/@created-by
+            @last-modified-by := records/record[@type="oftp.sfid-personality"]/@last-modified-by
+            @last-modified-at := records/record[@type="oftp.sfid-personality"]/@last-modified-at
 
             sfid-personality
             {
                 @identifier := "273f6310-37b1-11f0-8e28-c61e7f000101"
-                name := records/record[8]/sfid-personality/name
+                name := records/record[@type="oftp.sfid-personality"]/sfid-personality/name
 
                 administrative-data
                 {
-                    @changed-at := records/record[8]/sfid-personality/administrative-data/@changed-at
-                    @changed-by := records/record[8]/sfid-personality/administrative-data/@changed-by
-                    @comment := records/record[8]/sfid-personality/administrative-data/@comment
-                    @created-at := records/record[8]/sfid-personality/administrative-data/@created-at
-                    @created-by := records/record[8]/sfid-personality/administrative-data/@created-by
-                    @logical-system := records/record[8]/sfid-personality/administrative-data/@logical-system
-                    @record-id := records/record[8]/sfid-personality/administrative-data/@record-id
+                    @changed-at := records/record[@type="oftp.sfid-personality"]/sfid-personality/administrative-data/@changed-at
+                    @changed-by := records/record[@type="oftp.sfid-personality"]/sfid-personality/administrative-data/@changed-by
+                    @comment := records/record[@type="oftp.sfid-personality"]/sfid-personality/administrative-data/@comment
+                    @created-at := records/record[@type="oftp.sfid-personality"]/sfid-personality/administrative-data/@created-at
+                    @created-by := records/record[@type="oftp.sfid-personality"]/sfid-personality/administrative-data/@created-by
+                    @logical-system := records/record[@type="oftp.sfid-personality"]/sfid-personality/administrative-data/@logical-system
+                    @record-id := records/record[@type="oftp.sfid-personality"]/sfid-personality/administrative-data/@record-id
                 }
 
-                odette-code := records/record[8]/sfid-personality/odette-code
+                odette-code := records/record[@type="oftp.sfid-personality"]/sfid-personality/odette-code
 
                 signature-certificates
                 {
                     signature-certificate
                     {
-                        @effective-from-date-time := records/record[8]/sfid-personality/signature-certificates/signature-certificate/@effective-from-date-time
+                        @effective-from-date-time := records/record[@type="oftp.sfid-personality"]/sfid-personality/signature-certificates/signature-certificate/@effective-from-date-time
                         (: Fixed demoim certificate reference :)
                         certificate-ref { @href := "https://dedcdbdmgr01:14000/api/ksm/USERS/INSTANCES/demoim" }
                     }
@@ -802,7 +802,7 @@ transport <- /transport
                 {
                     eerp-signature-certificate
                     {
-                        @effective-from-date-time := records/record[8]/sfid-personality/eerp-signature-certificates/eerp-signature-certificate/@effective-from-date-time
+                        @effective-from-date-time := records/record[@type="oftp.sfid-personality"]/sfid-personality/eerp-signature-certificates/eerp-signature-certificate/@effective-from-date-time
                         (: Fixed demoim certificate reference :)
                         certificate-ref { @href := "https://dedcdbdmgr01:14000/api/ksm/USERS/INSTANCES/demoim" }
                     }
