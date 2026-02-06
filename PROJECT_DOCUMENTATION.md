@@ -17,8 +17,7 @@
 ### 1.1 Project Vision
 
 Enable customers to setup partner onboardings with **CMA out-of-the-box** with minimum configuration effort and zero installation and maintenace effort.
-- BIS 6 iPaaS and on-premise customers
-- The all-new Integrator Workspace (IWS)
+A touchpoint for BIS 6 customers to use Integrator Workspace for integration tasks, in this case between CMA and BIS 6
 
 **For Seeburger**: Demonstrate how capable our products and teams are to set up such a service in a short time, showcasing our advantages over competitors.
 
