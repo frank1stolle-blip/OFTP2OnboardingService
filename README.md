@@ -53,8 +53,9 @@ OFTP2OnboardingService/
 ├── Template-OFTP2-Onboarding-Mapping.bis  # Main BIS mapping
 ├── Template-OFTP2-Identity-Mapping.bis    # Identity mapping reference
 ├── Template-OFTP2.xml                     # Source template
-├── PROJECT_DOCUMENTATION.md              # Comprehensive documentation
-├── OFTP2_Onboarding_Presentation.md      # Presentation slides
+├── BIS_Mapping_Language_Tutorial.pdf      # BIS mapping reference guide
+├── PROJECT_DOCUMENTATION.md               # Comprehensive documentation
+├── OFTP2_Onboarding_Presentation.md       # Presentation slides
 └── README.md                              # This file
 ```
 
@@ -125,6 +126,7 @@ This ensures reliable processing regardless of record order in the source XML.
 | KSM | Key Store Manager |
 | CMA | Configuration Management Application |
 | IWS | Integrator Workspace |
+| participantid | Unique identifier for an OFTP2 partner |
 
 ---
 
