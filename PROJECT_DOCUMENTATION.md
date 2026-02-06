@@ -607,19 +607,13 @@ cd OFTP2OnboardingService
 
 ```
 OFTP2OnboardingService/
-├── mappings/
-│   ├── Template-OFTP2-Onboarding-Mapping.bis    # Main onboarding mapping
-│   └── Template-OFTP2-Identity-Mapping.bis      # Reference identity mapping
-├── templates/
-│   └── Template-OFTP2.xml                       # Source XML template
-├── tests/
-│   ├── unit/
-│   └── integration/
-├── docs/
-│   └── PROJECT_DOCUMENTATION.md
-├── config/
-│   └── (environment configurations)
-└── README.md
+├── Template-OFTP2-Onboarding-Mapping.bis    # Main onboarding mapping
+├── Template-OFTP2-Identity-Mapping.bis      # Reference identity mapping
+├── Template-OFTP2.xml                       # Source XML template
+├── BIS_Mapping_Language_Tutorial.pdf        # BIS mapping reference guide
+├── PROJECT_DOCUMENTATION.md                 # Full project documentation
+├── OFTP2_Onboarding_Presentation.md         # Presentation slides
+└── README.md                                # Project overview
 ```
 
 ### 6.4 Coding Standards
@@ -767,6 +761,8 @@ OFTP2OnboardingService/
 | EERP | End-to-End Response - delivery confirmation |
 | BIS | Business Integration Suite (Seeburger) |
 | KSM | Key Store Manager |
+| CMA | Configuration Management Application |
+| IWS | Integrator Workspace |
 | participantid | Unique identifier for an OFTP2 partner |
 
 ### 8.2 Reference Documents

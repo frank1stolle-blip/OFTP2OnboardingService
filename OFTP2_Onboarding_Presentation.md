@@ -431,6 +431,9 @@ record[@type="ksm-entry" and contains(@name, "-partnerauth")]
 | EERP | End-to-End Response |
 | BIS | Business Integration Suite |
 | KSM | Key Store Manager |
+| CMA | Configuration Management Application |
+| IWS | Integrator Workspace |
+| participantid | Unique identifier for an OFTP2 partner |
 
 ---
 
@@ -443,6 +446,7 @@ OFTP2OnboardingService/
 ├── Template-OFTP2-Onboarding-Mapping.bis
 ├── Template-OFTP2-Identity-Mapping.bis
 ├── Template-OFTP2.xml
+├── BIS_Mapping_Language_Tutorial.pdf
 ├── PROJECT_DOCUMENTATION.md
 ├── OFTP2_Onboarding_Presentation.md
 └── README.md
