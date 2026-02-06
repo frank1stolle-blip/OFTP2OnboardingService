@@ -16,7 +16,7 @@
 
 ### 1.1 Project Vision
 
-Enable customers to use **CMA for OFTP2 partner onboardings out-of-the-box** with minimum configuration effort. The service acts as a **strategic bridge** between:
+Enable customers to setup partner onboardings with **CMA out-of-the-box** with minimum configuration effort and zero installation and maintenace effort.
 - BIS 6 iPaaS and on-premise customers
 - The all-new Integrator Workspace (IWS)
 
