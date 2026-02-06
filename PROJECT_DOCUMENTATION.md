@@ -15,10 +15,28 @@
 ## 1. Executive Summary
 
 ### 1.1 Project Vision
-<!-- Describe the overall vision and purpose of the OFTP2 Onboarding Service -->
+
+Enable customers to use **CMA for OFTP2 partner onboardings out-of-the-box** with minimum configuration effort. The service acts as a **strategic bridge** between:
+- BIS 6 iPaaS and on-premise customers
+- The all-new Integrator Workspace (IWS)
+
+**For Seeburger**: Demonstrate how capable our products and teams are to set up such a service in a short time, showcasing our advantages over competitors.
 
 ### 1.2 Project Scope
-<!-- Define what is in scope and out of scope -->
+
+#### Phase 1 (Current Focus)
+- Standard delivery for customers with **BIS 6 on-premise** or **iPaaS**
+- CMA as primary front-end and management tool
+- OFTP2 protocol support
+
+#### Phase 2 (Future Extension)
+- Extend service to **IWS customers** who want to customize in Integrator Workspace
+- Enable self-service customization capabilities
+
+#### Phase 3 (Potential Future)
+- Add other communication protocols (e.g., **AS2**)
+- Onboarding to **Communication Gateway**
+- Broader protocol coverage
 
 ### 1.3 Key Stakeholders
 | Role | Name | Responsibility |
@@ -45,75 +63,177 @@
 ### 2.1 Business Case
 
 #### 2.1.1 Problem Statement
-<!-- What problem does this service solve? -->
 - Manual partner onboarding is time-consuming and error-prone
 - Complex certificate management across multiple systems
 - Lack of standardized onboarding process for OFTP2 partners
+- Gap between BIS 6 (on-premise/iPaaS) and new Integrator Workspace
+- Customers need out-of-the-box solutions with minimal configuration
 
 #### 2.1.2 Solution Overview
-<!-- How does this service address the problem? -->
-- Automated partner configuration generation
+- **CMA Integration**: Use CMA as front-end and management tool for partner onboardings
+- **API-First Design**: Customers can also use the API to connect to other platforms or tools
+- Automated partner configuration generation via BIS mapping
 - Template-based onboarding with dynamic parameter substitution
 - Centralized certificate and identity management
 
 #### 2.1.3 Value Proposition
+
+**For Customers:**
 | Benefit | Description | Metric |
 |---------|-------------|--------|
+| Out-of-the-Box | Ready to use with minimal configuration | Setup time < 1 day |
 | Time Savings | Reduced onboarding time | Hours → Minutes |
-| Error Reduction | Automated validation | % reduction in errors |
-| Scalability | Handle more partners | Partners per day |
-| Compliance | Standardized configurations | Audit compliance % |
+| Error Reduction | Automated validation | 90%+ reduction in errors |
+| Flexibility | CMA front-end OR API integration | Multiple integration options |
+| Scalability | Handle more partners | 10x throughput increase |
+
+**For Seeburger:**
+| Benefit | Description |
+|---------|-------------|
+| Capability Demonstration | Show how quickly we can deliver valuable services |
+| Competitive Advantage | Demonstrate superiority over competitors |
+| Platform Bridge | Connect BIS 6 customers to IWS ecosystem |
+| Team Showcase | Highlight team capabilities and agility |
+| Future Expansion | Foundation for AS2, Communication Gateway, etc. |
 
 ### 2.2 Monetization Strategy
 
-#### 2.2.1 Pricing Model Options
+#### 2.2.1 Strategic Value vs. Direct Revenue
+
+> **Note**: This service is **not expected to generate significant direct revenue**. Its primary value is:
+> - Demonstrating capabilities to customers and internally
+> - Showcasing advantages over competitors
+> - Enabling customer success with minimal friction
+> - Building foundation for future protocol expansions
+
+#### 2.2.2 Pricing Model Options
 | Model | Description | Target Segment |
 |-------|-------------|----------------|
-| Per-Partner Fee | Charge per partner onboarded | SMB customers |
-| Subscription | Monthly/annual flat fee | Enterprise customers |
-| Volume Tiers | Discounted rates at scale | High-volume customers |
-| Bundled | Part of larger EDI package | Existing customers |
-
-#### 2.2.2 Revenue Projections
-| Year | Partners Onboarded | Revenue Target |
-|------|-------------------|----------------|
-| Year 1 | | |
-| Year 2 | | |
-| Year 3 | | |
+| **Included** | Part of BIS 6 / iPaaS subscription | Existing customers |
+| Per-Partner Fee | Optional charge per partner | High-volume customers |
+| Premium Support | Enhanced SLA and support | Enterprise customers |
+| Customization | IWS customization services | IWS customers |
 
 #### 2.2.3 Cost Structure
 | Cost Category | Description | Estimated Amount |
 |---------------|-------------|------------------|
-| Development | Initial build | |
-| Infrastructure | Hosting, certificates | |
-| Maintenance | Ongoing support | |
-| Operations | Staff, monitoring | |
+| Development | Initial build (BIS mapping, API) | Minimal (internal) |
+| Infrastructure | Hosted as part of existing platform | Marginal |
+| Maintenance | Ongoing support | Low |
+| Operations | Monitoring, updates | Low |
 
-### 2.3 Market Analysis
+**Cost Optimization**: Leverage existing BIS 6/iPaaS infrastructure to minimize incremental costs.
 
-#### 2.3.1 Target Market
-<!-- Who are the target customers? -->
-- Automotive industry (OEMs, suppliers)
+### 2.3 Integration Options
+
+#### 2.3.1 Primary: CMA Front-End
+- **Out-of-the-box** partner onboarding experience
+- Visual management interface for partner lifecycle
+- Certificate upload and validation
+- Status monitoring and audit trails
+- Minimal configuration required
+
+#### 2.3.2 Alternative: API Integration
+- RESTful API for programmatic access
+- Enable customers to connect to:
+  - Their own portals and tools
+  - Third-party platforms
+  - Custom automation workflows
+- Full feature parity with CMA
+- OpenAPI specification available
+
+#### 2.3.3 Future: IWS Customization
+- Customers using Integrator Workspace can customize the service
+- Extend with custom validation rules
+- Add organization-specific workflows
+- Integrate with internal systems
+
+### 2.4 Market Analysis
+
+#### 2.4.1 Target Market
+
+**Phase 1 - Primary Targets:**
+| Segment | Description | Platform |
+|---------|-------------|----------|
+| BIS 6 On-Premise | Existing on-premise customers | BIS 6 |
+| BIS 6 iPaaS | Cloud-hosted BIS customers | iPaaS |
+
+**Phase 2 - Extended Targets:**
+| Segment | Description | Platform |
+|---------|-------------|----------|
+| IWS Customers | Integrator Workspace users | IWS |
+| New Customers | Prospects evaluating Seeburger | All |
+
+**Industry Verticals:**
+- Automotive industry (OEMs, Tier 1-2 suppliers)
 - Manufacturing companies
 - Logistics providers
 - Retail supply chain partners
 
-#### 2.3.2 Competitive Landscape
+#### 2.4.2 Competitive Landscape
 | Competitor | Strengths | Weaknesses | Our Differentiation |
 |------------|-----------|------------|---------------------|
-| | | | |
+| Manual Setup | Flexible | Slow, error-prone | Automated, consistent |
+| Custom Scripts | Tailored | Hard to maintain | Supported, upgradable |
+| Other Vendors | Existing relationships | Less integrated | Native BIS integration |
 
-#### 2.3.3 Market Size
-<!-- TAM, SAM, SOM analysis -->
+#### 2.4.3 Competitive Advantages
+- **Speed**: Demonstrate rapid service delivery capability
+- **Integration**: Native integration with BIS ecosystem
+- **Flexibility**: CMA UI + API + IWS customization options
+- **Expertise**: Deep OFTP2 protocol knowledge
+- **Foundation**: Expandable to AS2, Communication Gateway
 
-### 2.4 Risk Assessment
+### 2.5 Risk Assessment
 
-#### 2.4.1 Business Risks
+#### 2.5.1 Business Risks
 | Risk | Likelihood | Impact | Mitigation |
 |------|------------|--------|------------|
-| Low adoption | | | |
-| Pricing pressure | | | |
-| Regulatory changes | | | |
+| Low adoption | Low | Medium | Include in standard offering, minimize barrier |
+| Scope creep | Medium | Medium | Phased approach, clear boundaries per phase |
+| Resource constraints | Medium | Low | Leverage existing BIS capabilities |
+| Competitor response | Low | Low | Speed to market, native integration |
+
+#### 2.5.2 Technical Risks
+| Risk | Likelihood | Impact | Mitigation |
+|------|------------|--------|------------|
+| BIS mapping limitations | Low | Medium | Proven technology, existing patterns |
+| Integration complexity | Medium | Medium | API-first design, standard interfaces |
+| Certificate handling | Low | High | Leverage existing KSM infrastructure |
+
+#### 2.5.3 Strategic Risks
+| Risk | Likelihood | Impact | Mitigation |
+|------|------------|--------|------------|
+| IWS migration delays | Medium | Low | Service works standalone for BIS 6 |
+| Protocol expansion complexity | Medium | Medium | Modular design for future protocols |
+
+### 2.6 Strategic Roadmap
+
+#### Phase 1: Foundation (Current)
+**Target**: BIS 6 On-Premise & iPaaS Customers
+| Deliverable | Status |
+|-------------|--------|
+| BIS Mapping (create/update modes) | ✅ Complete |
+| Type-based XPath predicates | ✅ Complete |
+| Project documentation | ✅ Complete |
+| CMA integration | 🔲 Planned |
+| API endpoints | 🔲 Planned |
+
+#### Phase 2: IWS Extension
+**Target**: Integrator Workspace Customers
+| Deliverable | Status |
+|-------------|--------|
+| IWS-compatible service packaging | 🔲 Planned |
+| Customization hooks | 🔲 Planned |
+| IWS marketplace listing | 🔲 Planned |
+
+#### Phase 3: Protocol Expansion
+**Target**: Broader Communication Needs
+| Deliverable | Status |
+|-------------|--------|
+| AS2 protocol support | 🔲 Future |
+| Communication Gateway onboarding | 🔲 Future |
+| Additional protocols (TBD) | 🔲 Future |
 
 ---
 
