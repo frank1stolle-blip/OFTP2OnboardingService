@@ -38,20 +38,20 @@ A touchpoint for BIS 6 customers to use Integrator Workspace for integration tas
 ### 1.3 Key Stakeholders
 | Role | Name | Responsibility |
 |------|------|----------------|
-| Product Owner | | |
-| Technical Lead | | |
-| Business Analyst | | |
-| Operations Lead | | |
+| Product Owner |Frank Stolle | |
+| Technical Lead |tbd | |
+| Business Analyst |tbd | |
+| Operations Lead |tbd | |
 
 ### 1.4 Project Timeline
 | Phase | Start Date | End Date | Status |
 |-------|------------|----------|--------|
-| Discovery | | | |
-| Design | | | |
-| Development | | | |
-| Testing | | | |
-| Deployment | | | |
-| Go-Live | | | |
+| Discovery |2026-03 |2026-03 |not started |
+| Design |2026-04 |2026-04 |not started |
+| Development |2026-05 |2026-06 |not started |
+| Testing |2026-06 |2026-06 |not started |
+| Deployment |2026-07 |2026-07 |not strated |
+| Go-Live |2026-08 |2026-08 |not started |
 
 ---
 
