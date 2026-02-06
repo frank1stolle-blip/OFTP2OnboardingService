@@ -61,17 +61,16 @@ A touchpoint for BIS 6 customers to use Integrator Workspace for integration tas
 
 #### 2.1.1 Problem Statement
 - Manual partner onboarding is time-consuming and error-prone
-- Complex certificate management across multiple systems
-- Lack of standardized onboarding process for OFTP2 partners
-- Gap between BIS 6 (on-premise/iPaaS) and new Integrator Workspace
-- Customers need out-of-the-box solutions with minimal configuration
+- Lack of end-to-end onboarding process for OFTP2 partners
+- Gap between BIS 6 (on-premise/iPaaS) and CMA App
+- Customers need out-of-the-box solutions with minimal configuration and consulting support
 
 #### 2.1.2 Solution Overview
 - **CMA Integration**: Use CMA as front-end and management tool for partner onboardings
+- Auto-generating OFTP2 onboarding form out of OpenAPI definition file
 - **API-First Design**: Customers can also use the API to connect to other platforms or tools
-- Automated partner configuration generation via BIS mapping
+- Automated partner configuration generation as BIS 6 Transport via Integrator Workspace Flow
 - Template-based onboarding with dynamic parameter substitution
-- Centralized certificate and identity management
 
 #### 2.1.3 Value Proposition
 
