@@ -25,7 +25,7 @@ A touchpoint for BIS 6 customers to use Integrator Workspace for integration tas
 
 #### Phase 1 (Current Focus)
 - Targeting customers with **BIS 6 iPaaS systems**
-- IWS is internally used but invisible for the customers
+- IWS will internally used but invisible for the customers in this phase
 - Using CMA as a cloud service as primary front-end and management tool for onboardings
 - OFTP2 protocol support
 
