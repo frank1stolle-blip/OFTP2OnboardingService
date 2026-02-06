@@ -257,19 +257,11 @@ Enable customers to use **CMA for OFTP2 partner onboardings out-of-the-box** wit
 | **Actor** | System Administrator |
 | **Precondition** | Partner already exists in system |
 | **Trigger** | Partner update request (certificate renewal, config change) |
-| **Main Flow** | 1. Input existing partner ID<br>2. Execute mapping with mode="update"<br>3. Preserve existing UUIDs<br>4. Update configuration records<br>5. Deploy changes |
+| **Main Flow** | 1. Input existing partner ID<br>2. Upload updated certificates (if applicable)<br>3. Execute mapping with mode="update"<br>4. Preserve existing UUIDs<br>5. Update configuration records<br>6. Deploy changes |
 | **Postcondition** | Partner configuration updated, IDs preserved |
+| **Includes** | Certificate renewal (auth, eerp, encrypt certificates) |
 
-#### UC-03: Certificate Renewal
-| Attribute | Description |
-|-----------|-------------|
-| **Actor** | System Administrator / Automated Process |
-| **Precondition** | Certificate expiring or new certificate provided |
-| **Trigger** | Certificate renewal request |
-| **Main Flow** | 1. Upload new certificate<br>2. Execute update mapping<br>3. Update certificate records (auth, eerp, encrypt)<br>4. Maintain partner relationships |
-| **Postcondition** | New certificates active, old references updated |
-
-#### UC-04: Partner Decommissioning
+#### UC-03: Partner Decommissioning
 | Attribute | Description |
 |-----------|-------------|
 | **Actor** | System Administrator |
@@ -278,7 +270,7 @@ Enable customers to use **CMA for OFTP2 partner onboardings out-of-the-box** wit
 | **Main Flow** | 1. Identify partner by ID<br>2. Generate decommission payload<br>3. Remove/disable configuration records<br>4. Archive partner data |
 | **Postcondition** | Partner removed from active configuration |
 
-#### UC-05: Bulk Partner Import
+#### UC-04: Bulk Partner Import
 | Attribute | Description |
 |-----------|-------------|
 | **Actor** | System Administrator |
