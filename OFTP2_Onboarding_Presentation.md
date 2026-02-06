@@ -211,10 +211,13 @@ mode = "update"
 
 **Flow:**
 1. Input existing partner ID
-2. Execute mapping with mode="update"
-3. Preserve existing UUIDs
-4. Update only changed fields
-5. Deploy changes
+2. Upload updated certificates (if applicable)
+3. Execute mapping with mode="update"
+4. Preserve existing UUIDs
+5. Update configuration records
+6. Deploy changes
+
+**Includes:** Certificate renewal (auth, eerp, encrypt)
 
 **Result:** Partner updated, IDs preserved
 
@@ -222,18 +225,18 @@ mode = "update"
 
 # Use Cases (continued)
 
-## UC-03: Certificate Renewal
+## UC-03: Partner Decommissioning
 
-- Automated or manual trigger
-- Upload new certificate
-- Update certificate records only
-- Maintain all partner relationships
+- Identify partner by ID
+- Generate decommission payload
+- Remove/disable configuration records
+- Archive partner data
 
-## UC-04: Bulk Import
+## UC-04: Bulk Partner Import
 
 - CSV/Excel upload
 - Validate all entries
-- Process multiple partners
+- Process multiple partners (create or update)
 - Generate consolidated report
 
 ---
@@ -306,34 +309,32 @@ record[@type="ksm-entry" and contains(@name, "-partnerauth")]
 # 7. Implementation Roadmap
 
 ## Phase 1: Foundation (Current)
+**Target:** BIS 6 On-Premise & iPaaS Customers
 
 - [x] BIS mapping development
 - [x] Create/Update mode support
 - [x] Type-based XPath predicates
 - [x] Project documentation
-
-## Phase 2: Service Layer
-
-- [ ] API development
-- [ ] Certificate validation
-- [ ] Error handling
+- [ ] CMA integration
+- [ ] API endpoints
 
 ---
 
 # Implementation Roadmap (continued)
 
-## Phase 3: Integration
+## Phase 2: IWS Extension
+**Target:** Integrator Workspace Customers
 
-- [ ] BIS system integration
-- [ ] Key Store Manager integration
-- [ ] Monitoring & alerting
+- [ ] IWS-compatible service packaging
+- [ ] Customization hooks
+- [ ] IWS marketplace listing
 
-## Phase 4: Production
+## Phase 3: Protocol Expansion
+**Target:** Broader Communication Needs
 
-- [ ] Security hardening
-- [ ] Performance testing
-- [ ] Documentation & training
-- [ ] Go-live
+- [ ] AS2 protocol support
+- [ ] Communication Gateway onboarding
+- [ ] Additional protocols (TBD)
 
 ---
 
@@ -342,17 +343,17 @@ record[@type="ksm-entry" and contains(@name, "-partnerauth")]
 ## Immediate Actions
 
 1. **Review & Approve** project documentation
-2. **Define** pricing model and revenue targets
-3. **Allocate** development resources
-4. **Setup** development environment
-5. **Begin** Phase 2 implementation
+2. **Complete** CMA integration for Phase 1
+3. **Define** API endpoints specification
+4. **Test** with pilot BIS 6 customers
+5. **Plan** IWS extension (Phase 2)
 
 ## Key Decisions Needed
 
-- Technology stack selection
-- Hosting environment (on-prem vs cloud)
-- Integration priorities
-- Go-live timeline
+- CMA integration approach
+- API authentication model
+- Pilot customer selection
+- IWS timeline alignment
 
 ---
 
