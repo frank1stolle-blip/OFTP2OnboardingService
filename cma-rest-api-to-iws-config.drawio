@@ -1,0 +1,276 @@
+<mxfile host="Electron" modified="2026-02-10T10:00:00.000Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="cmaRestApiToIws" version="21.6.8" type="device">
+  <diagram name="CMA REST API to IWS Configuration" id="cma-rest-api-iws-config">
+    <mxGraphModel dx="3200" dy="2200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ========== SWIMLANES ========== -->
+
+        <mxCell id="sw-cma" value="CMA Service (Customer Portal)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-180" y="-80" width="460" height="1120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sw-iws" value="Integrator Workspace (IWS)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=top;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="280" y="-80" width="520" height="1120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sw-hive" value="Hive Control Platform" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="800" y="-80" width="340" height="1120" as="geometry" />
+        </mxCell>
+
+        <!-- ========== ACTOR ========== -->
+
+        <mxCell id="actor-integrator" value="Integrator" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="-290" y="200" width="30" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ========== LIFELINE BOXES ========== -->
+
+        <mxCell id="box-cmapage" value="CMA Page&lt;br&gt;:Configuration" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-120" y="10" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="box-creds" value="WorkflowDS&lt;br&gt;:Credential Store" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="10" width="130" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="box-workflow" value="IWS Workflow&lt;br&gt;:Design Studio" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="10" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="box-openapi" value="OpenAPI Spec&lt;br&gt;:IWS Repository" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="10" width="130" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="box-gateway" value="API Gateway&lt;br&gt;:Hive Control" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="10" width="130" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ========== PHASE 1: Create &amp; Deploy IWS Workflow ========== -->
+
+        <mxCell id="phase1-label" value="Phase 1: Create &amp; Deploy IWS Workflow" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=12;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-170" y="95" width="310" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Activation: IWS Workflow Phase 1 -->
+        <mxCell id="act-wf1" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="395" y="140" width="10" height="220" as="geometry" />
+        </mxCell>
+
+        <!-- Activation: OpenAPI Spec Phase 1 -->
+        <mxCell id="act-oa1" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="600" y="190" width="10" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Activation: API Gateway Phase 1 -->
+        <mxCell id="act-gw1" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="960" y="280" width="10" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 1. Integrator -> IWS Workflow: create workflow -->
+        <mxCell id="msg01" value="create workflow (mapping, logic)" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="-260" y="150" as="sourcePoint" />
+            <mxPoint x="395" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 2. IWS Workflow -> OpenAPI Spec: create/upload spec -->
+        <mxCell id="msg02" value="create/upload OpenAPI specification (YAML)" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="405" y="200" as="sourcePoint" />
+            <mxPoint x="600" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 3. OpenAPI Spec -> IWS Workflow: return -->
+        <mxCell id="msg03" value="return (spec registered)" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="240" as="sourcePoint" />
+            <mxPoint x="405" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 4. IWS Workflow -> API Gateway: deploy REST endpoint -->
+        <mxCell id="msg04" value="deploy as REST endpoint" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="405" y="290" as="sourcePoint" />
+            <mxPoint x="960" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 5. API Gateway -> IWS Workflow: return endpoint URL -->
+        <mxCell id="msg05" value="return (endpoint URL on hive-control.seeburger-hub.com)" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="960" y="330" as="sourcePoint" />
+            <mxPoint x="405" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== PHASE 2: Configure CMA Page ========== -->
+
+        <mxCell id="phase2-label" value="Phase 2: Configure CMA Page to access IWS" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=12;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-170" y="385" width="330" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Activation: CMA Page Phase 2 -->
+        <mxCell id="act-cma2" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-65" y="430" width="10" height="280" as="geometry" />
+        </mxCell>
+
+        <!-- Activation: OpenAPI Spec Phase 2 -->
+        <mxCell id="act-oa2" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="600" y="450" width="10" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Activation: Credential Store Phase 2 -->
+        <mxCell id="act-cred2" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="140" y="580" width="10" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- 6. Integrator -> CMA Page: open configuration -->
+        <mxCell id="msg06" value="open page configuration" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="-260" y="440" as="sourcePoint" />
+            <mxPoint x="-65" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 7. CMA Page -> OpenAPI Spec: fetch available specs -->
+        <mxCell id="msg07" value="fetch available OpenAPI specs (OpenApiChooserManager)" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="-55" y="460" as="sourcePoint" />
+            <mxPoint x="600" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 8. OpenAPI Spec -> CMA Page: return list -->
+        <mxCell id="msg08" value="return (list of available OpenAPI specs)" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="510" as="sourcePoint" />
+            <mxPoint x="-55" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 9. Integrator -> CMA Page: select spec and bind to page -->
+        <mxCell id="msg09" value="select OpenAPI spec (bind workflow to CMA page)" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="-260" y="560" as="sourcePoint" />
+            <mxPoint x="-65" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 10. CMA Page -> Credential Store: configure credentials -->
+        <mxCell id="msg10" value="configure API credentials (WorkflowDS datasource)" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="-55" y="590" as="sourcePoint" />
+            <mxPoint x="140" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 11. Credential Store -> CMA Page: return -->
+        <mxCell id="msg11" value="return (credentials stored)" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="640" as="sourcePoint" />
+            <mxPoint x="-55" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- return to integrator -->
+        <mxCell id="msg11b" value="return (page configured)" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-65" y="690" as="sourcePoint" />
+            <mxPoint x="-260" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== PHASE 3: Test REST API Connection ========== -->
+
+        <mxCell id="phase3-label" value="Phase 3: Test REST API Connection" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=12;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-170" y="720" width="280" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Activation: CMA Page Phase 3 -->
+        <mxCell id="act-cma3" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-65" y="770" width="10" height="230" as="geometry" />
+        </mxCell>
+
+        <!-- Activation: API Gateway Phase 3 -->
+        <mxCell id="act-gw3" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="960" y="780" width="10" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- Activation: IWS Workflow Phase 3 -->
+        <mxCell id="act-wf3" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="395" y="820" width="10" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 12. Integrator -> CMA Page: trigger test -->
+        <mxCell id="msg12" value="trigger test REST API call" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="-260" y="780" as="sourcePoint" />
+            <mxPoint x="-65" y="780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 13. CMA Page -> API Gateway: POST (with credentials) -->
+        <mxCell id="msg13" value="POST request (WorkflowDS credentials, JSON body)" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="-55" y="790" as="sourcePoint" />
+            <mxPoint x="960" y="790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 14. API Gateway -> IWS Workflow: authenticate &amp; forward -->
+        <mxCell id="msg14" value="authenticate &amp; forward to workflow" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="960" y="830" as="sourcePoint" />
+            <mxPoint x="405" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 15. IWS Workflow -> API Gateway: return response -->
+        <mxCell id="msg15" value="return (workflow response)" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="405" y="870" as="sourcePoint" />
+            <mxPoint x="960" y="870" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 16. API Gateway -> CMA Page: return HTTP response -->
+        <mxCell id="msg16" value="return (HTTP 200 / 500)" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="960" y="920" as="sourcePoint" />
+            <mxPoint x="-55" y="920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Decision diamond -->
+        <mxCell id="diamond1" value="" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-110" y="940" width="80" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- success path -->
+        <mxCell id="msg17" value="success: configuration complete" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-110" y="960" as="sourcePoint" />
+            <mxPoint x="-260" y="960" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- failure path -->
+        <mxCell id="msg18" value="failure: check credentials / endpoint" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-70" y="980" as="sourcePoint" />
+            <mxPoint x="-260" y="1000" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-160" y="1000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
