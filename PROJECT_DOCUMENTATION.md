@@ -615,6 +615,8 @@ OFTP2OnboardingService/
 ├── Template-OFTP2-Identity-Mapping.bis      # Reference identity mapping
 ├── Template-OFTP2.xml                       # Source XML template
 ├── BIS_Mapping_Language_Tutorial.pdf        # BIS mapping reference guide
+├── sequence diagram.drawio                  # Sequence diagram (draw.io)
+├── cma-rest-api-to-iws-config.drawio        # CMA to IWS config diagram (draw.io)
 ├── PROJECT_DOCUMENTATION.md                 # Full project documentation
 ├── OFTP2_Onboarding_Presentation.md         # Presentation slides
 └── README.md                                # Project overview

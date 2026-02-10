@@ -447,6 +447,8 @@ OFTP2OnboardingService/
 ├── Template-OFTP2-Identity-Mapping.bis
 ├── Template-OFTP2.xml
 ├── BIS_Mapping_Language_Tutorial.pdf
+├── sequence diagram.drawio
+├── cma-rest-api-to-iws-config.drawio
 ├── PROJECT_DOCUMENTATION.md
 ├── OFTP2_Onboarding_Presentation.md
 └── README.md
