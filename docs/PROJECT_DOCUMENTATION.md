@@ -65,15 +65,15 @@ A touchpoint for BIS 6 customers to use Integrator Workspace for integration tas
 #### 2.1.1 Problem Statement
 - Manual partner onboarding is time-consuming and error-prone
 - Lack of end-to-end onboarding process for OFTP2 partners
-- Gap between BIS 6 (on-premise/iPaaS) and CMA App
+- Seeburgers offering of using CMA on is expensive and timeconsuming upfront. Reason is the gap between BIS 6 (on-premise/iPaaS) and CMA App
 - Customers need out-of-the-box solutions with minimal configuration and consulting support
 
 #### 2.1.2 Solution Overview
 - **CMA Integration**: Use CMA as front-end and management tool for partner onboardings
 - Auto-generating OFTP2 onboarding form out of OpenAPI definition file
-- **API-First Design**: Customers can also use the API to connect to other platforms or tools
-- Automated partner configuration generation as BIS 6 Transport via Integrator Workspace Flow
-- Template-based onboarding with dynamic parameter substitution
+- Creating a facade in front of the BIS transport API which faces an easy to use api to CMA or direct use by the customer and handles transformation of input data into into a valid BIS tranport at the other end. 
+- Customers can also use the facade API to connect to other platforms or tools easily
+- Using Integrator Workspace Flow to implement the facade lightweight and with no installation on the BIS 6 of the customer
 
 #### 2.1.3 Value Proposition
 
