@@ -443,14 +443,20 @@ record[@type="ksm-entry" and contains(@name, "-partnerauth")]
 
 ```
 OFTP2OnboardingService/
-├── Template-OFTP2-Onboarding-Mapping.bis
-├── Template-OFTP2-Identity-Mapping.bis
-├── Template-OFTP2.xml
-├── BIS_Mapping_Language_Tutorial.pdf
-├── sequence diagram.drawio
-├── cma-rest-api-to-iws-config.drawio
-├── PROJECT_DOCUMENTATION.md
-├── OFTP2_Onboarding_Presentation.md
+├── mappings/
+│   ├── Template-OFTP2-Onboarding-Mapping.bis
+│   └── Template-OFTP2-Identity-Mapping.bis
+├── templates/
+│   └── Template-OFTP2.xml
+├── docs/
+│   ├── PROJECT_DOCUMENTATION.md
+│   ├── OFTP2_Onboarding_Presentation.md
+│   └── diagrams/
+│       ├── sequence diagram.drawio
+│       └── cma-rest-api-to-iws-config.drawio
+├── reference/
+│   ├── BIS_Mapping_Language_Tutorial.pdf
+│   └── mapping-example-by-chatgpt
 └── README.md
 ```
 

@@ -607,14 +607,20 @@ cd OFTP2OnboardingService
 
 ```
 OFTP2OnboardingService/
-├── Template-OFTP2-Onboarding-Mapping.bis    # Main onboarding mapping
-├── Template-OFTP2-Identity-Mapping.bis      # Reference identity mapping
-├── Template-OFTP2.xml                       # Source XML template
-├── BIS_Mapping_Language_Tutorial.pdf        # BIS mapping reference guide
-├── sequence diagram.drawio                  # Sequence diagram (draw.io)
-├── cma-rest-api-to-iws-config.drawio        # CMA to IWS config diagram (draw.io)
-├── PROJECT_DOCUMENTATION.md                 # Full project documentation
-├── OFTP2_Onboarding_Presentation.md         # Presentation slides
+├── mappings/                                # BIS mapping files
+│   ├── Template-OFTP2-Onboarding-Mapping.bis   # Main onboarding mapping
+│   └── Template-OFTP2-Identity-Mapping.bis     # Identity mapping reference
+├── templates/                               # XML templates
+│   └── Template-OFTP2.xml                      # Source OFTP2 template
+├── docs/                                    # Documentation
+│   ├── PROJECT_DOCUMENTATION.md                # Full project documentation
+│   ├── OFTP2_Onboarding_Presentation.md        # Presentation slides
+│   └── diagrams/                               # Architecture diagrams
+│       ├── sequence diagram.drawio             # Sequence diagram
+│       └── cma-rest-api-to-iws-config.drawio   # CMA to IWS config diagram
+├── reference/                               # Reference materials
+│   ├── BIS_Mapping_Language_Tutorial.pdf       # BIS mapping guide
+│   └── mapping-example-by-chatgpt              # Example mapping
 └── README.md                                # Project overview
 ```
 

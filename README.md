@@ -50,14 +50,20 @@ The OFTP2 Onboarding Service automates the creation and management of OFTP2 trad
 
 ```
 OFTP2OnboardingService/
-├── Template-OFTP2-Onboarding-Mapping.bis  # Main BIS mapping
-├── Template-OFTP2-Identity-Mapping.bis    # Identity mapping reference
-├── Template-OFTP2.xml                     # Source template
-├── BIS_Mapping_Language_Tutorial.pdf      # BIS mapping reference guide
-├── sequence diagram.drawio                # Sequence diagram (draw.io)
-├── cma-rest-api-to-iws-config.drawio      # CMA to IWS config diagram (draw.io)
-├── PROJECT_DOCUMENTATION.md               # Comprehensive documentation
-├── OFTP2_Onboarding_Presentation.md       # Presentation slides
+├── mappings/                              # BIS mapping files
+│   ├── Template-OFTP2-Onboarding-Mapping.bis   # Main onboarding mapping
+│   └── Template-OFTP2-Identity-Mapping.bis     # Identity mapping reference
+├── templates/                             # XML templates
+│   └── Template-OFTP2.xml                      # Source OFTP2 template
+├── docs/                                  # Documentation
+│   ├── PROJECT_DOCUMENTATION.md                # Full project documentation
+│   ├── OFTP2_Onboarding_Presentation.md        # Presentation slides
+│   └── diagrams/                               # Architecture diagrams
+│       ├── sequence diagram.drawio             # Sequence diagram
+│       └── cma-rest-api-to-iws-config.drawio   # CMA to IWS config diagram
+├── reference/                             # Reference materials
+│   ├── BIS_Mapping_Language_Tutorial.pdf       # BIS mapping guide
+│   └── mapping-example-by-chatgpt              # Example mapping
 └── README.md                              # This file
 ```
 
@@ -97,8 +103,9 @@ OFTP2OnboardingService/
 
 ## Documentation
 
-- [PROJECT_DOCUMENTATION.md](PROJECT_DOCUMENTATION.md) - Full technical and business documentation
-- [OFTP2_Onboarding_Presentation.md](OFTP2_Onboarding_Presentation.md) - Presentation slides
+- [PROJECT_DOCUMENTATION.md](docs/PROJECT_DOCUMENTATION.md) - Full technical and business documentation
+- [OFTP2_Onboarding_Presentation.md](docs/OFTP2_Onboarding_Presentation.md) - Presentation slides
+- [Diagrams](docs/diagrams/) - Architecture and sequence diagrams
 
 ## Technical Notes
 
