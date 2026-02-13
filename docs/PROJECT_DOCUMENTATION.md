@@ -97,14 +97,6 @@ A touchpoint for BIS 6 customers to use Integrator Workspace for integration tas
 
 ### 2.2 Monetization Strategy
 
-#### 2.2.1 Strategic Value vs. Direct Revenue
-
-> **Note**: This service is **not expected to generate significant direct revenue**. Its primary value is:
-> - Demonstrating capabilities to customers and internally
-> - Showcasing advantages over competitors
-> - Enabling customer success with minimal friction
-> - Building foundation for future protocol expansions
-
 #### 2.2.2 Pricing Model Options
 
 Current price model: 
@@ -115,6 +107,8 @@ Current price model:
 New price model
 - BASE:             550 EUR / month including provisioning + up to 20 onboardings / month
 - ENTERPRISE:     3.000 EUR / month including provisioning + unlimited onboardings + CMA API + OpenAPI integration + Content Packages ("OFTP2 Onboarding for BIS 6", ...)
+
+Expectation: 5.000 EUR x 12 month x 5 customer = 300.000 EUR
 
 #### 2.2.3 Cost Structure
 | Cost Category | Description | Estimated Amount |
