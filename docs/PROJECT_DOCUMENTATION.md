@@ -16,45 +16,42 @@
 
 ### 1.1 Project Vision
 
-Enable customers to use **CMA for OFTP2 partner onboardings out-of-the-box** with minimum configuration effort. The service acts as a **strategic bridge** between:
-- BIS 6 iPaaS and on-premise customers
-- The all-new Integrator Workspace (IWS)
+Enable customers to setup partner onboardings with **CMA out-of-the-box** with minimum configuration effort and zero installation and maintenace effort.
+A touchpoint for BIS 6 customers to use Integrator Workspace for integration tasks, in this case between CMA and BIS 6.
 
 **For Seeburger**: Demonstrate how capable our products and teams are to set up such a service in a short time, showcasing our advantages over competitors.
 
 ### 1.2 Project Scope
 
 #### Phase 1 (Current Focus)
-- Standard delivery for customers with **BIS 6 on-premise** or **iPaaS**
-- CMA as primary front-end and management tool
+- Targeting customers with **BIS 6 iPaaS systems**
+- IWS will internally used but invisible for the customers in this phase
+- Using CMA as a cloud service as primary front-end and management tool for onboardings
 - OFTP2 protocol support
 
-#### Phase 2 (Future Extension)
+#### Future Extensions
 - Extend service to **IWS customers** who want to customize in Integrator Workspace
 - Enable self-service customization capabilities
-
-#### Phase 3 (Potential Future)
 - Add other communication protocols (e.g., **AS2**)
-- Onboarding to **Communication Gateway**
-- Broader protocol coverage
+- Add onboarding to **Communication Gateway**
 
 ### 1.3 Key Stakeholders
 | Role | Name | Responsibility |
 |------|------|----------------|
-| Product Owner | | |
-| Technical Lead | | |
-| Business Analyst | | |
-| Operations Lead | | |
+| Product Owner |Frank Stolle | |
+| Technical Lead |tbd | |
+| Business Analyst |tbd | |
+| Operations Lead |tbd | |
 
 ### 1.4 Project Timeline
 | Phase | Start Date | End Date | Status |
 |-------|------------|----------|--------|
-| Discovery | | | |
-| Design | | | |
-| Development | | | |
-| Testing | | | |
-| Deployment | | | |
-| Go-Live | | | |
+| Discovery |2026-03 |2026-03 |not started |
+| Design |2026-04 |2026-04 |not started |
+| Development |2026-05 |2026-06 |not started |
+| Testing |2026-06 |2026-06 |not started |
+| Deployment |2026-07 |2026-07 |not strated |
+| Go-Live |2026-08 |2026-08 |not started |
 
 ---
 
@@ -64,17 +61,16 @@ Enable customers to use **CMA for OFTP2 partner onboardings out-of-the-box** wit
 
 #### 2.1.1 Problem Statement
 - Manual partner onboarding is time-consuming and error-prone
-- Complex certificate management across multiple systems
-- Lack of standardized onboarding process for OFTP2 partners
-- Gap between BIS 6 (on-premise/iPaaS) and new Integrator Workspace
-- Customers need out-of-the-box solutions with minimal configuration
+- Lack of end-to-end onboarding process for OFTP2 partners
+- Gap between BIS 6 (on-premise/iPaaS) and CMA App
+- Customers need out-of-the-box solutions with minimal configuration and consulting support
 
 #### 2.1.2 Solution Overview
 - **CMA Integration**: Use CMA as front-end and management tool for partner onboardings
+- Auto-generating OFTP2 onboarding form out of OpenAPI definition file
 - **API-First Design**: Customers can also use the API to connect to other platforms or tools
-- Automated partner configuration generation via BIS mapping
+- Automated partner configuration generation as BIS 6 Transport via Integrator Workspace Flow
 - Template-based onboarding with dynamic parameter substitution
-- Centralized certificate and identity management
 
 #### 2.1.3 Value Proposition
 
