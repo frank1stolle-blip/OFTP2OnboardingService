@@ -16,7 +16,7 @@
 
 ### 1.1 Project Vision
 
-Enable customers to setup partner onboardings with **CMA out-of-the-box** with minimum configuration effort and zero installation and maintenace effort.
+Enable customers to setup partner onboardings with **CMA out-of-the-box** with minimum configuration effort and  zero installation and maintenace effort.
 A touchpoint for BIS 6 customers to use Integrator Workspace for integration tasks, in this case between CMA and BIS 6.
 
 **For Seeburger**: Demonstrate how capable our products and teams are to set up such a service in a short time, showcasing our advantages over competitors.
@@ -24,13 +24,16 @@ A touchpoint for BIS 6 customers to use Integrator Workspace for integration tas
 ### 1.2 Project Scope
 
 #### Phase 1 (Current Focus)
-- Targeting customers with **BIS 6 iPaaS systems**
-- IWS will internally used but invisible for the customers in this phase
+- Targeting customers with **BIS 6 iPaaS systems** or **on-premises systems**
 - Using CMA as a cloud service as primary front-end and management tool for onboardings
+- IWS will internally used but invisible for the customers in this phase
+- some remaining manual steps to setup the service on seeburger and on customer side
 - OFTP2 protocol support
 
 #### Future Extensions
 - Extend service to **IWS customers** who want to customize in Integrator Workspace
+- integrate AI for supporting in case of errors
+- fully automate the service setup after bokking it
 - Enable self-service customization capabilities
 - Add other communication protocols (e.g., **AS2**)
 - Add onboarding to **Communication Gateway**
