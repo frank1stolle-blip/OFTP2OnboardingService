@@ -64,7 +64,7 @@ A touchpoint for BIS 6 customers to use Integrator Workspace for integration tas
 
 #### 2.1.1 Problem Statement
 - Manual partner onboarding is time-consuming and error-prone
-- Lack of end-to-end onboarding process for OFTP2 partners
+- Lack of end-to-end onboarding process for OFTP2 partners (mainly for customers connecting their partners directly to their BIS 6
 - Seeburgers offering of using CMA on is expensive and timeconsuming upfront. Reason is the gap between BIS 6 (on-premise/iPaaS) and CMA App
 - Customers need out-of-the-box solutions with minimal configuration and consulting support
 
@@ -106,12 +106,15 @@ A touchpoint for BIS 6 customers to use Integrator Workspace for integration tas
 > - Building foundation for future protocol expansions
 
 #### 2.2.2 Pricing Model Options
-| Model | Description | Target Segment |
-|-------|-------------|----------------|
-| **Included** | Part of BIS 6 / iPaaS subscription | Existing customers |
-| Per-Partner Fee | Optional charge per partner | High-volume customers |
-| Premium Support | Enhanced SLA and support | Enterprise customers |
-| Customization | IWS customization services | IWS customers |
+
+Current price model: 
+- BASE:             550 EUR / month including provisioning and up to 20 onboardings / month
+- UNLIMITED:      2.500 EUR / month including provisioning and unlimited onboardings
+- API ADD-ON:       100 EUR / month usage of CMA API to manage partner onboardings per API
+
+New price model
+- BASE:             550 EUR / month including provisioning + up to 20 onboardings / month
+- ENTERPRISE:     3.000 EUR / month including provisioning + unlimited onboardings + CMA API + OpenAPI integration + Content Packages ("OFTP2 Onboarding for BIS 6", ...)
 
 #### 2.2.3 Cost Structure
 | Cost Category | Description | Estimated Amount |
