@@ -1,6 +1,6 @@
 # OFTP2 Onboarding Service
 
-OFTP2 partner self-service onboarding solution for BIS 6.7 using CMA and IWS. This service generates user friendly OFTP2 onboarding forms in CMA, connects them per IWS flow to a customer BIS 6.7 running on-premise or as iPaaS to create or updates OFTP2 master data.
+OFTP2 partner onboarding as self-service for BIS 6.7 based on CMA and IWS. This service generates user friendly OFTP2 onboarding forms in CMA, connects them per IWS flow to a customer BIS 6.7 running on-premise or as iPaaS to create or updates OFTP2 master data.
 
 ## Overview
 
