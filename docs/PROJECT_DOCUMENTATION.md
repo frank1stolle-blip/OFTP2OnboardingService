@@ -31,7 +31,7 @@ A touchpoint for BIS 6 customers to use Integrator Workspace for integration tas
 - Targeting customers with **BIS 6 iPaaS systems** or **on-premises systems**
 - Using IWS internally but invisible for the customers in this phase
 - accept some remaining manual steps to setup the service on seeburger and on customer side
-- The "CMA Pro" includes
+- The "CMA Pro" add on includes
   - CMA API (remote API of CMA, e.g. to add participants)
   - CMA API Integration (connecting CMA forms to back-end per API)
   - OFTP2 protocol support (IWS workflow acting as a API facade for BIS 6.7 OFTP2 master data, including OpenAPI definition file to auto create and connect CMA forns to the API facade)
@@ -43,13 +43,13 @@ A touchpoint for BIS 6 customers to use Integrator Workspace for integration tas
 - Enable self-service customization capabilities
 
 #### Phase 3 (Potential Future)
-- Add other communication protocols (e.g., **AS2**)
-- Onboarding to **Communication Gateway**
-- Broader protocol coverage
+- Add other communication protocols, e.g.
+  - AS2
+  - Onboarding to **Cloud Communication Gateway**
 
 ### 1.3 Key Stakeholders
 
-- **Product Owner**: TBD
+- **Product Owner**: Frank Stolle
 - **Technical Lead**: TBD
 - **Business Analyst**: TBD
 - **Operations Lead**: TBD
