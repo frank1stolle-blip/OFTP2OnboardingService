@@ -19,6 +19,8 @@
 Enable customers to use **CMA for OFTP2 partner onboardings out-of-the-box** with minimum configuration effort. The service acts as a **strategic bridge** between:
 - BIS 6 iPaaS and on-premise customers
 - The all-new Integrator Workspace (IWS)
+Enable customers to setup partner onboardings with **CMA out-of-the-box** with minimum configuration effort and  zero installation and maintenace effort.
+A touchpoint for BIS 6 customers to use Integrator Workspace for integration tasks, in this case between CMA and BIS 6.
 
 **For Seeburger**: Demonstrate how capable our products and teams are to set up such a service in a short time, showcasing our advantages over competitors.
 
@@ -27,10 +29,16 @@ Enable customers to use **CMA for OFTP2 partner onboardings out-of-the-box** wit
 #### Phase 1 (Current Focus)
 - Standard delivery for customers with **BIS 6 on-premise** or **iPaaS**
 - CMA as primary front-end and management tool
+- Targeting customers with **BIS 6 iPaaS systems** or **on-premises systems**
+- Using CMA as a cloud service as primary front-end and management tool for onboardings
+- IWS will internally used but invisible for the customers in this phase
+- some remaining manual steps to setup the service on seeburger and on customer side
 - OFTP2 protocol support
 
 #### Phase 2 (Future Extension)
 - Extend service to **IWS customers** who want to customize in Integrator Workspace
+- integrate AI for supporting in case of errors
+- fully automate the service setup after bokking it
 - Enable self-service customization capabilities
 
 #### Phase 3 (Potential Future)
@@ -75,6 +83,16 @@ Enable customers to use **CMA for OFTP2 partner onboardings out-of-the-box** wit
 - Automated partner configuration generation via BIS mapping
 - Template-based onboarding with dynamic parameter substitution
 - Centralized certificate and identity management
+- Lack of end-to-end onboarding process for OFTP2 partners (mainly for customers connecting their partners directly to their BIS 6
+- Seeburgers offering of using CMA on is expensive and timeconsuming upfront. Reason is the gap between BIS 6 (on-premise/iPaaS) and CMA App
+- Customers need out-of-the-box solutions with minimal configuration and consulting support
+
+#### 2.1.2 Solution Overview
+- **CMA Integration**: Use CMA as front-end and management tool for partner onboardings
+- Auto-generating OFTP2 onboarding form out of OpenAPI definition file
+- Creating a facade in front of the BIS transport API which faces an easy to use api to CMA or direct use by the customer and handles transformation of input data into into a valid BIS tranport at the other end. 
+- Customers can also use the facade API to connect to other platforms or tools easily
+- Using Integrator Workspace Flow to implement the facade lightweight and with no installation on the BIS 6 of the customer
 
 #### 2.1.3 Value Proposition
 
@@ -94,13 +112,12 @@ Enable customers to use **CMA for OFTP2 partner onboardings out-of-the-box** wit
 
 ### 2.2 Monetization Strategy
 
-#### 2.2.1 Strategic Value vs. Direct Revenue
+#### 2.2.2 Pricing Model Options
 
-> **Note**: This service is **not expected to generate significant direct revenue**. Its primary value is:
-> - Demonstrating capabilities to customers and internally
-> - Showcasing advantages over competitors
-> - Enabling customer success with minimal friction
-> - Building foundation for future protocol expansions
+Current price model: 
+- BASE:             550 EUR / month including provisioning and up to 20 onboardings / month
+- UNLIMITED:      2.500 EUR / month including provisioning and unlimited onboardings
+- API ADD-ON:       100 EUR / month usage of CMA API to manage partner onboardings per API
 
 #### 2.2.2 Pricing Model Options
 
@@ -108,6 +125,11 @@ Enable customers to use **CMA for OFTP2 partner onboardings out-of-the-box** wit
 - **Per-Partner Fee**: Optional charge per partner (high-volume customers)
 - **Premium Support**: Enhanced SLA and support (enterprise customers)
 - **Customization**: IWS customization services (IWS customers)
+New price model
+- BASE:             550 EUR / month including provisioning + up to 20 onboardings / month
+- ENTERPRISE:     3.000 EUR / month including provisioning + unlimited onboardings + CMA API + OpenAPI integration + Content Packages ("OFTP2 Onboarding for BIS 6", ...)
+
+Expected Revenue: 5.000 EUR x 12 month x 5 customer = 300.000 EUR
 
 #### 2.2.3 Cost Structure
 
