@@ -36,22 +36,18 @@ A touchpoint for BIS 6 customers to use Integrator Workspace for integration tas
 - Add onboarding to **Communication Gateway**
 
 ### 1.3 Key Stakeholders
-| Role | Name | Responsibility |
-|------|------|----------------|
-| Product Owner |Frank Stolle | |
-| Technical Lead |tbd | |
-| Business Analyst |tbd | |
-| Operations Lead |tbd | |
+- **Product Owner:** Frank Stolle
+- **Technical Lead:** tbd
+- **Business Analyst:** tbd
+- **Operations Lead:** tbd
 
 ### 1.4 Project Timeline
-| Phase | Start Date | End Date | Status |
-|-------|------------|----------|--------|
-| Discovery |2026-03 |2026-03 |not started |
-| Design |2026-04 |2026-04 |not started |
-| Development |2026-05 |2026-06 |not started |
-| Testing |2026-06 |2026-06 |not started |
-| Deployment |2026-07 |2026-07 |not strated |
-| Go-Live |2026-08 |2026-08 |not started |
+- **Discovery:** 2026-03 - not started
+- **Design:** 2026-04 - not started
+- **Development:** 2026-05 to 2026-06 - not started
+- **Testing:** 2026-06 - not started
+- **Deployment:** 2026-07 - not started
+- **Go-Live:** 2026-08 - not started
 
 ---
 
@@ -75,22 +71,18 @@ A touchpoint for BIS 6 customers to use Integrator Workspace for integration tas
 #### 2.1.3 Value Proposition
 
 **For Customers:**
-| Benefit | Description | Metric |
-|---------|-------------|--------|
-| Out-of-the-Box | Ready to use with minimal configuration | Setup time < 1 day |
-| Time Savings | Reduced onboarding time | Hours → Minutes |
-| Error Reduction | Automated validation | 90%+ reduction in errors |
-| Flexibility | CMA front-end OR API integration | Multiple integration options |
-| Scalability | Handle more partners | 10x throughput increase |
+- **Out-of-the-Box:** Ready to use with minimal configuration (setup time < 1 day)
+- **Time Savings:** Reduced onboarding time (hours to minutes)
+- **Error Reduction:** Automated validation (90%+ reduction in errors)
+- **Flexibility:** CMA front-end OR API integration (multiple integration options)
+- **Scalability:** Handle more partners (10x throughput increase)
 
 **For Seeburger:**
-| Benefit | Description |
-|---------|-------------|
-| Capability Demonstration | Show how quickly we can deliver valuable services |
-| Competitive Advantage | Demonstrate superiority over competitors |
-| Platform Bridge | Connect BIS 6 customers to IWS ecosystem |
-| Team Showcase | Highlight team capabilities and agility |
-| Future Expansion | Foundation for AS2, Communication Gateway, etc. |
+- **Capability Demonstration:** Show how quickly we can deliver valuable services
+- **Competitive Advantage:** Demonstrate superiority over competitors
+- **Platform Bridge:** Connect BIS 6 customers to IWS ecosystem
+- **Team Showcase:** Highlight team capabilities and agility
+- **Future Expansion:** Foundation for AS2, Communication Gateway, etc.
 
 ### 2.2 Monetization Strategy
 
@@ -103,20 +95,16 @@ A touchpoint for BIS 6 customers to use Integrator Workspace for integration tas
 > - Building foundation for future protocol expansions
 
 #### 2.2.2 Pricing Model Options
-| Model | Description | Target Segment |
-|-------|-------------|----------------|
-| **Included** | Part of BIS 6 / iPaaS subscription | Existing customers |
-| Per-Partner Fee | Optional charge per partner | High-volume customers |
-| Premium Support | Enhanced SLA and support | Enterprise customers |
-| Customization | IWS customization services | IWS customers |
+- **Included:** Part of BIS 6 / iPaaS subscription (existing customers)
+- **Per-Partner Fee:** Optional charge per partner (high-volume customers)
+- **Premium Support:** Enhanced SLA and support (enterprise customers)
+- **Customization:** IWS customization services (IWS customers)
 
 #### 2.2.3 Cost Structure
-| Cost Category | Description | Estimated Amount |
-|---------------|-------------|------------------|
-| Development | Initial build (BIS mapping, API) | Minimal (internal) |
-| Infrastructure | Hosted as part of existing platform | Marginal |
-| Maintenance | Ongoing support | Low |
-| Operations | Monitoring, updates | Low |
+- **Development:** Initial build (BIS mapping, API) - minimal (internal)
+- **Infrastructure:** Hosted as part of existing platform - marginal
+- **Maintenance:** Ongoing support - low
+- **Operations:** Monitoring, updates - low
 
 **Cost Optimization**: Leverage existing BIS 6/iPaaS infrastructure to minimize incremental costs.
 
@@ -149,16 +137,12 @@ A touchpoint for BIS 6 customers to use Integrator Workspace for integration tas
 #### 2.4.1 Target Market
 
 **Phase 1 - Primary Targets:**
-| Segment | Description | Platform |
-|---------|-------------|----------|
-| BIS 6 On-Premise | Existing on-premise customers | BIS 6 |
-| BIS 6 iPaaS | Cloud-hosted BIS customers | iPaaS |
+- **BIS 6 On-Premise:** Existing on-premise customers (BIS 6)
+- **BIS 6 iPaaS:** Cloud-hosted BIS customers (iPaaS)
 
 **Phase 2 - Extended Targets:**
-| Segment | Description | Platform |
-|---------|-------------|----------|
-| IWS Customers | Integrator Workspace users | IWS |
-| New Customers | Prospects evaluating Seeburger | All |
+- **IWS Customers:** Integrator Workspace users (IWS)
+- **New Customers:** Prospects evaluating Seeburger (all platforms)
 
 **Industry Verticals:**
 - Automotive industry (OEMs, Tier 1-2 suppliers)
@@ -167,11 +151,9 @@ A touchpoint for BIS 6 customers to use Integrator Workspace for integration tas
 - Retail supply chain partners
 
 #### 2.4.2 Competitive Landscape
-| Competitor | Strengths | Weaknesses | Our Differentiation |
-|------------|-----------|------------|---------------------|
-| Manual Setup | Flexible | Slow, error-prone | Automated, consistent |
-| Custom Scripts | Tailored | Hard to maintain | Supported, upgradable |
-| Other Vendors | Existing relationships | Less integrated | Native BIS integration |
+- **Manual Setup:** Flexible but slow and error-prone - we differentiate with automation and consistency
+- **Custom Scripts:** Tailored but hard to maintain - we differentiate with supported, upgradable solution
+- **Other Vendors:** Existing relationships but less integrated - we differentiate with native BIS integration
 
 #### 2.4.3 Competitive Advantages
 - **Speed**: Demonstrate rapid service delivery capability
@@ -183,53 +165,41 @@ A touchpoint for BIS 6 customers to use Integrator Workspace for integration tas
 ### 2.5 Risk Assessment
 
 #### 2.5.1 Business Risks
-| Risk | Likelihood | Impact | Mitigation |
-|------|------------|--------|------------|
-| Low adoption | Low | Medium | Include in standard offering, minimize barrier |
-| Scope creep | Medium | Medium | Phased approach, clear boundaries per phase |
-| Resource constraints | Medium | Low | Leverage existing BIS capabilities |
-| Competitor response | Low | Low | Speed to market, native integration |
+- **Low adoption** (low likelihood, medium impact): Include in standard offering, minimize barrier
+- **Scope creep** (medium likelihood, medium impact): Phased approach, clear boundaries per phase
+- **Resource constraints** (medium likelihood, low impact): Leverage existing BIS capabilities
+- **Competitor response** (low likelihood, low impact): Speed to market, native integration
 
 #### 2.5.2 Technical Risks
-| Risk | Likelihood | Impact | Mitigation |
-|------|------------|--------|------------|
-| BIS mapping limitations | Low | Medium | Proven technology, existing patterns |
-| Integration complexity | Medium | Medium | API-first design, standard interfaces |
-| Certificate handling | Low | High | Leverage existing KSM infrastructure |
+- **BIS mapping limitations** (low likelihood, medium impact): Proven technology, existing patterns
+- **Integration complexity** (medium likelihood, medium impact): API-first design, standard interfaces
+- **Certificate handling** (low likelihood, high impact): Leverage existing KSM infrastructure
 
 #### 2.5.3 Strategic Risks
-| Risk | Likelihood | Impact | Mitigation |
-|------|------------|--------|------------|
-| IWS migration delays | Medium | Low | Service works standalone for BIS 6 |
-| Protocol expansion complexity | Medium | Medium | Modular design for future protocols |
+- **IWS migration delays** (medium likelihood, low impact): Service works standalone for BIS 6
+- **Protocol expansion complexity** (medium likelihood, medium impact): Modular design for future protocols
 
 ### 2.6 Strategic Roadmap
 
 #### Phase 1: Foundation (Current)
 **Target**: BIS 6 On-Premise & iPaaS Customers
-| Deliverable | Status |
-|-------------|--------|
-| BIS Mapping (create/update modes) | ✅ Complete |
-| Type-based XPath predicates | ✅ Complete |
-| Project documentation | ✅ Complete |
-| CMA integration | 🔲 Planned |
-| API endpoints | 🔲 Planned |
+- ✅ BIS Mapping (create/update modes)
+- ✅ Type-based XPath predicates
+- ✅ Project documentation
+- 🔲 CMA integration
+- 🔲 API endpoints
 
 #### Phase 2: IWS Extension
 **Target**: Integrator Workspace Customers
-| Deliverable | Status |
-|-------------|--------|
-| IWS-compatible service packaging | 🔲 Planned |
-| Customization hooks | 🔲 Planned |
-| IWS marketplace listing | 🔲 Planned |
+- 🔲 IWS-compatible service packaging
+- 🔲 Customization hooks
+- 🔲 IWS marketplace listing
 
 #### Phase 3: Protocol Expansion
 **Target**: Broader Communication Needs
-| Deliverable | Status |
-|-------------|--------|
-| AS2 protocol support | 🔲 Future |
-| Communication Gateway onboarding | 🔲 Future |
-| Additional protocols (TBD) | 🔲 Future |
+- 🔲 AS2 protocol support
+- 🔲 Communication Gateway onboarding
+- 🔲 Additional protocols (TBD)
 
 ---
 
@@ -238,116 +208,109 @@ A touchpoint for BIS 6 customers to use Integrator Workspace for integration tas
 ### 3.1 Use Cases
 
 #### UC-01: Create New Partner
-| Attribute | Description |
-|-----------|-------------|
-| **Actor** | System Administrator |
-| **Precondition** | Partner data available (certificates, credentials) |
-| **Trigger** | New partner onboarding request |
-| **Main Flow** | 1. Input partner ID (participantid)<br>2. Upload partner certificates<br>3. Execute mapping with mode="create"<br>4. Generate 8 configuration records<br>5. Deploy to target system |
-| **Postcondition** | Partner fully configured in OFTP2 system |
-| **Alternative Flows** | - Certificate validation failure<br>- Duplicate partner detection |
+- **Actor:** System Administrator
+- **Precondition:** Partner data available (certificates, credentials)
+- **Trigger:** New partner onboarding request
+- **Main Flow:**
+  1. Input partner ID (participantid)
+  2. Upload partner certificates
+  3. Execute mapping with mode="create"
+  4. Generate 8 configuration records
+  5. Deploy to target system
+- **Postcondition:** Partner fully configured in OFTP2 system
+- **Alternative Flows:** Certificate validation failure, duplicate partner detection
 
 #### UC-02: Update Existing Partner
-| Attribute | Description |
-|-----------|-------------|
-| **Actor** | System Administrator |
-| **Precondition** | Partner already exists in system |
-| **Trigger** | Partner update request (certificate renewal, config change) |
-| **Main Flow** | 1. Input existing partner ID<br>2. Upload updated certificates (if applicable)<br>3. Execute mapping with mode="update"<br>4. Preserve existing UUIDs<br>5. Update configuration records<br>6. Deploy changes |
-| **Postcondition** | Partner configuration updated, IDs preserved |
-| **Includes** | Certificate renewal (auth, eerp, encrypt certificates) |
+- **Actor:** System Administrator
+- **Precondition:** Partner already exists in system
+- **Trigger:** Partner update request (certificate renewal, config change)
+- **Main Flow:**
+  1. Input existing partner ID
+  2. Upload updated certificates (if applicable)
+  3. Execute mapping with mode="update"
+  4. Preserve existing UUIDs
+  5. Update configuration records
+  6. Deploy changes
+- **Postcondition:** Partner configuration updated, IDs preserved
+- **Includes:** Certificate renewal (auth, eerp, encrypt certificates)
 
 #### UC-03: Partner Decommissioning
-| Attribute | Description |
-|-----------|-------------|
-| **Actor** | System Administrator |
-| **Precondition** | Partner to be removed |
-| **Trigger** | Partner termination request |
-| **Main Flow** | 1. Identify partner by ID<br>2. Generate decommission payload<br>3. Remove/disable configuration records<br>4. Archive partner data |
-| **Postcondition** | Partner removed from active configuration |
+- **Actor:** System Administrator
+- **Precondition:** Partner to be removed
+- **Trigger:** Partner termination request
+- **Main Flow:**
+  1. Identify partner by ID
+  2. Generate decommission payload
+  3. Remove/disable configuration records
+  4. Archive partner data
+- **Postcondition:** Partner removed from active configuration
 
 #### UC-04: Bulk Partner Import
-| Attribute | Description |
-|-----------|-------------|
-| **Actor** | System Administrator |
-| **Precondition** | Multiple partners to onboard |
-| **Trigger** | Bulk import file upload |
-| **Main Flow** | 1. Upload CSV/Excel with partner data<br>2. Validate all entries<br>3. Execute mapping for each partner<br>4. Generate consolidated report |
-| **Postcondition** | Multiple partners configured |
+- **Actor:** System Administrator
+- **Precondition:** Multiple partners to onboard
+- **Trigger:** Bulk import file upload
+- **Main Flow:**
+  1. Upload CSV/Excel with partner data
+  2. Validate all entries
+  3. Execute mapping for each partner
+  4. Generate consolidated report
+- **Postcondition:** Multiple partners configured
 
 ### 3.2 Functional Requirements
 
 #### FR-01: Partner Configuration Generation
-| ID | Requirement | Priority |
-|----|-------------|----------|
-| FR-01.1 | Generate OFTP v2 partner record | Must |
-| FR-01.2 | Generate SFID partner record | Must |
-| FR-01.3 | Generate 3 partner certificate records (auth, eerp, encrypt) | Must |
-| FR-01.4 | Reference fixed demoim private key | Must |
-| FR-01.5 | Reference fixed OFTP listener | Must |
-| FR-01.6 | Reference fixed SFID personality | Must |
+- **FR-01.1** (Must): Generate OFTP v2 partner record
+- **FR-01.2** (Must): Generate SFID partner record
+- **FR-01.3** (Must): Generate 3 partner certificate records (auth, eerp, encrypt)
+- **FR-01.4** (Must): Reference fixed demoim private key
+- **FR-01.5** (Must): Reference fixed OFTP listener
+- **FR-01.6** (Must): Reference fixed SFID personality
 
 #### FR-02: Dynamic Parameter Handling
-| ID | Requirement | Priority |
-|----|-------------|----------|
-| FR-02.1 | Accept participantid as input parameter | Must |
-| FR-02.2 | Support mode parameter (create/update) | Must |
-| FR-02.3 | Generate UUIDs in create mode | Must |
-| FR-02.4 | Preserve UUIDs in update mode | Must |
-| FR-02.5 | Build certificate aliases from participantid | Must |
+- **FR-02.1** (Must): Accept participantid as input parameter
+- **FR-02.2** (Must): Support mode parameter (create/update)
+- **FR-02.3** (Must): Generate UUIDs in create mode
+- **FR-02.4** (Must): Preserve UUIDs in update mode
+- **FR-02.5** (Must): Build certificate aliases from participantid
 
 #### FR-03: Certificate Management
-| ID | Requirement | Priority |
-|----|-------------|----------|
-| FR-03.1 | Store certificates in TRUSTED\TRUSTED_INSTANCES path | Must |
-| FR-03.2 | Generate certificate URLs dynamically | Must |
-| FR-03.3 | Validate certificate format on input | Should |
-| FR-03.4 | Check certificate expiration | Should |
+- **FR-03.1** (Must): Store certificates in TRUSTED\TRUSTED_INSTANCES path
+- **FR-03.2** (Must): Generate certificate URLs dynamically
+- **FR-03.3** (Should): Validate certificate format on input
+- **FR-03.4** (Should): Check certificate expiration
 
 #### FR-04: Validation & Error Handling
-| ID | Requirement | Priority |
-|----|-------------|----------|
-| FR-04.1 | Validate participantid format | Must |
-| FR-04.2 | Detect duplicate partner IDs | Should |
-| FR-04.3 | Validate XML output structure | Must |
-| FR-04.4 | Provide meaningful error messages | Must |
+- **FR-04.1** (Must): Validate participantid format
+- **FR-04.2** (Should): Detect duplicate partner IDs
+- **FR-04.3** (Must): Validate XML output structure
+- **FR-04.4** (Must): Provide meaningful error messages
 
 ### 3.3 Non-Functional Requirements
 
 #### NFR-01: Performance
-| ID | Requirement | Target |
-|----|-------------|--------|
-| NFR-01.1 | Single partner onboarding time | < 5 seconds |
-| NFR-01.2 | Bulk import (100 partners) | < 5 minutes |
-| NFR-01.3 | Mapping transformation time | < 1 second |
+- **NFR-01.1:** Single partner onboarding time < 5 seconds
+- **NFR-01.2:** Bulk import (100 partners) < 5 minutes
+- **NFR-01.3:** Mapping transformation time < 1 second
 
 #### NFR-02: Reliability
-| ID | Requirement | Target |
-|----|-------------|--------|
-| NFR-02.1 | Service availability | 99.5% |
-| NFR-02.2 | Data consistency | 100% |
-| NFR-02.3 | Transaction atomicity | Required |
+- **NFR-02.1:** Service availability 99.5%
+- **NFR-02.2:** Data consistency 100%
+- **NFR-02.3:** Transaction atomicity required
 
 #### NFR-03: Security
-| ID | Requirement | Target |
-|----|-------------|--------|
-| NFR-03.1 | Certificate encryption at rest | AES-256 |
-| NFR-03.2 | API authentication | OAuth 2.0 / API Key |
-| NFR-03.3 | Audit logging | All operations |
-| NFR-03.4 | Role-based access control | Required |
+- **NFR-03.1:** Certificate encryption at rest: AES-256
+- **NFR-03.2:** API authentication: OAuth 2.0 / API Key
+- **NFR-03.3:** Audit logging: all operations
+- **NFR-03.4:** Role-based access control required
 
 #### NFR-04: Scalability
-| ID | Requirement | Target |
-|----|-------------|--------|
-| NFR-04.1 | Concurrent onboarding requests | 10+ |
-| NFR-04.2 | Total partners supported | 10,000+ |
+- **NFR-04.1:** Concurrent onboarding requests: 10+
+- **NFR-04.2:** Total partners supported: 10,000+
 
 #### NFR-05: Maintainability
-| ID | Requirement | Target |
-|----|-------------|--------|
-| NFR-05.1 | Code documentation | Complete |
-| NFR-05.2 | Mapping template versioning | Git-based |
-| NFR-05.3 | Configuration externalization | Required |
+- **NFR-05.1:** Code documentation: complete
+- **NFR-05.2:** Mapping template versioning: Git-based
+- **NFR-05.3:** Configuration externalization required
 
 ---
 
@@ -356,61 +319,47 @@ A touchpoint for BIS 6 customers to use Integrator Workspace for integration tas
 ### 4.1 Input Requirements
 
 #### 4.1.1 Required Input Parameters
-| Parameter | Type | Description | Example |
-|-----------|------|-------------|---------|
-| participantid | String | Unique partner identifier | "PARTNER-12345" |
-| mode | Enum | Operation mode | "create" or "update" |
+- **participantid** (String): Unique partner identifier, e.g. "PARTNER-12345"
+- **mode** (Enum): Operation mode - "create" or "update"
 
 #### 4.1.2 Required Certificate Data
-| Certificate | Purpose | Format |
-|-------------|---------|--------|
-| Partner Auth | Authentication signature verification | X.509 PEM/DER |
-| Partner EERP | EERP signature verification | X.509 PEM/DER |
-| Partner Encrypt | File encryption | X.509 PEM/DER |
+- **Partner Auth:** Authentication signature verification (X.509 PEM/DER)
+- **Partner EERP:** EERP signature verification (X.509 PEM/DER)
+- **Partner Encrypt:** File encryption (X.509 PEM/DER)
 
 #### 4.1.3 Optional Parameters
-| Parameter | Type | Description | Default |
-|-----------|------|-------------|---------|
-| hostname | String | Partner OFTP server | From template |
-| port | Integer | OFTP port | 6619 |
-| use-tls | Boolean | TLS enabled | true |
+- **hostname** (String): Partner OFTP server (default: from template)
+- **port** (Integer): OFTP port (default: 6619)
+- **use-tls** (Boolean): TLS enabled (default: true)
 
 ### 4.2 Output Requirements
 
 #### 4.2.1 Generated Records
-| Record # | Type | Description |
-|----------|------|-------------|
-| 1 | oftp.oftp-partner | OFTP v2 partner configuration |
-| 2 | oftp.sfid-partner | SFID partner with encryption settings |
-| 3 | ksm-entry | Partner authentication certificate |
-| 4 | ksm-entry | Partner EERP certificate |
-| 5 | ksm-entry | Partner encryption certificate |
-| 6 | ksm-entry | Demoim private key (FIXED) |
-| 7 | oftp.oftp-listener | OFTP listener (FIXED) |
-| 8 | oftp.sfid-personality | SFID personality (FIXED) |
+1. **oftp.oftp-partner** - OFTP v2 partner configuration
+2. **oftp.sfid-partner** - SFID partner with encryption settings
+3. **ksm-entry** - Partner authentication certificate
+4. **ksm-entry** - Partner EERP certificate
+5. **ksm-entry** - Partner encryption certificate
+6. **ksm-entry** - Demoim private key (FIXED)
+7. **oftp.oftp-listener** - OFTP listener (FIXED)
+8. **oftp.sfid-personality** - SFID personality (FIXED)
 
 #### 4.2.2 Fixed References
-| Component | Fixed ID |
-|-----------|----------|
-| Demoim Private Key | a8e279ca-cfa9-11ec-8563-ea550a0b1393 |
-| OFTP Listener | 26fcb4c0-37b1-11f0-8e28-c61e7f000101 |
-| SFID Personality | 273f6310-37b1-11f0-8e28-c61e7f000101 |
+- **Demoim Private Key:** `a8e279ca-cfa9-11ec-8563-ea550a0b1393`
+- **OFTP Listener:** `26fcb4c0-37b1-11f0-8e28-c61e7f000101`
+- **SFID Personality:** `273f6310-37b1-11f0-8e28-c61e7f000101`
 
 ### 4.3 Integration Requirements
 
 #### 4.3.1 Upstream Systems
-| System | Integration Type | Data Flow |
-|--------|------------------|-----------|
-| Partner Portal | REST API | Partner data input |
-| Certificate Authority | File/API | Certificate import |
-| CRM | REST API | Partner metadata |
+- **Partner Portal:** REST API - partner data input
+- **Certificate Authority:** File/API - certificate import
+- **CRM:** REST API - partner metadata
 
 #### 4.3.2 Downstream Systems
-| System | Integration Type | Data Flow |
-|--------|------------------|-----------|
-| Seeburger BIS | REST API | Configuration deployment |
-| Key Store Manager | REST API | Certificate storage |
-| Monitoring | Events | Status updates |
+- **Seeburger BIS:** REST API - configuration deployment
+- **Key Store Manager:** REST API - certificate storage
+- **Monitoring:** Events - status updates
 
 ---
 
@@ -559,11 +508,9 @@ Template-OFTP2-Onboarding-Mapping.bis
 - Certificate-based authentication for OFTP connections
 
 #### 5.5.2 Authorization
-| Role | Permissions |
-|------|-------------|
-| Admin | Full CRUD on all partners |
-| Operator | Create, Read, Update |
-| Viewer | Read only |
+- **Admin:** Full CRUD on all partners
+- **Operator:** Create, Read, Update
+- **Viewer:** Read only
 
 #### 5.5.3 Data Protection
 - Certificates encrypted at rest
@@ -576,14 +523,12 @@ Template-OFTP2-Onboarding-Mapping.bis
 
 ### 6.1 Technology Stack
 
-| Layer | Technology | Version |
-|-------|------------|---------|
-| Mapping Engine | Seeburger BIS | |
-| API Layer | | |
-| Database | | |
-| Message Queue | | |
-| Container | Docker | |
-| Orchestration | Kubernetes | |
+- **Mapping Engine:** Seeburger BIS
+- **API Layer:** tbd
+- **Database:** tbd
+- **Message Queue:** tbd
+- **Container:** Docker
+- **Orchestration:** Kubernetes
 
 ### 6.2 Development Environment Setup
 
@@ -625,11 +570,9 @@ OFTP2OnboardingService/
 - Keep mappings modular and readable
 
 #### 6.4.2 Naming Conventions
-| Element | Convention | Example |
-|---------|------------|---------|
-| Variables | snake_case with $ prefix | $partner_auth_cert_id |
-| Certificate aliases | participantid-suffix | ABC123-partnerauth |
-| Record types | dot notation | oftp.oftp-partner |
+- **Variables:** snake_case with $ prefix, e.g. `$partner_auth_cert_id`
+- **Certificate aliases:** participantid-suffix, e.g. `ABC123-partnerauth`
+- **Record types:** dot notation, e.g. `oftp.oftp-partner`
 
 ### 6.5 Testing Strategy
 
@@ -644,11 +587,9 @@ OFTP2OnboardingService/
 - API contract testing
 
 #### 6.5.3 Test Data
-| Scenario | Test Data |
-|----------|-----------|
-| New partner | participantid="TEST-001", mode="create" |
-| Update partner | participantid="TEST-001", mode="update" |
-| Special characters | participantid="TEST_SPECIAL-001" |
+- **New partner:** participantid="TEST-001", mode="create"
+- **Update partner:** participantid="TEST-001", mode="update"
+- **Special characters:** participantid="TEST_SPECIAL-001"
 
 ### 6.6 CI/CD Pipeline
 
@@ -669,11 +610,9 @@ OFTP2OnboardingService/
 ### 7.1 Deployment
 
 #### 7.1.1 Deployment Environments
-| Environment | Purpose | URL |
-|-------------|---------|-----|
-| Development | Developer testing | |
-| Staging | Pre-production validation | |
-| Production | Live system | |
+- **Development:** Developer testing
+- **Staging:** Pre-production validation
+- **Production:** Live system
 
 #### 7.1.2 Deployment Checklist
 - [ ] Mapping files validated
@@ -686,30 +625,24 @@ OFTP2OnboardingService/
 ### 7.2 Monitoring
 
 #### 7.2.1 Key Metrics
-| Metric | Description | Alert Threshold |
-|--------|-------------|-----------------|
-| Onboarding Success Rate | % successful onboardings | < 95% |
-| Onboarding Latency | Time to complete | > 10 seconds |
-| Error Rate | Failed transformations | > 5% |
-| Certificate Expiry | Days until expiry | < 30 days |
+- **Onboarding Success Rate:** % successful onboardings (alert if < 95%)
+- **Onboarding Latency:** Time to complete (alert if > 10 seconds)
+- **Error Rate:** Failed transformations (alert if > 5%)
+- **Certificate Expiry:** Days until expiry (alert if < 30 days)
 
 #### 7.2.2 Logging
-| Log Level | Use Case |
-|-----------|----------|
-| ERROR | Failed operations, exceptions |
-| WARN | Certificate expiry warnings, retries |
-| INFO | Successful onboardings, API calls |
-| DEBUG | Detailed transformation steps |
+- **ERROR:** Failed operations, exceptions
+- **WARN:** Certificate expiry warnings, retries
+- **INFO:** Successful onboardings, API calls
+- **DEBUG:** Detailed transformation steps
 
 ### 7.3 Incident Response
 
 #### 7.3.1 Severity Levels
-| Severity | Description | Response Time |
-|----------|-------------|---------------|
-| P1 | Service down, no onboarding possible | 15 minutes |
-| P2 | Degraded performance, partial failures | 1 hour |
-| P3 | Minor issues, workaround available | 4 hours |
-| P4 | Enhancement request | Next sprint |
+- **P1:** Service down, no onboarding possible (response: 15 minutes)
+- **P2:** Degraded performance, partial failures (response: 1 hour)
+- **P3:** Minor issues, workaround available (response: 4 hours)
+- **P4:** Enhancement request (response: next sprint)
 
 #### 7.3.2 Escalation Path
 1. On-call engineer
@@ -720,12 +653,10 @@ OFTP2OnboardingService/
 ### 7.4 Backup & Recovery
 
 #### 7.4.1 Backup Strategy
-| Data | Frequency | Retention |
-|------|-----------|-----------|
-| Mapping files | Git (continuous) | Permanent |
-| Partner configurations | Daily | 30 days |
-| Certificates | On change | 1 year |
-| Audit logs | Real-time | 7 years |
+- **Mapping files:** Git (continuous) - permanent retention
+- **Partner configurations:** Daily - 30 days retention
+- **Certificates:** On change - 1 year retention
+- **Audit logs:** Real-time - 7 years retention
 
 #### 7.4.2 Recovery Procedures
 - **Mapping rollback:** Git revert to previous version
@@ -735,12 +666,10 @@ OFTP2OnboardingService/
 ### 7.5 Maintenance
 
 #### 7.5.1 Routine Maintenance
-| Task | Frequency | Owner |
-|------|-----------|-------|
-| Certificate expiry check | Weekly | Automated |
-| Log rotation | Daily | Automated |
-| Dependency updates | Monthly | Dev team |
-| Security patching | As needed | Ops team |
+- **Certificate expiry check:** Weekly (automated)
+- **Log rotation:** Daily (automated)
+- **Dependency updates:** Monthly (dev team)
+- **Security patching:** As needed (ops team)
 
 #### 7.5.2 Change Management
 - All changes via Git pull requests
@@ -754,40 +683,31 @@ OFTP2OnboardingService/
 
 ### 8.1 Glossary
 
-| Term | Definition |
-|------|------------|
-| OFTP2 | Odette File Transfer Protocol version 2 |
-| SFID | Secure File ID - signed/encrypted file identification |
-| EERP | End-to-End Response - delivery confirmation |
-| BIS | Business Integration Suite (Seeburger) |
-| KSM | Key Store Manager |
-| CMA | Configuration Management Application |
-| IWS | Integrator Workspace |
-| participantid | Unique identifier for an OFTP2 partner |
+- **OFTP2:** Odette File Transfer Protocol version 2
+- **SFID:** Secure File ID - signed/encrypted file identification
+- **EERP:** End-to-End Response - delivery confirmation
+- **BIS:** Business Integration Suite (Seeburger)
+- **KSM:** Key Store Manager
+- **CMA:** Configuration Management Application
+- **IWS:** Integrator Workspace
+- **participantid:** Unique identifier for an OFTP2 partner
 
 ### 8.2 Reference Documents
 
-| Document | Description | Location |
-|----------|-------------|----------|
-| BIS Mapping Language Tutorial | Mapping syntax reference | BIS_Mapping_Language_Tutorial.pdf |
-| OFTP2 RFC 5024 | Protocol specification | https://tools.ietf.org/html/rfc5024 |
-| Template-OFTP2.xml | Source XML template | Repository |
+- **BIS Mapping Language Tutorial:** Mapping syntax reference (`BIS_Mapping_Language_Tutorial.pdf`)
+- **OFTP2 RFC 5024:** Protocol specification
+- **Template-OFTP2.xml:** Source XML template (repository)
 
 ### 8.3 Contact Information
 
-| Role | Name | Email | Phone |
-|------|------|-------|-------|
-| Product Owner | | | |
-| Technical Lead | | | |
-| Operations | | | |
-| Support | | | |
+- **Product Owner:** tbd
+- **Technical Lead:** tbd
+- **Operations:** tbd
+- **Support:** tbd
 
 ### 8.4 Version History
 
-| Version | Date | Author | Changes |
-|---------|------|--------|---------|
-| 0.1 | 2026-02-06 | | Initial draft |
-| | | | |
+- **0.1** (2026-02-06): Initial draft
 
 ---
 
