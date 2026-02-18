@@ -18,9 +18,10 @@
 
 Enable BIS 6 customers (iPaaS and on premises) to do OFTP2 partner onboardings on their BIS 6.7 with CMA with minimum preparation effort.
 
-The main part of this service is a facade which connects on one side 
+A facade is introduced to connect CMA to BIS 6.7.
 
-Using an Integrator Work Space flow for integration between CMA and BIS 6.7. prevents any installtion on customer BIS systems and demonstrates how to use it for for integration tasks, in this case between CMA and BIS 6.
+This facade is implemented using an Integrator Workspace flow, which eliminates the need for any installation on the customer's BIS system. Additionally, this approach demonstrates how IWS can be effectively utilized for integration tasks, specifically between CMA and BIS 6.
+
 
 
 ### 1.2 Project Scope
