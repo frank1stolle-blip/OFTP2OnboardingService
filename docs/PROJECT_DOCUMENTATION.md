@@ -27,13 +27,14 @@ A touchpoint for BIS 6 customers to use Integrator Workspace for integration tas
 ### 1.2 Project Scope
 
 #### Phase 1 (Current Focus)
-- Standard delivery for customers with **BIS 6 on-premise** or **iPaaS**
-- CMA as primary front-end and management tool
+- Adding a "CMA Pro" add on service for "CMA" cloud service customers
 - Targeting customers with **BIS 6 iPaaS systems** or **on-premises systems**
-- Using CMA as a cloud service as primary front-end and management tool for onboardings
-- IWS will internally used but invisible for the customers in this phase
-- some remaining manual steps to setup the service on seeburger and on customer side
-- OFTP2 protocol support
+- Using IWS internally but invisible for the customers in this phase
+- accept some remaining manual steps to setup the service on seeburger and on customer side
+- The "CMA Pro" includes
+  - CMA API (remote API of CMA, e.g. to add participants)
+  - CMA API Integration (connecting CMA forms to back-end per API)
+  - OFTP2 protocol support (IWS workflow acting as a API facade for BIS 6.7 OFTP2 master data, including OpenAPI definition file to auto create and connect CMA forns to the API facade)
 
 #### Phase 2 (Future Extension)
 - Extend service to **IWS customers** who want to customize in Integrator Workspace
