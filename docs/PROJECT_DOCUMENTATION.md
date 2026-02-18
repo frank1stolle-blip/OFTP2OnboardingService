@@ -16,11 +16,12 @@
 
 ### 1.1 Project Vision
 
-Enable BIS 6 customers (iPaaS and on premises) to use **CMA for OFTP2 partner onboardings out-of-the-box** with minimum configuration effort.
+Enable BIS 6 customers (iPaaS and on premises) to do OFTP2 partner onboardings on their BIS 6.7 with CMA with minimum preparation effort.
 
-A touchpoint for BIS 6 customers to use Integrator Workspace for integration tasks, in this case between CMA and BIS 6.
+The main part of this service is a facade which connects on one side 
 
-**For Seeburger**: Demonstrate how capable our products and teams are to set up such a service in a short time, showcasing our advantages over competitors.
+Using an Integrator Work Space flow for integration between CMA and BIS 6.7. prevents any installtion on customer BIS systems and demonstrates how to use it for for integration tasks, in this case between CMA and BIS 6.
+
 
 ### 1.2 Project Scope
 
