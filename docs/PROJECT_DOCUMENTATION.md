@@ -14,7 +14,7 @@
 
 ## 1. Executive Summary
 
-### 1.1 Project Visionxy
+### 1.1 Project Vision
 
 Enable BIS 6 customers (iPaaS and on premises) to do OFTP2 partner onboardings on their BIS 6.7 with CMA with minimum preparation effort.
 
