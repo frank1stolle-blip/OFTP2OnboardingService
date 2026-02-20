@@ -20,7 +20,7 @@ Enable BIS 6 customers (iPaaS and on premises) to do OFTP2 partner onboardings o
 
 A facade is introduced to connect CMA to BIS 6.7. This architectural layer bridges the gap between CMA and the  BIS 6 API. It abstracts the complexity of the underlying BIS 6 Transport API, ensuring that CMA can interact with BIS 6 without requiring extensive development effort on behalf of the customer.
 
-This facade is implemented using an Integrator Workspace flow, which eliminates the need for any installation on the customer's BIS system. Additionally, this approach demonstrates how IWS can be effectively utilized for integration tasks, specifically between CMA and BIS 6.
+The mentioned facade is implemented using an Integrator Workspace flow, which eliminates the need for any installation on the customer's BIS system. Additionally, this approach demonstrates how IWS can be effectively utilized for integration tasks, in this case between CMA and BIS 6.
 
 ### 1.2 Project Scope
 
