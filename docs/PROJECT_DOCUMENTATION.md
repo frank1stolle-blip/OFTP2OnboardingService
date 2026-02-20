@@ -72,22 +72,17 @@ The mentioned facade is implemented using an Integrator Workspace flow, which el
 - Seeburger provides CMA to support partner onboarding; however, preparing onboarding packages with CMA still requires significant effort.
 - To increase customer adoption of CMA, an out-of-the-box solution is needed that minimizes configuration effort and enables a short time-to-value for productive use.
 
-#### 2.1.2 Solution Overview
-- **CMA Integration**: Use CMA as front-end and management tool for partner onboardings
-- **API-First Design**: Customers can also use the API to connect to other platforms or tools
-- Automated partner configuration generation via BIS mapping
-- Template-based onboarding with dynamic parameter substitution
-- Centralized certificate and identity management
-- Lack of end-to-end onboarding process for OFTP2 partners (mainly for customers connecting their partners directly to their BIS 6
-- Seeburgers offering of using CMA on is expensive and timeconsuming upfront. Reason is the gap between BIS 6 (on-premise/iPaaS) and CMA App
-- Customers need out-of-the-box solutions with minimal configuration and consulting support
+### 2.1.2 Solution Overview
 
-#### 2.1.2 Solution Overview
-- **CMA Integration**: Use CMA as front-end and management tool for partner onboardings
-- Auto-generating OFTP2 onboarding form out of OpenAPI definition file
-- Creating a facade in front of the BIS transport API which faces an easy to use api to CMA or direct use by the customer and handles transformation of input data into into a valid BIS tranport at the other end. 
-- Customers can also use the facade API to connect to other platforms or tools easily
-- Using Integrator Workspace Flow to implement the facade lightweight and with no installation on the BIS 6 of the customer
+* Use the **BIS 6.7 Transport API** to bundle the creation, update, and assignment of all components required for an OFTP2 partner setup into a single API call. The Transport API also provides **built-in rollback**, reverting all changes if an error occurs.
+* Encapsulate the business logic around the BIS Transport API in an **Integrator Workspace (IWS) flow**, which acts as a **facade API** callable by any client (in our case, CMA).
+* Use **CMA’s API integration** feature to **generate** a CMA form for OFTP2 and connect it to the IWS flow.
+* The IWS flow reads the relevant OFTP2 parameters from the CMA form and builds the payload for the BIS Transport API.
+* **For new partners**: the flow retrieves an OFTP2 transport template from the customer’s BIS (including all required references and assignments), maps the partner-specific OFTP2 parameters into it, and submits it to BIS via the Transport API.
+* **For existing partner updates**: if a transport for the partner already exists, the flow retrieves it from BIS, applies the updated OFTP2 parameters from CMA, and sends the updated transport back to BIS via the Transport API.
+* The **facade API** can also be reused to integrate with other platforms or tools.
+* Implement the facade using an **Integrator Workspace (IWS) flow** to keep it lightweight and avoid any additional installation on the customer’s BIS 6 system.
+
 
 #### 2.1.3 Value Proposition
 
