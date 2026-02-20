@@ -25,14 +25,12 @@ The mentioned facade is implemented using an Integrator Workspace flow, which el
 ### 1.2 Project Scope
 
 #### Phase 1 (Current Focus)
-- Adding a **CMA Pro** add on service for **CMA** cloud service customers
-- Targeting customers with **BIS 6 iPaaS systems** or **on-premises systems**
-- Using IWS internally but invisible for the customers in this phase
-- accept some remaining manual steps to setup the service on seeburger and on customer side
-- The **CMA Pro** add on includes
+- Adding a **CMA Pro** add on service for **CMA** cloud service customers- Targeting customers with **BIS 6 iPaaS systems** or **on-premises systems**
+- The **CMA Pro** add on shall include
   - CMA API (remote API of CMA, e.g. to add participants)
   - CMA API Integration (connecting CMA forms to back-end per API)
-  - OFTP2 protocol support (IWS workflow acting as a API facade for BIS 6.7 OFTP2 master data, including OpenAPI definition file to auto create and connect CMA forns to the API facade)
+  - OFTP2 protocol support (IWS workflow acting as a API facade for BIS 6.7 OFTP2 master data,- OpenAPI definition file to auto create and connect CMA forns to the API facade)
+- accept some remaining manual steps to setup the service on Seeburger and on customer side
 
 #### Phase 2 (Future Extension)
 - Extend service to **IWS customers** who want to customize in Integrator Workspace
@@ -70,11 +68,9 @@ The mentioned facade is implemented using an Integrator Workspace flow, which el
 ### 2.1 Business Case
 
 #### 2.1.1 Problem Statement
-- Manual partner onboarding is time-consuming and error-prone
-- Complex certificate management across multiple systems
-- Lack of standardized onboarding process for OFTP2 partners
-- Gap between BIS 6 (on-premise/iPaaS) and new Integrator Workspace
-- Customers need out-of-the-box solutions with minimal configuration
+- Manual partner onboardings for complex communication protocols like OFTP2 are time-consuming and error-prone
+- Seeburger offers CMA for partner onboardings, however there is still a lot of effort to prepare onboardings with cma
+- Customers need out-of-the-box solutions with minimal configuration which are a cost effective and time saving alternative to manual onboardings
 
 #### 2.1.2 Solution Overview
 - **CMA Integration**: Use CMA as front-end and management tool for partner onboardings
