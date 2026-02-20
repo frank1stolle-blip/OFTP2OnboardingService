@@ -25,12 +25,15 @@ The mentioned facade is implemented using an Integrator Workspace flow, which el
 ### 1.2 Project Scope
 
 #### Phase 1 (Current Focus)
-- Adding a **CMA Pro** add on service for **CMA** cloud service customers- Targeting customers with **BIS 6 iPaaS systems** or **on-premises systems**
-- The **CMA Pro** add on shall include
-  - Access to CMA API (remote API of CMA, e.g. to add participants)
-  - Access to CMA API Integration feature (connecting CMA forms to back-end per API)
-  - OFTP2 protocol support (IWS workflow acting as a API facade for BIS 6.7 OFTP2 master data,- OpenAPI definition file to auto create and connect CMA forns to the API facade)
-- accept some remaining manual steps to setup the service on Seeburger and on customer side
+
+In Phase 1, we introduce **CMA Pro** as an add-on for existing **CMA Cloud Service** customers. The initial target group are customers running **BIS 6**, either as an **iPaaS** deployment or **on-premises**.
+
+**CMA Pro** provides three key capabilities: **CMA API access** (remote API, e.g., to manage participants), access to the **CMA API Integration** feature (to connect CMA forms to backend systems via API), and **OFTP2 protocol support**.
+
+For OFTP2, the solution is based on an **IWS workflow** that acts as an **API facade** for **BIS 6.7 OFTP2 master data**, plus an **OpenAPI definition** that enables automated creation of CMA forms and connection to the facade API.
+
+Some manual setup steps will remain in Phase 1, both on the **Seeburger** side and on the **customer** side.
+
 
 #### Phase 2 (Future Extension)
 - Extend service to **IWS customers** who want to customize in Integrator Workspace
