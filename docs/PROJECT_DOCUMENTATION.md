@@ -68,9 +68,9 @@ The mentioned facade is implemented using an Integrator Workspace flow, which el
 ### 2.1 Business Case
 
 #### 2.1.1 Problem Statement
-- Manual partner onboardings for complex communication protocols like OFTP2 are time-consuming and error-prone
-- Seeburger offers CMA for partner onboardings, however there is still a lot of effort to prepare onboardings with cma
-- Customers need out-of-the-box solutions with minimal configuration which are a cost effective and time saving alternative to manual onboardings
+- Manual partner onboarding for complex communication protocols such as OFTP2 is time-consuming and prone to errors.
+- Seeburger provides CMA to support partner onboarding; however, preparing onboarding packages with CMA still requires significant effort.
+- To increase customer adoption of CMA, an out-of-the-box solution is needed that minimizes configuration effort and enables a short time-to-value for productive use.
 
 #### 2.1.2 Solution Overview
 - **CMA Integration**: Use CMA as front-end and management tool for partner onboardings
