@@ -16,24 +16,25 @@
 
 ### 1.1 Project Vision
 
-Enable BIS 6 customers (iPaaS and on premises) to do OFTP2 partner onboardings on their BIS 6.7 with CMA with minimum preparation effort.
+Provide a low-effort onboarding path for **OFTP2** partners for customers operating **BIS 6.7** (iPaaS and on-premises) using **CMA**. The primary objective is to minimize customer-side development and avoid any additional installation on the customer’s BIS runtime.
 
-A facade is introduced to connect CMA to BIS 6.7. This architectural layer bridges the gap between CMA and the  BIS 6 API. It abstracts the complexity of the underlying BIS 6 Transport API, ensuring that CMA can interact with BIS 6 without requiring extensive development effort on behalf of the customer.
+The solution introduces an API facade between **CMA** and **BIS 6.7**. The facade abstracts the underlying BIS 6.7 Transport API into a simplified, stable contract that CMA can consume.
 
-The mentioned facade is implemented using an Integrator Workspace flow, which eliminates the need for any installation on the customer's BIS system. Additionally, this approach demonstrates how IWS can be effectively utilized for integration tasks, in this case between CMA and BIS 6.
+The facade is implemented as an **Integrator Workspace (IWS)** flow. This keeps the integration logic outside the customer’s BIS runtime while providing an API surface for CMA-driven onboarding operations. The implementation also demonstrates a reusable IWS-based integration pattern for CMA ↔ BIS 6.7 scenarios.
 
 ### 1.2 Project Scope
 
 #### Phase 1 (Current Focus)
 
-In Phase 1, we introduce **CMA Pro** as an add-on for existing **CMA Cloud Service** customers. The initial target group are customers running **BIS 6**, either as an **iPaaS** deployment or **on-premises**.
+Phase 1 delivers **CMA Pro** as an add-on for existing **CMA Cloud Service** customers operating BIS 6.7 (iPaaS or on-premises).
 
-**CMA Pro** provides three key capabilities: **CMA API access** (remote API, e.g., to manage participants), access to the **CMA API Integration** feature (to connect CMA forms to backend systems via API), and **OFTP2 protocol support**.
+Scope includes:
+- **CMA API** access (remote API for participant administration)
+- **CMA API Integration** for connecting CMA forms to customer backend APIs
+- **OFTP2** support via an IWS-based facade API over BIS 6.7 OFTP2 master data
+- An **OpenAPI** definition to auto-generate CMA forms and bind them to the facade endpoints
 
-For OFTP2, the solution is based on an **IWS workflow** that acts as an **API facade** for **BIS 6.7 OFTP2 master data**, plus an **OpenAPI definition** that enables automated creation of CMA forms and connection to the facade API.
-
-Some manual setup steps will remain in Phase 1, both on the **Seeburger** side and on the **customer** side.
-
+With the Phase 1 deliverables in place, some manual preparation steps for OFTP2 onboarding will still remain on both Seeburger Consulting’s side and the customer’s side.
 
 #### Phase 2 (Future Extension)
 - Extend service to **IWS customers** who want to customize in Integrator Workspace
@@ -55,17 +56,24 @@ Some manual setup steps will remain in Phase 1, both on the **Seeburger** side a
 
 ### 1.4 Project Timeline
 
-| Phase | Start Date | End Date | Status |
-|-------|------------|----------|--------|
-| Discovery | | | |
-| Design | | | |
-| Development | | | |
-| Testing | | | |
-| Deployment | | | |
-| Go-Live | | | |
+```text
+Project Timeline (ISO Weeks) — 2026
 
----
+Months:      Mar          Apr           May         Jun       Jul
+Weeks:    10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29
+         |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 
+Discovery  [==========]
+Design                 [==========]
+Development                         [=====================]
+Testing                                               [======]
+Deployment                                                      [==]
+Go-Live                                                             [*]
+
+Legend:
+[====]  work period (weekly blocks)
+[*]     milestone / go-live week
+```
 ## 2. Business Overview
 
 ### 2.1 Business Case
