@@ -87,12 +87,85 @@ Legend:
 
 * Use the **BIS 6.7 Transport API** to bundle the creation, update, and assignment of all components required for an OFTP2 partner setup into a single API call. The Transport API also provides **built-in rollback**, reverting all changes if an error occurs.
 * Encapsulate the business logic around the BIS Transport API in an **Integrator Workspace (IWS) flow**, which acts as a **facade API** callable by any client (in our case, CMA).
-* Use **CMA’s API integration** feature to **generate** a CMA form for OFTP2 and connect it to the IWS flow.
+* Use **CMA's API integration** feature to **generate** a CMA form for OFTP2 and connect it to the IWS flow.
 * The IWS flow reads the relevant OFTP2 parameters from the CMA form and builds the payload for the BIS Transport API.
-* **For new partners**: the flow retrieves an OFTP2 transport template from the customer’s BIS (including all required references and assignments), maps the partner-specific OFTP2 parameters into it, and submits it to BIS via the Transport API.
+* **For new partners**: the flow retrieves an OFTP2 transport template from the customer's BIS (including all required references and assignments), maps the partner-specific OFTP2 parameters into it, and submits it to BIS via the Transport API.
 * **For existing partner updates**: if a transport for the partner already exists, the flow retrieves it from BIS, applies the updated OFTP2 parameters from CMA, and sends the updated transport back to BIS via the Transport API.
 * The **facade API** can also be reused to integrate with other platforms or tools.
-* Implement the facade using an **Integrator Workspace (IWS) flow** to keep it lightweight and avoid any additional installation on the customer’s BIS 6 system.
+* Implement the facade using an **Integrator Workspace (IWS) flow** to keep it lightweight and avoid any additional installation on the customer's BIS 6 system.
+
+```text
+Solution Architecture — OFTP2 Partner Onboarding
+
+  ┌──────────────────────────────────────────────────────────┐
+  │                        C M A                             │
+  │  (Configuration Management Application — Cloud Service)  │
+  │                                                          │
+  │   ┌──────────────────────────────────────────────────┐   │
+  │   │  Auto-generated OFTP2 Onboarding Form            │   │
+  │   │  (from OpenAPI definition of IWS Facade API)     │   │
+  │   └──────────────────────┬───────────────────────────┘   │
+  └──────────────────────────┼───────────────────────────────┘
+                             │
+                             │  REST API call
+                             │  (OFTP2 parameters)
+                             ▼
+  ┌──────────────────────────────────────────────────────────┐
+  │              IWS Flow  (Facade API)                      │
+  │                                                          │
+  │   1. Receive OFTP2 parameters from CMA (or any client)   │
+  │   2. Determine mode: NEW partner or UPDATE existing?     │
+  │                                                          │
+  │   ┌─────────────────────┐   ┌──────────────────────────┐ │
+  │   │    NEW PARTNER      │   │    UPDATE PARTNER        │ │
+  │   │                     │   │                          │ │
+  │   │ Retrieve OFTP2      │   │ Retrieve existing        │ │
+  │   │ transport template  │   │ transport from BIS       │ │
+  │   │ from BIS            │   │                          │ │
+  │   │         │           │   │         │                │ │
+  │   │         ▼           │   │         ▼                │ │
+  │   │ Map partner-specific│   │ Apply updated OFTP2      │ │
+  │   │ OFTP2 params into   │   │ params from CMA          │ │
+  │   │ template            │   │                          │ │
+  │   └─────────┬───────────┘   └────────────┬─────────────┘ │
+  │             │                            │               │
+  │             └─────────┬──────────────────┘               │
+  │                       │                                  │
+  │   3. Submit transport via BIS Transport API              │
+  │      (single call — built-in rollback on error)          │
+  └───────────────────────┼──────────────────────────────────┘
+                          │
+                          │  BIS 6.7 Transport API
+                          │  (atomic create/update + rollback)
+                          ▼
+  ┌──────────────────────────────────────────────────────────┐
+  │                Customer BIS 6.7                          │
+  │            (on-premise or iPaaS)                         │
+  │                                                          │
+  │   Created/Updated OFTP2 Configuration:                   │
+  │                                                          │
+  │     ┌─────────────────┐  ┌──────────────────────┐       │
+  │     │ oftp.oftp-partner│  │ oftp.sfid-partner    │       │
+  │     └─────────────────┘  └──────────────────────┘       │
+  │     ┌─────────────────┐  ┌──────────────────────┐       │
+  │     │ ksm-entry       │  │ ksm-entry            │       │
+  │     │ (auth cert)     │  │ (eerp cert)          │       │
+  │     └─────────────────┘  └──────────────────────┘       │
+  │     ┌─────────────────┐  ┌──────────────────────┐       │
+  │     │ ksm-entry       │  │ ksm-entry            │       │
+  │     │ (encrypt cert)  │  │ (demoim key) FIXED   │       │
+  │     └─────────────────┘  └──────────────────────┘       │
+  │     ┌─────────────────┐  ┌──────────────────────┐       │
+  │     │ oftp.oftp-       │  │ oftp.sfid-           │       │
+  │     │ listener  FIXED  │  │ personality  FIXED   │       │
+  │     └─────────────────┘  └──────────────────────┘       │
+  │                                                          │
+  └──────────────────────────────────────────────────────────┘
+
+Key:
+  FIXED = Shared system resource with hardcoded UUID (not partner-specific)
+  All other records are generated dynamically per partner
+```
 
 
 #### 2.1.3 Value Proposition
