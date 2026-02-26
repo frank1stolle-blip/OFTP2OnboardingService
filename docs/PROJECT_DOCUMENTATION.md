@@ -21,7 +21,16 @@ Provide a low-effort onboarding path for **OFTP2** partners for customers operat
 The solution introduces an API facade between **CMA** and **BIS 6.7**. The facade abstracts the underlying BIS 6.7 Transport API into a simplified, stable contract that CMA can consume.
 
 The facade is implemented as an **Integrator Workspace (IWS)** flow. This keeps the integration logic outside the customer’s BIS runtime while providing an API surface for CMA-driven onboarding operations. The implementation also demonstrates a reusable IWS-based integration pattern for CMA ↔ BIS 6.7 scenarios.
-
+```text
++---------------------------+        +---------------------------+        +---------------------------+
+|            CMA            |        |            IWS            |        |          BIS 6.7          |
+|  Forms / API / Workflow   |------->| Integrator Workspace Flow |------->|   Transport API + Runtime |
+|                           |        |  (API Facade + Orches.)   |        |   OFTP2 Master Data       |
+| Partner fills customer-   |        |  - validate / map         |        |   - partners/stations     |
+| prepared onboarding forms |        |  - bundle provisioning    |        |   - certs/policies        |
+| with OFTP2 master data    |        |    via Transport API      |        |   - routing/monitoring    |
++---------------------------+        +---------------------------+        +---------------------------+
+```
 ### 1.2 Project Scope
 
 #### Phase 1 (Current Focus)
@@ -88,7 +97,7 @@ Legend:
 * Use the **BIS 6.7 Transport API** to bundle the creation, update, and assignment of all components required for an OFTP2 partner setup into a single API call. The Transport API also provides **built-in rollback**, reverting all changes if an error occurs.
 * Encapsulate the business logic around the BIS Transport API in an **Integrator Workspace (IWS) flow**, which acts as a **facade API** callable by any client (in our case, CMA).
 * Use **CMA’s API integration** feature to **generate** a CMA form for OFTP2 and connect it to the IWS flow.
-* The IWS flow reads the relevant OFTP2 parameters from the CMA form and builds the payload for the BIS Transport API.
+* The IWS flow receives the relevant OFTP2 parameters from the CMA form and builds the payload for the BIS Transport API.
 * **For new partners**: the flow retrieves an OFTP2 transport template from the customer’s BIS (including all required references and assignments), maps the partner-specific OFTP2 parameters into it, and submits it to BIS via the Transport API.
 * **For existing partner updates**: if a transport for the partner already exists, the flow retrieves it from BIS, applies the updated OFTP2 parameters from CMA, and sends the updated transport back to BIS via the Transport API.
 * The **facade API** can also be reused to integrate with other platforms or tools.
