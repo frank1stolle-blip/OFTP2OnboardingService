@@ -103,6 +103,18 @@ Legend:
 * The **facade API** can also be reused to integrate with other platforms or tools.
 * Implement the facade using an **Integrator Workspace (IWS) flow** to keep it lightweight and avoid any additional installation on the customer’s BIS 6 system.
 
+```mermaid
+flowchart LR
+  CMA["CMA<br/>API Integration<br/>• generates OFTP2 form<br/>• partner enters OFTP2 params"]
+  IWS["IWS Flow (Facade)<br/>• validates/maps/enriches<br/>• builds Transport API payload<br/>• reusable facade"]
+  BIS["BIS 6.7 Transport API<br/>• bundled create/update/assign<br/>• rollback on error"]
+
+  CMA -->|facade API call| IWS
+  IWS -->|Transport API call| BIS
+
+  IWS -.->|NEW: get template → map params → submit| BIS
+  IWS -.->|UPDATE: get transport → apply params → submit| BIS
+  ```
 
 #### 2.1.3 Value Proposition
 
