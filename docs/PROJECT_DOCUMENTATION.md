@@ -64,25 +64,28 @@ With the Phase 1 deliverables in place, some manual preparation steps for OFTP2 
 - **Operations Lead**: TBD
 
 ### 1.4 Project Timeline
+```mermaid
 
-```text
-Project Timeline (ISO Weeks) — 2026
-
-Months:      Mar          Apr           May         Jun       Jul
-Weeks:    10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29
-         |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-
-Discovery  [==========]
-Design                 [==========]
-Development                         [=====================]
-Testing                                               [======]
-Deployment                                                      [==]
-Go-Live                                                             [*]
-
-Legend:
-[====]  work period (weekly blocks)
-[*]     milestone / go-live week
+gantt
+  title Project Timeline — 2026
+  excludes    weekends
+  dateFormat  YYYY-MM-DD
+  axisFormat  %b  (cw%W)
+  tickInterval 1month
+  weekDay monday
+todayMarker off
+  section Phases
+  
+  Kick-of       :milestone, s1, 2026-03-01, 0d
+  Discovery   :d1, 2026-03-09, 15d
+  Design      :d2, 2026-03-30, 15d
+  Development :d3, 2026-04-20, 35d
+  Testing     :d4, 2026-06-08, 10d
+  Deployment  :d5, 2026-06-22, 15d
+  Buffer      :active, d6, 2026-07-13, 30d
+  Go-Live     :milestone, m1, 2026-08-25,0d
 ```
+
 ## 2. Business Overview
 
 ### 2.1 Business Case
@@ -104,16 +107,36 @@ Legend:
 * Implement the facade using an **Integrator Workspace (IWS) flow** to keep it lightweight and avoid any additional installation on the customer’s BIS 6 system.
 
 ```mermaid
-flowchart LR
-  CMA["CMA<br/>API Integration<br/>• generates OFTP2 form<br/>• partner enters OFTP2 params"]
-  IWS["IWS Flow (Facade)<br/>• validates/maps/enriches<br/>• builds Transport API payload<br/>• reusable facade"]
-  BIS["BIS 6.7 Transport API<br/>• bundled create/update/assign<br/>• rollback on error"]
+flowchart 
+  CMA["CMA: partner fills OFTP2 form"]
 
-  CMA -->|facade API call| IWS
-  IWS -->|Transport API call| BIS
+  subgraph IWS["IWS Flow (Facade)"]
+    V["Get last Transport from Partner"]
+    D{"Partner exists?"}
 
-  IWS -.->|NEW: get template → map params → submit| BIS
-  IWS -.->|UPDATE: get transport → apply params → submit| BIS
+    subgraph no["Create New Partner"]
+      N1["GET Transport Template from BIS"]
+      N2["Map OFTP2 params from CMA into template"]
+      N3["POST updated Template into BIS Transport API "]
+      N1 --> N2 --> N3
+    end
+
+    subgraph yes["Update Existing Partner"]
+      U1["GET last Transport of Partner from BIS"]
+      U2["UPDATE: apply updated params"]
+      U3["UPDATE: POST bundled Transport API call"]
+      U1 --> U2 --> U3
+    end
+
+    V --> D
+    D -->|No -> Create| N1
+    D -->|Yes -> Update| U1
+  end
+ 
+
+  CMA --> V
+
+  
   ```
 
 #### 2.1.3 Value Proposition
