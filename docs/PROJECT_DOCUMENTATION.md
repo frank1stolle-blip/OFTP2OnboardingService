@@ -21,16 +21,16 @@ Provide a low-effort onboarding path for **OFTP2** partners for customers operat
 The solution introduces an API facade between **CMA** and **BIS 6.7**. The facade abstracts the underlying BIS 6.7 Transport API into a simplified, stable contract that CMA can consume.
 
 The facade is implemented as an **Integrator Workspace (IWS)** flow. This keeps the integration logic outside the customer’s BIS runtime while providing an API surface for CMA-driven onboarding operations. The implementation also demonstrates a reusable IWS-based integration pattern for CMA ↔ BIS 6.7 scenarios.
-```text
-+---------------------------+        +---------------------------+        +---------------------------+
-|            CMA            |        |            IWS            |        |          BIS 6.7          |
-|  Forms / API / Workflow   |------->| Integrator Workspace Flow |------->|   Transport API + Runtime |
-|                           |        |  (API Facade + Orches.)   |        |   OFTP2 Master Data       |
-| Partner fills customer-   |        |  - validate / map         |        |   - partners/stations     |
-| prepared onboarding forms |        |  - bundle provisioning    |        |   - certs/policies        |
-| with OFTP2 master data    |        |    via Transport API      |        |   - routing/monitoring    |
-+---------------------------+        +---------------------------+        +---------------------------+
+```mermaid
+flowchart LR
+CMA["`**CMA (Customer Portal)** 
+Partner fills standard OFTP2 onboarding form with his OFTP2 master data`"]-->
+IWS["`**IWS**
+Integrator Workspace Flow acts as API facade, maps OFTP2 master data into BIS Transport API format calls BIS Transport API `"]-->
+BIS["`**BIS 6.7 (Customer)**
+validates Transport API calls, creates and updates OFTP2 master data accordingly`"]
 ```
+
 ### 1.2 Project Scope
 
 #### Phase 1 (Current Focus)
