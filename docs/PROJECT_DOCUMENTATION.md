@@ -139,38 +139,33 @@ flowchart
   
   ```
 
-#### 2.1.3 Value Proposition
+
+### 2.1.3 Value Proposition
 
 **For Customers:**
-- **Out-of-the-Box**: Ready to use with minimal configuration (setup time < 1 day)
-- **Time Savings**: Reduced onboarding time from hours to minutes
-- **Error Reduction**: Automated validation with 90%+ reduction in errors
-- **Flexibility**: CMA front-end OR API integration
-- **Scalability**: Handle 10x more partners with same resources
+* **Cost Reduction:** A budget-friendly subscription model replaces high upfront development costs.
+* **Out-of-the-Box:** Replaces manual onboarding preparation (via CMA) with a ready-to-use, standardized service.
+* **Accelerated Time-to-Value:** Drastically reduces time-to-value from months to merely days.
+* **Error Reduction:** A standardized cloud service minimizes the errors often associated with on-premise installations and highly customized solutions.
+* **Convenience:** Requires zero software installation and handles all updates automatically.
 
 **For Seeburger:**
-- **Capability Demonstration**: Show how quickly we can deliver valuable services
-- **Competitive Advantage**: Demonstrate superiority over competitors
-- **Platform Bridge**: Connect BIS 6 customers to IWS ecosystem
-- **Team Showcase**: Highlight team capabilities and agility
-- **Future Expansion**: Foundation for AS2, Communication Gateway, etc.
+* **Transformation:** Drives our internal learning and transition from traditional product offerings to service-based models.
+* **Competitive Advantage:** Demonstrates market superiority by offering seamless, superior onboarding services.
+* **Platform Bridge:** Serves as the crucial first point of contact for BIS 6 customers entering the IWS ecosystem.
+* **Customer Insights:** Provides deeper, actionable visibility into exactly how customers utilize our products and services.
+* **Future Opportunities:** Establishes a scalable foundation for future services, such as AS2, Communication Gateway, and more.
 
 ### 2.2 Monetization Strategy
 
 #### 2.2.2 Pricing Model Options
 
-Current price model: 
+Current Pricing Model: 
 - BASE:             550 EUR / month including provisioning and up to 20 onboardings / month
 - UNLIMITED:      2.500 EUR / month including provisioning and unlimited onboardings
 - API ADD-ON:       100 EUR / month usage of CMA API to manage partner onboardings per API
 
-#### 2.2.2 Pricing Model Options
-
-- **Included**: Part of BIS 6 / iPaaS subscription (existing customers)
-- **Per-Partner Fee**: Optional charge per partner (high-volume customers)
-- **Premium Support**: Enhanced SLA and support (enterprise customers)
-- **Customization**: IWS customization services (IWS customers)
-New price model
+New Pricing Model
 - BASE:             550 EUR / month including provisioning + up to 20 onboardings / month
 - ENTERPRISE:     3.000 EUR / month including provisioning + unlimited onboardings + CMA API + OpenAPI integration + Content Packages ("OFTP2 Onboarding for BIS 6", ...)
 
