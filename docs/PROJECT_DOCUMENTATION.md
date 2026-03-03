@@ -12,11 +12,26 @@
 
 ---
 
-## 1. Executive Summary
 
-### 1.1 Project Vision
+## Project Vision
 
-Provide a low-effort onboarding path for **OFTP2** partners for customers operating **BIS 6.7** (iPaaS and on-premises) using **CMA**. The primary objective is to minimize customer-side development and avoid any additional installation on the customer’s BIS runtime.
+Manual partner onboarding for complex communication protocols such as OFTP2 is time-consuming and prone to errors. Seeburger provides **CMA** to support partner onboarding; however, preparing onboarding packages with CMA still requires significant effort. To increase customer adoption of CMA, an out-of-the-box solution is needed that minimizes configuration effort and enables a short time-to-value for productive use.
+
+This project aims to provide a low-effort onboarding path for **OFTP2** partners for customers operating **BIS 6.7** (iPaaS and on-premises) using **CMA**. The primary objective is to minimize customer-side development and avoid any additional installation on the customer’s BIS runtime.
+
+
+
+
+## Key Stakeholders
+
+- **Product Owner**: Frank Stolle
+- **Technical Lead**: TBD
+- **Business Analyst**: TBD
+- **Operations Lead**: TBD
+
+## Solution
+
+### Overview
 
 The solution introduces an API facade between **CMA** and **BIS 6.7**. The facade abstracts the underlying BIS 6.7 Transport API into a simplified, stable contract that CMA can consume.
 
@@ -31,71 +46,7 @@ BIS["`**BIS 6.7 (Customer)**
 validates Transport API calls, creates and updates OFTP2 master data accordingly`"]
 ```
 
-### 1.2 Project Scope
-
-#### Phase 1 (Current Focus)
-
-Phase 1 delivers **CMA Pro** as an add-on for existing **CMA Cloud Service** customers operating BIS 6.7 (iPaaS or on-premises).
-
-Scope includes:
-- **CMA API** access (remote API for participant administration)
-- **CMA API Integration** for connecting CMA forms to customer backend APIs
-- **OFTP2** support via an IWS-based facade API over BIS 6.7 OFTP2 master data
-- An **OpenAPI** definition to auto-generate CMA forms and bind them to the facade endpoints
-
-With the Phase 1 deliverables in place, some manual preparation steps for OFTP2 onboarding will still remain on both Seeburger Consulting’s side and the customer’s side.
-
-#### Phase 2 (Future Extension)
-- Extend service to **IWS customers** who want to customize in Integrator Workspace
-- integrate AI for supporting in case of errors
-- fully automate the service setup after bokking it
-- Enable self-service customization capabilities
-
-#### Phase 3 (Potential Future)
-- Add other communication protocols, e.g.
-  - AS2
-  - Onboarding to **Cloud Communication Gateway**
-
-### 1.3 Key Stakeholders
-
-- **Product Owner**: Frank Stolle
-- **Technical Lead**: TBD
-- **Business Analyst**: TBD
-- **Operations Lead**: TBD
-
-### 1.4 Project Timeline
-```mermaid
-
-gantt
-  title Project Timeline — 2026
-  excludes    weekends
-  dateFormat  YYYY-MM-DD
-  axisFormat  %b  (cw%W)
-  tickInterval 1month
-  weekDay monday
-todayMarker off
-  section Phases
-  
-  Kick-of       :milestone, s1, 2026-03-01, 0d
-  Discovery   :d1, 2026-03-09, 15d
-  Design      :d2, 2026-03-30, 15d
-  Development :d3, 2026-04-20, 35d
-  Testing     :d4, 2026-06-08, 10d
-  Deployment  :d5, 2026-06-22, 15d
-  Buffer      :active, d6, 2026-07-13, 30d
-  Go-Live     :milestone, m1, 2026-08-25,0d
-```
-
-## 2. Business Overview
-
-### 2.1 Business Case
-
-#### 2.1.1 Problem Statement
-- Manual partner onboarding for complex communication protocols such as OFTP2 is time-consuming and prone to errors.
-- Seeburger provides CMA to support partner onboarding; however, preparing onboarding packages with CMA still requires significant effort.
-- To increase customer adoption of CMA, an out-of-the-box solution is needed that minimizes configuration effort and enables a short time-to-value for productive use.
-
-### 2.1.2 Solution Overview
+### Breakdown
 
 * Use the **BIS 6.7 Transport API** to bundle the creation, update, and assignment of all components required for an OFTP2 partner setup into a single API call. The Transport API also provides **built-in rollback**, reverting all changes if an error occurs.
 * Encapsulate the business logic around the BIS Transport API in an **Integrator Workspace (IWS) flow**, which acts as a **facade API** callable by any client (in our case, CMA).
@@ -138,9 +89,31 @@ flowchart
 
   
   ```
+## Business Plan
+### 1.2 Market Analysis
+
+**Phase 1 - Primary Targets:**
+- **BIS 6 On-Premise**: Existing on-premise customers (BIS 6)
+- **BIS 6 iPaaS**: Cloud-hosted BIS customers (iPaaS)
+
+**Industry Verticals:**
+- Automotive industry (OEMs, Tier 1-2 suppliers)
+- Manufacturing companies
+- Aerospace
+- Logistics providers
+- Retail supply chain partners
 
 
-### 2.1.3 Value Proposition
+
+
+## Business Overview
+
+### Problem Statement
+- Manual partner onboarding for complex communication protocols such as OFTP2 is time-consuming and prone to errors.
+- Seeburger provides CMA to support partner onboarding; however, preparing onboarding packages with CMA still requires significant effort.
+- To increase customer adoption of CMA, an out-of-the-box solution is needed that minimizes configuration effort and enables a short time-to-value for productive use.
+
+### Value Proposition
 
 **For Customers:**
 * **Cost Reduction:** A budget-friendly subscription model replaces high upfront development costs.
@@ -156,9 +129,7 @@ flowchart
 * **Customer Insights:** Provides deeper, actionable visibility into exactly how customers utilize our products and services.
 * **Future Opportunities:** Establishes a scalable foundation for future services, such as AS2, Communication Gateway, and more.
 
-### 2.2 Monetization Strategy
-
-#### 2.2.2 Pricing Model Options
+### Pricing Model Options
 
 Current Pricing Model: 
 - BASE:             550 EUR / month including provisioning and up to 20 onboardings / month
@@ -169,99 +140,68 @@ New Pricing Model
 - BASE:             550 EUR / month including provisioning + up to 20 onboardings / month
 - ENTERPRISE:     3.000 EUR / month including provisioning + unlimited onboardings + CMA API + OpenAPI integration + Content Packages ("OFTP2 Onboarding for BIS 6", ...)
 
-Expected Revenue: 3.000 EUR x 12 month x 5 customer = 180.000 EUR
+**Expected Revenue p.a.**: 3.000 EUR x 12 month x 5 customer = **180.000 EUR**
 
-#### 2.2.3 Cost Structure
+### Cost Structure
 
-- **Development**: Initial build (BIS mapping, API) — Minimal (internal)
-- **Infrastructure**: Hosted as part of existing platform — Marginal
-- **Maintenance**: Ongoing support — Low
-- **Operations**: Monitoring, updates — Low
+- **Development Project Effort**: 
+  -  90 days development
+  -  30 days cloud devops 
+  -  15 days management  
+  - **Total effort: 135 days**
+- **Infrastructure**: Hosted as part of existing platform — **Marginal**
+- **Maintenance**: Ongoing support — **Low**
+- **Operations**: Monitoring, updates — **Low**
 
-**Cost Optimization**: Leverage existing BIS 6/iPaaS infrastructure to minimize incremental costs.
 
-### 2.3 Integration Options
+### Project
+#### Timeline
+```mermaid
 
-#### 2.3.1 Primary: CMA Front-End
-- **Out-of-the-box** partner onboarding experience
-- Visual management interface for partner lifecycle
-- Certificate upload and validation
-- Status monitoring and audit trails
-- Minimal configuration required
-
-#### 2.3.2 Alternative: API Integration
-- RESTful API for programmatic access
-- Enable customers to connect to:
-  - Their own portals and tools
-  - Third-party platforms
-  - Custom automation workflows
-- Full feature parity with CMA
-- OpenAPI specification available
-
-#### 2.3.3 Future: IWS Customization
-- Customers using Integrator Workspace can customize the service
-- Extend with custom validation rules
-- Add organization-specific workflows
-- Integrate with internal systems
-
-### 2.4 Market Analysis
-
-#### 2.4.1 Target Market
-
-**Phase 1 - Primary Targets:**
-- **BIS 6 On-Premise**: Existing on-premise customers (BIS 6)
-- **BIS 6 iPaaS**: Cloud-hosted BIS customers (iPaaS)
-
-**Phase 2 - Extended Targets:**
-- **IWS Customers**: Integrator Workspace users
-- **New Customers**: Prospects evaluating Seeburger
-
-**Industry Verticals:**
-- Automotive industry (OEMs, Tier 1-2 suppliers)
-- Manufacturing companies
-- Logistics providers
-- Retail supply chain partners
-
-#### 2.4.2 Competitive Landscape
-
-| Competitor | Strengths | Weaknesses | Our Differentiation |
-|------------|-----------|------------|---------------------|
-| Manual Setup | Flexible | Slow, error-prone | Automated, consistent |
-| Custom Scripts | Tailored | Hard to maintain | Supported, upgradable |
-| Other Vendors | Existing relationships | Less integrated | Native BIS integration |
-
-#### 2.4.3 Competitive Advantages
-- **Speed**: Demonstrate rapid service delivery capability
-- **Integration**: Native integration with BIS ecosystem
-- **Flexibility**: CMA UI + API + IWS customization options
-- **Expertise**: Deep OFTP2 protocol knowledge
-- **Foundation**: Expandable to AS2, Communication Gateway
-
+gantt
+  title Project Timeline — 2026
+  excludes    weekends
+  dateFormat  YYYY-MM-DD
+  axisFormat  %b  (cw%W)
+  tickInterval 1month
+  weekDay monday
+todayMarker off
+  section Phases
+  
+  Kick-of       :milestone, s1, 2026-03-01, 0d
+  Discovery   :d1, 2026-03-09, 15d
+  Design      :d2, 2026-03-30, 15d
+  Development :d3, 2026-04-20, 35d
+  Testing     :d4, 2026-06-08, 10d
+  Deployment  :d5, 2026-06-22, 15d
+  Cloud DevOps      :d6, 2026-07-13, 30d
+  Go-Live     :milestone, m1, 2026-08-25,0d
+```
 ### 2.5 Risk Assessment
 
 #### 2.5.1 Business Risks
 
 | Risk | Likelihood | Impact | Mitigation |
 |------|------------|--------|------------|
-| Low adoption | Low | Medium | Include in standard offering, minimize barrier |
+| Low adoption | High | Medium | Include in standard offering, minimize barrier |
 | Scope creep | Medium | Medium | Phased approach, clear boundaries per phase |
 | Resource constraints | Medium | Low | Leverage existing BIS capabilities |
-| Competitor response | Low | Low | Speed to market, native integration |
+| Competitor response | Low | Low | Native integration |
 
 #### 2.5.2 Technical Risks
 
 | Risk | Likelihood | Impact | Mitigation |
 |------|------------|--------|------------|
 | BIS mapping limitations | Low | Medium | Proven technology, existing patterns |
-| Integration complexity | Medium | Medium | API-first design, standard interfaces |
-| Certificate handling | Low | High | Leverage existing KSM infrastructure |
+| Integration complexity | Medium | High | Investigated |
+| IWS limitations | Medium | Medium | Addressed and not blocking |
 
 #### 2.5.3 Strategic Risks
 
 | Risk | Likelihood | Impact | Mitigation |
 |------|------------|--------|------------|
-| IWS migration delays | Medium | Low | Service works standalone for BIS 6 |
-| Protocol expansion complexity | Medium | Medium | Modular design for future protocols |
+| BIS 6.7 only | Medium | Low |  |
+| Conflicts with  | Medium | Medium | Modular design for future protocols |
 
 ### 2.6 Strategic Roadmap
 
