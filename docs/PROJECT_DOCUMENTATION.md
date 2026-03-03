@@ -89,29 +89,7 @@ flowchart
 
   
   ```
-## Business Plan
-### 1.2 Market Analysis
-
-**Phase 1 - Primary Targets:**
-- **BIS 6 On-Premise**: Existing on-premise customers (BIS 6)
-- **BIS 6 iPaaS**: Cloud-hosted BIS customers (iPaaS)
-
-**Industry Verticals:**
-- Automotive industry (OEMs, Tier 1-2 suppliers)
-- Manufacturing companies
-- Aerospace
-- Logistics providers
-- Retail supply chain partners
-
-
-
-
-## Business Overview
-
-### Problem Statement
-- Manual partner onboarding for complex communication protocols such as OFTP2 is time-consuming and prone to errors.
-- Seeburger provides CMA to support partner onboarding; however, preparing onboarding packages with CMA still requires significant effort.
-- To increase customer adoption of CMA, an out-of-the-box solution is needed that minimizes configuration effort and enables a short time-to-value for productive use.
+## Business
 
 ### Value Proposition
 
@@ -129,7 +107,32 @@ flowchart
 * **Customer Insights:** Provides deeper, actionable visibility into exactly how customers utilize our products and services.
 * **Future Opportunities:** Establishes a scalable foundation for future services, such as AS2, Communication Gateway, and more.
 
-### Pricing Model Options
+### Target Customers
+
+- customers with more than 100 partners
+- customers who are not using communication per B2B Routing Service
+
+**Primary**
+- **BIS 6.7 iPaaS**: Cloud-hosted BIS customers (iPaaS) with CMA cloud services, lowest support effort
+
+**Secondary**
+- **BIS 6.7 on-premises**: On premises BIS customers with CMA cloud services, medium support effort
+- **BIS 6.7 any deployment** without CMA, new business
+
+**Tertiary**
+- **BIS 6.7 any deployment**: with CMA subscription, migrating to cloud services
+
+**Industry Verticals:**
+
+Industries where OFTP2 is comon:
+
+- Automotive industry (OEMs, Tier 1-2 suppliers)
+- Manufacturing companies
+- Aerospace
+- Logistics providers
+- Retail supply chain partners
+
+### Pricing Model
 
 Current Pricing Model: 
 - BASE:             550 EUR / month including provisioning and up to 20 onboardings / month
@@ -142,7 +145,7 @@ New Pricing Model
 
 **Expected Revenue p.a.**: 3.000 EUR x 12 month x 5 customer = **180.000 EUR**
 
-### Cost Structure
+### Costs
 
 - **Development Project Effort**: 
   -  90 days development
