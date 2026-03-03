@@ -169,7 +169,7 @@ New Pricing Model
 - BASE:             550 EUR / month including provisioning + up to 20 onboardings / month
 - ENTERPRISE:     3.000 EUR / month including provisioning + unlimited onboardings + CMA API + OpenAPI integration + Content Packages ("OFTP2 Onboarding for BIS 6", ...)
 
-Expected Revenue: 5.000 EUR x 12 month x 5 customer = 300.000 EUR
+Expected Revenue: 3.000 EUR x 12 month x 5 customer = 180.000 EUR
 
 #### 2.2.3 Cost Structure
 
