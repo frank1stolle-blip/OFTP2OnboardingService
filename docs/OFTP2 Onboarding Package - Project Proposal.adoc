@@ -1,13 +1,14 @@
 = OFTP2 Onboarding Package - Project Proposal
 :toc:
-:imagesdir: ./diagrams
+:imagesdir: diagrams
 
 == Project Vision
 Manual partner onboarding for complex communication protocols such as OFTP2 is time-consuming and prone to errors. Seeburger provides CMA to support partner onboarding; however, preparing onboarding packages with CMA still requires significant effort. To increase customer adoption of CMA, an out-of-the-box solution is needed that minimizes configuration effort and enables a short time-to-value for productive use.
 This project aims to provide a low-effort onboarding path for OFTP2 partners for customers operating BIS 6.7 (iPaaS or on-premises) using CMA. The primary objective is to minimize customer-side development and avoid any additional installation on the customer’s BIS runtime.
 Customers will be able to get the OFTP2 onboarding package in the SEEBURGER Cloud as part of the CMA ENTERPRISE service. This extension includes the new OFTP2 onboarding package as well as unlimited number of onboardings, access to the CMA API, and all future onboarding packages.
 
-image::base-enterprise.jpg []
+image::base-enterprise.jpg[]
+
 
 == Key Stakeholders
 
@@ -23,7 +24,8 @@ image::base-enterprise.jpg []
 The package introduces an API facade between CMA and BIS 6.7. The facade abstracts the underlying BIS 6.7 Transport API into a simplified, stable contract that CMA can consume.
 The facade is implemented as an Integrator Workspace (IWS) flow. This keeps the integration logic outside the customer’s BIS runtime while providing an API surface for CMA-driven onboarding operations. The implementation also demonstrates a reusable IWS-based integration pattern for CMA ↔ BIS 6.7 scenarios.
 
- 
+image::architecture.jpg[]
+
 === Breakdown
 
 •	Uses the BIS 6.7 Transport API to bundle the creation, update, and assignment of all components required for an OFTP2 partner setup into a single API call. The Transport API also provides built-in rollback, reverting all changes if an error occurs.
@@ -34,7 +36,8 @@ The facade is implemented as an Integrator Workspace (IWS) flow. This keeps the 
 •	For existing partner updates: if a transport for the partner already exists, the flow retrieves it from BIS, applies the updated OFTP2 parameters from CMA, and sends the updated transport back to BIS via the Transport API.
 •	The facade API can also be reused to integrate with other platforms or tools.
 •	Note: The CMA API is part of the CMA ENTERPRISE service but not necessarily used for OFTP2 onboardings
- 
+
+image::sequence.jpg[]
 
 == Business
 
@@ -101,6 +104,8 @@ o	Total effort: 135 days
 
 == Project
 === Timeline
+
+image::timeline.jpg[]
  
 === Deliverables
 •	OpenAPI Specification: A complete API definition to automatically generate the OFTP2 configuration form within the CMA.
