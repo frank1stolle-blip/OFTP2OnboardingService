@@ -6,6 +6,7 @@
 Manual partner onboarding for complex communication protocols such as OFTP2 is time-consuming and prone to errors. Seeburger provides CMA to support partner onboarding; however, preparing onboarding packages with CMA still requires significant effort. To increase customer adoption of CMA, an out-of-the-box solution is needed that minimizes configuration effort and enables a short time-to-value for productive use.
 This project aims to provide a low-effort onboarding path for OFTP2 partners for customers operating BIS 6.7 (iPaaS or on-premises) using CMA. The primary objective is to minimize customer-side development and avoid any additional installation on the customer’s BIS runtime.
 Customers will be able to get the OFTP2 onboarding package in the SEEBURGER Cloud as part of the CMA ENTERPRISE service. This extension includes the new OFTP2 onboarding package as well as unlimited number of onboardings, access to the CMA API, and all future onboarding packages.
+
 image::base-enterprise.jpg []
 
 == Key Stakeholders
@@ -122,5 +123,6 @@ Known limitation: missing option to create mappings with multiple sources in web
 Integration complexity	Medium	High	Changes in any of the components CMA, IWS, BIS6.7 may lead to corruption of the service
 IWS limitations	Medium	Medium	Addressed missing features: Flow shoud be able to response with failure, flow should offer API 
 Incomprehensible error messages from BIS Transport AP	High	Medium	Trying to fix it with AI, MCP
+
 
 
