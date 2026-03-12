@@ -7,8 +7,10 @@
 
 == Project Vision
 Manual partner onboarding for complex communication protocols such as OFTP2 is time-consuming and prone to errors. Seeburger provides CMA to support partner onboarding; however, preparing onboarding packages with CMA still requires significant effort. To increase customer adoption of CMA, an out-of-the-box solution is needed that minimizes configuration effort and enables a short time-to-value for productive use.
-This project aims to provide a low-effort onboarding path for OFTP2 partners for customers operating BIS 6.7 (iPaaS or on-premises) using CMA. The primary objective is to minimize customer-side development and avoid any additional installation on the customer’s BIS runtime.
-Customers will be able to get the OFTP2 onboarding package in the SEEBURGER Cloud as part of the CMA ENTERPRISE service. This extension includes the new OFTP2 onboarding package as well as unlimited number of onboardings, access to the CMA API, and all future onboarding packages.
+
+This project aims to provide a low-effort onboarding path for OFTP2 partners for customers operating BIS 6.7 (iPaaS or on-premises) using CMA.The primary objective is to minimize customer-side development and avoid any additional installation on the customer’s BIS runtime.
+
+Customers will be able to get the OFTP2 onboarding package in the SEEBURGER Cloud as part of the CMA ENTERPRISE service. The ENTERPRISE service includes the new OFTP2 onboarding package as well as unlimited number of onboardings, access to the CMA API, and all future onboarding packages.
 
 image::base-enterprise.jpg[width=40%,align=left]
 
@@ -31,12 +33,12 @@ image::architecture.jpg[]
 
 === Breakdown
 
-- Uses the BIS 6.7 Transport API to bundle the creation, update, and assignment of all components required for an OFTP2 partner setup into a single API call. The Transport API also provides built-in rollback, reverting all changes if an error occurs.
-- Encapsulates the business logic around the BIS Transport API in an Integrator Workspace (IWS) flow, which acts as a facade API callable by any client (in our case, CMA) and avoids any installation on the customer’s BIS 6 system
-- Uses CMA’s API integration feature to generate a CMA form for OFTP2 and connect it to the IWS flow.
-- The IWS flow receives the relevant OFTP2 parameters from the CMA form and builds the payload for the BIS Transport API.
+- BIS 6.7 Transport API is usedc to bundle the creation, update, and assignment of all components required for an OFTP2 partner setup into a single API call. The Transport API also provides built-in rollback, reverting all changes if an error occurs.
+- The business logic around the BIS Transport API encapsulated in an Integrator Workspace (IWS) flow, which acts as a facade API callable by any client (in our case, CMA) and avoids any installation on the customer’s BIS 6 system
+- CMA’s new API Integration feature is used to auto-generate a CMA form for OFTP2 and connect it to the IWS flow.
+- The IWS flow receives the relevant OFTP2 parameters from the CMA form and creates the payload for the BIS Transport API.
 - For new partners: the flow retrieves an OFTP2 transport template from the customer’s BIS (including all required references and assignments), maps the partner-specific OFTP2 parameters into it, and submits it to BIS via the Transport API.
-- For existing partner updates: if a transport for the partner already exists, the flow retrieves it from BIS, applies the updated OFTP2 parameters from CMA, and sends the updated transport back to BIS via the Transport API.
+- For updates of existing partners, the flow retrieves the last transport from BIS, applies the updated OFTP2 parameters from CMA, and sends the updated transport back to BIS via the Transport API.
 - The facade API can also be reused to integrate with other platforms or tools.
 - Note: The CMA API is part of the CMA ENTERPRISE service but not necessarily used for OFTP2 onboardings
 
@@ -84,29 +86,37 @@ Industries where OFTP2 is comon:
 
 === Pricing Model
 Current Pricing Model:
-- CMA Cloud Service Base: 550 EUR / month including provisioning and up to 20 onboardings / month
-- +UNLIMITED: 2.500 EUR / month including provisioning and unlimited onboardings
-- +API ADD-ON: 100 EUR / month usage of CMA API to manage partner onboardings per API
-New Pricing Model
-- CMA Cloud Service BASE: 550 EUR / month including provisioning + up to 20 onboardings / month
-- CMA Cloud Service ENTERPRISE: 3.000 EUR / month including provisioning + unlimited onboardings + CMA API + OpenAPI integration + Content Packages ("OFTP2 Onboarding for BIS 6", ...)
-Expected Revenue p.a.: 3.000 EUR x 12 month x 5 customer = 180.000 EUR
+
+*     550 EUR / month Base CMA Cloud Service including provisioning and up to 20 onboardings / month
+* + 2.500 EUR / month unlimited onboardings
+* + 100 EUR / month usage of CMA API to manage partner onboardings per API
+
+New Pricing Model:
+
+* 550 EUR / month BASE CMA Cloud Service:  Including provisioning + up to 20 onboardings / month
+* 4000 EUR / month ENTERPRISE CMA Cloud Service: Including provisioning + unlimited onboardings + CMA API + OpenAPI integration + Content Packages ("OFTP2 Onboarding for BIS 6", ...)
+
+Expected Revenue p.a.: 4.000 EUR x 12 month x 5 customer = 240.000 EUR
 
 
 === Costs
-- Development Project Effort:
-- *	90 days development
-- 15 days refinement
-- 15 days design
-- 35 days implementation
-- 10 days testing
-- 15 days deployment
-- *	30 days cloud devops
-- *	15 days management
-- *	Total effort: 135 days
-- Infrastructure: Hosted as part of existing platform — Marginal
-- Maintenance: Ongoing support — Low
-- Operations: Monitoring, updates — Low
+* Development Project Effort:
+** 90 days development
+*** 15 days refinement
+*** 15 days design
+*** 35 days implementation
+*** 10 days testing
+*** 15 days deployment
+** 30 days cloud devops
+** 15 days management
+
+* Total effort: 135 days
+
+Operational Costs:
+
+* Infrastructure: Hosted as part of existing platform — Marginal
+* Maintenance: Ongoing support — Low
+* Operations: Monitoring, updates — Low
 
 == Project
 === Timeline
@@ -174,7 +184,3 @@ image::timeline.jpg[]
 
 
 
-
-== New Section
-
-Details to follow...
