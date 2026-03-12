@@ -1,5 +1,11 @@
 = OFTP2 Onboarding Package - Project Proposal
+:experimental:
+:icons: font
+:linkcss:
+:stylesdir: https://bis-docs.seeburger.de/bis-help/_/css/site.css
+:stylesheet: site.css
 :toc:
+
 :imagesdir: diagrams
 
 == Project Vision
@@ -7,7 +13,8 @@ Manual partner onboarding for complex communication protocols such as OFTP2 is t
 This project aims to provide a low-effort onboarding path for OFTP2 partners for customers operating BIS 6.7 (iPaaS or on-premises) using CMA. The primary objective is to minimize customer-side development and avoid any additional installation on the customer’s BIS runtime.
 Customers will be able to get the OFTP2 onboarding package in the SEEBURGER Cloud as part of the CMA ENTERPRISE service. This extension includes the new OFTP2 onboarding package as well as unlimited number of onboardings, access to the CMA API, and all future onboarding packages.
 
-image::base-enterprise.jpg[]
+.BASE vs ENTERPRISE CMA Service
+image::base-enterprise.jpg[caption="",width=50%,align=left]
 
 
 == Key Stakeholders
