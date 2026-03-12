@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.20">
+<title>OFTP2 Onboarding Package - Project Proposal</title>
+<link rel="stylesheet" href="https://bis-docs.seeburger.de/bis-help/_/css/site.css">
+</head>
+<body class="article">
+<div id="header">
+<h1>OFTP2 Onboarding Package - Project Proposal</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_project_vision">Project Vision</a></li>
+<li><a href="#_key_stakeholders">Key Stakeholders</a></li>
+<li><a href="#_solution">Solution</a>
+<ul class="sectlevel2">
+<li><a href="#_overview">Overview</a></li>
+<li><a href="#_breakdown">Breakdown</a></li>
+</ul>
+</li>
+<li><a href="#_business">Business</a>
+<ul class="sectlevel2">
+<li><a href="#_value_proposition">Value Proposition</a></li>
+<li><a href="#_target_customers">Target Customers</a></li>
+<li><a href="#_pricing_model">Pricing Model</a></li>
+<li><a href="#_costs">Costs</a></li>
+</ul>
+</li>
+<li><a href="#_project">Project</a>
+<ul class="sectlevel2">
+<li><a href="#_timeline">Timeline</a></li>
+<li><a href="#_deliverables">Deliverables</a></li>
+</ul>
+</li>
+<li><a href="#_risk_assessment">Risk Assessment</a>
+<ul class="sectlevel2">
+<li><a href="#_business_risks">Business Risks</a></li>
+<li><a href="#_technical_risks">Technical Risks</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_project_vision">Project Vision</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Manual partner onboarding for complex communication protocols such as OFTP2 is time-consuming and prone to errors. Seeburger provides CMA to support partner onboarding; however, preparing onboarding packages with CMA still requires significant effort. To increase customer adoption of CMA, an out-of-the-box solution is needed that minimizes configuration effort and enables a short time-to-value for productive use.
+This project aims to provide a low-effort onboarding path for OFTP2 partners for customers operating BIS 6.7 (iPaaS or on-premises) using CMA. The primary objective is to minimize customer-side development and avoid any additional installation on the customer’s BIS runtime.
+Customers will be able to get the OFTP2 onboarding package in the SEEBURGER Cloud as part of the CMA ENTERPRISE service. This extension includes the new OFTP2 onboarding package as well as unlimited number of onboardings, access to the CMA API, and all future onboarding packages.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="diagrams/base-enterprise.jpg" alt="base enterprise">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_key_stakeholders">Key Stakeholders</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Product Owner: Frank Stolle</p>
+</li>
+<li>
+<p>Technical Lead: TBD</p>
+</li>
+<li>
+<p>Business Analyst: TBD
+Operations Lead: TBD</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_solution">Solution</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_overview">Overview</h3>
+<div class="paragraph">
+<p>The package introduces an API facade between CMA and BIS 6.7. The facade abstracts the underlying BIS 6.7 Transport API into a simplified, stable contract that CMA can consume.
+The facade is implemented as an Integrator Workspace (IWS) flow. This keeps the integration logic outside the customer’s BIS runtime while providing an API surface for CMA-driven onboarding operations. The implementation also demonstrates a reusable IWS-based integration pattern for CMA ↔ BIS 6.7 scenarios.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="diagrams/architecture.jpg" alt="architecture">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_breakdown">Breakdown</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Uses the BIS 6.7 Transport API to bundle the creation, update, and assignment of all components required for an OFTP2 partner setup into a single API call. The Transport API also provides built-in rollback, reverting all changes if an error occurs.</p>
+</li>
+<li>
+<p>Encapsulates the business logic around the BIS Transport API in an Integrator Workspace (IWS) flow, which acts as a facade API callable by any client (in our case, CMA) and avoids any installation on the customer’s BIS 6 system</p>
+</li>
+<li>
+<p>Uses CMA’s API integration feature to generate a CMA form for OFTP2 and connect it to the IWS flow.</p>
+</li>
+<li>
+<p>The IWS flow receives the relevant OFTP2 parameters from the CMA form and builds the payload for the BIS Transport API.</p>
+</li>
+<li>
+<p>For new partners: the flow retrieves an OFTP2 transport template from the customer’s BIS (including all required references and assignments), maps the partner-specific OFTP2 parameters into it, and submits it to BIS via the Transport API.</p>
+</li>
+<li>
+<p>For existing partner updates: if a transport for the partner already exists, the flow retrieves it from BIS, applies the updated OFTP2 parameters from CMA, and sends the updated transport back to BIS via the Transport API.</p>
+</li>
+<li>
+<p>The facade API can also be reused to integrate with other platforms or tools.</p>
+</li>
+<li>
+<p>Note: The CMA API is part of the CMA ENTERPRISE service but not necessarily used for OFTP2 onboardings</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="diagrams/sequence.jpg" alt="sequence">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_business">Business</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_value_proposition">Value Proposition</h3>
+<div class="paragraph">
+<p>For Customers:
+*	Out-of-the-Box: Replaces manual onboarding preparation (via CMA) with a ready-to-use, standardized package.
+*	Accelerated Time-to-Value: Drastically reduces time-to-value from months to merely days.
+*	Cost Reduction: As part of the ENTERPRISE extension of the CMA service A budget-friendly subscription model replaces high upfront development costs.
+*	Error Reduction: A standardized cloud service minimizes the errors often associated with on-premise installations and highly customized solutions.
+*	Convenience: Requires zero software installation and handles all updates automatically.
+For Seeburger:
+*	Transformation: Drives our internal learning and transition from traditional product offerings to service-based models.
+*	Competitive Advantage: Demonstrates market superiority by offering seamless, superior onboarding services.
+*	Platform Bridge: Serves as the crucial first point of contact for BIS 6 customers entering the IWS ecosystem.
+*	Customer Insights: Provides deeper, actionable visibility into exactly how customers utilize our products and services.
+*	Future Opportunities: Establishes a scalable foundation for future onboarding packages, such as AS2, Communication Gateway, and more.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_target_customers">Target Customers</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>customers with more than 100 partners</p>
+</li>
+<li>
+<p>customers who are not using communication per B2B Routing Service
+Primary</p>
+</li>
+<li>
+<p>BIS 6.7 iPaaS: Cloud-hosted BIS customers (iPaaS) with CMA cloud services, lowest support effort
+Secondary</p>
+</li>
+<li>
+<p>BIS 6.7 on-premises: On premises BIS customers with CMA cloud services, medium support effort</p>
+</li>
+<li>
+<p>BIS 6.7 any deployment without CMA, new business
+Tertiary</p>
+</li>
+<li>
+<p>BIS 6.7 any deployment: with CMA subscription, migrating to cloud services</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Industry Verticals:
+Industries where OFTP2 is comon:
+*	Automotive industry (OEMs, Tier 1-2 suppliers)
+*	Manufacturing companies
+*	Aerospace
+*	Logistics providers
+*	Retail supply chain partner</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pricing_model">Pricing Model</h3>
+<div class="paragraph">
+<p>Current Pricing Model:
+*	CMA Cloud Service Base: 550 EUR / month including provisioning and up to 20 onboardings / month
+*	+UNLIMITED: 2.500 EUR / month including provisioning and unlimited onboardings
+*	+API ADD-ON: 100 EUR / month usage of CMA API to manage partner onboardings per API
+New Pricing Model
+*	CMA Cloud Service BASE: 550 EUR / month including provisioning + up to 20 onboardings / month
+*	CMA Cloud Service ENTERPRISE: 3.000 EUR / month including provisioning + unlimited onboardings + CMA API + OpenAPI integration + Content Packages ("OFTP2 Onboarding for BIS 6", &#8230;&#8203;)
+Expected Revenue p.a.: 3.000 EUR x 12 month x 5 customer = 180.000 EUR</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_costs">Costs</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Development Project Effort:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>90 days development</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>15 days refinement</p>
+</li>
+<li>
+<p>15 days design</p>
+</li>
+<li>
+<p>35 days implementation</p>
+</li>
+<li>
+<p>10 days testing</p>
+</li>
+<li>
+<p>15 days deployment</p>
+<div class="ulist">
+<ul>
+<li>
+<p>30 days cloud devops</p>
+</li>
+<li>
+<p>15 days management</p>
+</li>
+<li>
+<p>Total effort: 135 days</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Infrastructure: Hosted as part of existing platform — Marginal</p>
+</li>
+<li>
+<p>Maintenance: Ongoing support — Low</p>
+</li>
+<li>
+<p>Operations: Monitoring, updates — Low</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_project">Project</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_timeline">Timeline</h3>
+<div class="imageblock">
+<div class="content">
+<img src="diagrams/timeline.jpg" alt="timeline">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deliverables">Deliverables</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenAPI Specification: A complete API definition to automatically generate the OFTP2 configuration form within the CMA.</p>
+</li>
+<li>
+<p>IWS Workflow &amp; Mapping: Fully configured integration flows and data mappings required to seamlessly create and update OFTP2 transports.</p>
+</li>
+<li>
+<p>Cloud Service Deployment: Complete provisioning and delivery of the CMA ENTERPRISE extensio within the SEEBURGER Cloud.</p>
+</li>
+<li>
+<p>Comprehensive Documentation: Tailored enablement materials, technical guides, and standard operating procedures (SOPs) for the Sales, Consulting, and Operations teams.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_risk_assessment">Risk Assessment</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_business_risks">Business Risks</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Risk</th>
+<th class="tableblock halign-left valign-top">Likelihood</th>
+<th class="tableblock halign-left valign-top">Impact</th>
+<th class="tableblock halign-left valign-top">Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Low adoption</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make CMA Enterprise more attractive e.g. with more protocols like AS2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maintenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MVP approach with controlled rollout, no on-premise deployments</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resource constraints</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Leveraging more resources to implement standard content for CMA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Development costs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Low</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reviewing project in early stage with customers</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_technical_risks">Technical Risks</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Risk</th>
+<th class="tableblock halign-left valign-top">Likelihood</th>
+<th class="tableblock halign-left valign-top">Impact</th>
+<th class="tableblock halign-left valign-top">Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BIS mapping limitations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Low</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Proven technology, existing patterns. Known limitation: missing option to create mappings with multiple sources in web mapper</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integration complexity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Changes in any of the components CMA, IWS, BIS 6.7 may lead to corruption of the service</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IWS limitations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Addressed missing features: Flow should be able to respond with failure, flow should offer API</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Incomprehensible error messages from BIS Transport API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implement error translation layer; explore AI-assisted error interpretation (MCP)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-03-12 09:24:54 +0100
+</div>
+</div>
+</body>
+</html>
