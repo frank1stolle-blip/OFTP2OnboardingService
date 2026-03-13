@@ -59,6 +59,19 @@ image::timeline.jpg[]
 * Cloud Service Deployment: Complete provisioning and delivery of the CMA ENTERPRISE extensio within the SEEBURGER Cloud.
 * Comprehensive Documentation: Tailored enablement materials, technical guides, and standard operating procedures (SOPs) for the Sales, Consulting, and Operations teams.
 
+=== Effort
+
+* 90 days development
+** 15 days refinement
+** 15 days design
+** 35 days implementation
+** 10 days testing
+** 15 days deployment
+* 30 days cloud devops
+* 15 days management
+
+Total effort: 135 days
+
 <<<
 
 == Business
@@ -124,18 +137,6 @@ Expected Revenue p.a.: 4.000 EUR x 12 month x 5 customer = 240.000 EUR
 <<<
 
 === Costs
-Development Project Effort:
-
-* 90 days development
-** 15 days refinement
-** 15 days design
-** 35 days implementation
-** 10 days testing
-** 15 days deployment
-* 30 days cloud devops
-* 15 days management
-
-Total effort: 135 days
 
 Operational Costs:
 
