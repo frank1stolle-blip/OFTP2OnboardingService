@@ -1,9 +1,12 @@
 = OFTP2 Onboarding Package - Project Proposal
 :sectnums:
-
 :toc:
-
+:toc-placement: macro
 :imagesdir: diagrams
+
+toc::[]
+
+<<<
 
 == Project Vision
 Manual partner onboarding for complex communication protocols such as OFTP2 is time-consuming and prone to errors. Seeburger provides CMA to support partner onboarding; however, preparing onboarding packages with CMA still requires significant effort. To increase customer adoption of CMA, an out-of-the-box solution is needed that minimizes configuration effort and enables a short time-to-value for productive use.
