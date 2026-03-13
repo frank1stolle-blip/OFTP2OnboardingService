@@ -12,7 +12,7 @@ This project aims to provide a low-effort onboarding path for OFTP2 partners for
 
 Customers will be able to get the OFTP2 onboarding package in the SEEBURGER Cloud as part of the CMA ENTERPRISE service. The ENTERPRISE service includes the new OFTP2 onboarding package as well as unlimited number of onboardings, access to the CMA API, and all future onboarding packages.
 
-image::base-enterprise.jpg[width=40%,align=left]
+image::base-enterprise.jpg[width=50%,align=left]
 
 <<<
 
