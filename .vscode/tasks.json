@@ -16,7 +16,7 @@
     {
       "label": "Build PDF",
       "type": "shell",
-      "command": "docker run --rm -v \"c:/Users/stolle/git/frank1stolle-blip/OFTP2OnboardingService/docs:/documents\" asciidoctor/docker-asciidoctor asciidoctor-pdf -a data-uri -o OFTP2_Onboarding_Proposal.pdf \"OFTP2 Onboarding Package - Project Proposal.adoc\"",
+      "command": "$v = git describe --tags --always; $d = (Get-Date -Format 'yyyy-MM-dd'); docker run --rm -v 'c:/Users/stolle/git/frank1stolle-blip/OFTP2OnboardingService/docs:/documents' asciidoctor/docker-asciidoctor asciidoctor-pdf -a data-uri -a pdf-theme=theme.yml -a revnumber=$v -a revdate=$d -o OFTP2_Onboarding_Proposal.pdf 'OFTP2 Onboarding Package - Project Proposal.adoc'",
       "options": {
         "cwd": "${workspaceFolder}/docs"
       },

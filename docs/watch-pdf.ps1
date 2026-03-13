@@ -10,11 +10,14 @@ $watcher.Filter = $adocFile
 $watcher.NotifyFilter = [System.IO.NotifyFilters]::LastWrite
 
 function Rebuild {
-    Write-Host ("[{0}] Change detected, regenerating PDF..." -f (Get-Date -Format "HH:mm:ss")) -ForegroundColor Yellow
+    Write-Host ('[{0}] Change detected, regenerating PDF...' -f (Get-Date -Format 'HH:mm:ss')) -ForegroundColor Yellow
+    $version = & git -C $docsDir describe --tags --always 2>$null
+    if (-not $version) { $version = 'dev' }
+    $date = (Get-Date -Format 'yyyy-MM-dd')
     docker run --rm `
         -v "${docsDir}:/documents" `
         asciidoctor/docker-asciidoctor `
-        asciidoctor-pdf -a data-uri -o $pdfFile $adocFile
+        asciidoctor-pdf -a data-uri -a pdf-theme=theme.yml -a revnumber=$version -a revdate=$date -o $pdfFile $adocFile
     if ($LASTEXITCODE -eq 0) {
         Write-Host ("[{0}] PDF updated: $pdfFile" -f (Get-Date -Format "HH:mm:ss")) -ForegroundColor Green
     } else {
