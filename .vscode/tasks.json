@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Watch & Build PDF",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File '${workspaceFolder}/docs/watch-pdf.ps1'",
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "pdf"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build PDF",
+      "type": "shell",
+      "command": "docker run --rm -v \"c:/Users/stolle/git/frank1stolle-blip/OFTP2OnboardingService/docs:/documents\" asciidoctor/docker-asciidoctor asciidoctor-pdf -a data-uri -o OFTP2_Onboarding_Proposal.pdf \"OFTP2 Onboarding Package - Project Proposal.adoc\"",
+      "options": {
+        "cwd": "${workspaceFolder}/docs"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
