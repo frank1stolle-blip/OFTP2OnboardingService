@@ -22,6 +22,10 @@ image::base-enterprise.jpg[width=40%,align=left]
 *	Business Analyst: TBD
 *	Operations Lead: TBD
 
+<<<
+
+<<<
+
 == Solution
 
 === Overview
@@ -33,14 +37,14 @@ image::architecture.jpg[]
 
 === Breakdown
 
-- BIS 6.7 Transport API is usedc to bundle the creation, update, and assignment of all components required for an OFTP2 partner setup into a single API call. The Transport API also provides built-in rollback, reverting all changes if an error occurs.
-- The business logic around the BIS Transport API encapsulated in an Integrator Workspace (IWS) flow, which acts as a facade API callable by any client (in our case, CMA) and avoids any installation on the customer’s BIS 6 system
-- CMA’s new API Integration feature is used to auto-generate a CMA form for OFTP2 and connect it to the IWS flow.
-- The IWS flow receives the relevant OFTP2 parameters from the CMA form and creates the payload for the BIS Transport API.
-- For new partners: the flow retrieves an OFTP2 transport template from the customer’s BIS (including all required references and assignments), maps the partner-specific OFTP2 parameters into it, and submits it to BIS via the Transport API.
-- For updates of existing partners, the flow retrieves the last transport from BIS, applies the updated OFTP2 parameters from CMA, and sends the updated transport back to BIS via the Transport API.
-- The facade API can also be reused to integrate with other platforms or tools.
-- Note: The CMA API is part of the CMA ENTERPRISE service but not necessarily used for OFTP2 onboardings
+* BIS 6.7 Transport API is usedc to bundle the creation, update, and assignment of all components required for an OFTP2 partner setup into a single API call. The Transport API also provides built-in rollback, reverting all changes if an error occurs.
+* The business logic around the BIS Transport API encapsulated in an Integrator Workspace (IWS) flow, which acts as a facade API callable by any client (in our case, CMA) and avoids any installation on the customer’s BIS 6 system
+* CMA’s new API Integration feature is used to auto-generate a CMA form for OFTP2 and connect it to the IWS flow.
+* The IWS flow receives the relevant OFTP2 parameters from the CMA form and creates the payload for the BIS Transport API.
+* For new partners: the flow retrieves an OFTP2 transport template from the customer’s BIS (including all required references and assignments), maps the partner-specific OFTP2 parameters into it, and submits it to BIS via the Transport API.
+* For updates of existing partners, the flow retrieves the last transport from BIS, applies the updated OFTP2 parameters from CMA, and sends the updated transport back to BIS via the Transport API.
+* The facade API can also be reused to integrate with other platforms or tools.
+* Note: The CMA API is part of the CMA ENTERPRISE service but not necessarily used for OFTP2 onboardings
 
 image::sequence.jpg[]
 
@@ -50,39 +54,45 @@ image::sequence.jpg[]
 
 For Customers:
 
-- Out-of-the-Box: Replaces manual onboarding preparation (via CMA) with a ready-to-use, standardized package.
-- Accelerated Time-to-Value: Drastically reduces time-to-value from months to merely days.
-- Cost Reduction: As part of the ENTERPRISE extension of the CMA service A budget-friendly subscription model replaces high upfront development costs.
-- Error Reduction: A standardized cloud service minimizes the errors often associated with on-premise installations and highly customized solutions.
-- Convenience: Requires zero software installation and handles all updates automatically.
+* Out-of-the-Box: Replaces manual onboarding preparation (via CMA) with a ready-to-use, standardized package.
+* Accelerated Time-to-Value: Drastically reduces time-to-value from months to merely days.
+* Cost Reduction: As part of the ENTERPRISE extension of the CMA service A budget-friendly subscription model replaces high upfront development costs.
+* Error Reduction: A standardized cloud service minimizes the errors often associated with on-premise installations and highly customized solutions.
+* Convenience: Requires zero software installation and handles all updates automatically.
 
 For Seeburger:
 
-- Transformation: Drives our internal learning and transition from traditional product offerings to service-based models.
-- Competitive Advantage: Demonstrates market superiority by offering seamless, superior onboarding services.
-- Platform Bridge: Serves as the crucial first point of contact for BIS 6 customers entering the IWS ecosystem.
-- Customer Insights: Provides deeper, actionable visibility into exactly how customers utilize our products and services.
-- Future Opportunities: Establishes a scalable foundation for future onboarding packages, such as AS2, Communication Gateway, and more.
+* Transformation: Drives our internal learning and transition from traditional product offerings to service-based models.
+* Competitive Advantage: Demonstrates market superiority by offering seamless, superior onboarding services.
+* Platform Bridge: Serves as the crucial first point of contact for BIS 6 customers entering the IWS ecosystem.
+* Customer Insights: Provides deeper, actionable visibility into exactly how customers utilize our products and services.
+* Future Opportunities: Establishes a scalable foundation for future onboarding packages, such as AS2, Communication Gateway, and more.
 
 === Target Customers
 
-- customers with more than 100 partners
-- customers who are not using communication per B2B Routing Service
-Primary
-- BIS 6.7 iPaaS: Cloud-hosted BIS customers (iPaaS) with CMA cloud services, lowest support effort
-Secondary
-- BIS 6.7 on-premises: On premises BIS customers with CMA cloud services, medium support effort
-- BIS 6.7 any deployment without CMA, new business
-Tertiary
-- BIS 6.7 any deployment: with CMA subscription, migrating to cloud services
+* customers with more than 100 partners
+* customers who are not using communication per B2B Routing Service
 
-Industry Verticals:
-Industries where OFTP2 is comon:
-- Automotive industry (OEMs, Tier 1-2 suppliers)
-- Manufacturing companies
-- Aerospace
-- Logistics providers
-- Retail supply chain partner
+Primary:
+
+* BIS 6.7 iPaaS: Cloud-hosted BIS customers (iPaaS) with CMA cloud services, lowest support effort
+
+Secondary:
+
+* BIS 6.7 on-premises: On premises BIS customers with CMA cloud services, medium support effort
+* BIS 6.7 any deployment without CMA, new business
+
+Tertiary:
+
+* BIS 6.7 any deployment: with CMA subscription, migrating to cloud services
+
+Industry Verticals - Industries where OFTP2 is comon:
+
+* Automotive industry (OEMs, Tier 1-2 suppliers)
+* Manufacturing companies
+* Aerospace
+* Logistics providers
+* Retail supply chain partner
 
 === Pricing Model
 Current Pricing Model:
@@ -100,17 +110,18 @@ Expected Revenue p.a.: 4.000 EUR x 12 month x 5 customer = 240.000 EUR
 
 
 === Costs
-* Development Project Effort:
-** 90 days development
-*** 15 days refinement
-*** 15 days design
-*** 35 days implementation
-*** 10 days testing
-*** 15 days deployment
-** 30 days cloud devops
-** 15 days management
+Development Project Effort:
 
-* Total effort: 135 days
+* 90 days development
+** 15 days refinement
+** 15 days design
+** 35 days implementation
+** 10 days testing
+** 15 days deployment
+* 30 days cloud devops
+* 15 days management
+
+Total effort: 135 days
 
 Operational Costs:
 
@@ -124,10 +135,10 @@ Operational Costs:
 image::timeline.jpg[]
  
 === Deliverables
-- OpenAPI Specification: A complete API definition to automatically generate the OFTP2 configuration form within the CMA.
-- IWS Workflow & Mapping: Fully configured integration flows and data mappings required to seamlessly create and update OFTP2 transports.
-- Cloud Service Deployment: Complete provisioning and delivery of the CMA ENTERPRISE extensio within the SEEBURGER Cloud.
-- Comprehensive Documentation: Tailored enablement materials, technical guides, and standard operating procedures (SOPs) for the Sales, Consulting, and Operations teams.
+* OpenAPI Specification: A complete API definition to automatically generate the OFTP2 configuration form within the CMA.
+* IWS Workflow & Mapping: Fully configured integration flows and data mappings required to seamlessly create and update OFTP2 transports.
+* Cloud Service Deployment: Complete provisioning and delivery of the CMA ENTERPRISE extensio within the SEEBURGER Cloud.
+* Comprehensive Documentation: Tailored enablement materials, technical guides, and standard operating procedures (SOPs) for the Sales, Consulting, and Operations teams.
 
 == Risk Assessment
 === Business Risks
