@@ -41,6 +41,13 @@ image::sequence.jpg[]
 <<<
 
 == Project
+=== Key Stakeholders
+
+*	Product Owner: Frank Stolle
+*	Technical Lead: TBD
+*	Business Analyst: TBD
+*	Operations Lead: TBD
+
 === Timeline
 
 image::timeline.jpg[]
@@ -63,13 +70,6 @@ image::timeline.jpg[]
 * 15 days management
 
 Total effort: 135 days
-
-=== Key Stakeholders
-
-*	Product Owner: Frank Stolle
-*	Technical Lead: TBD
-*	Business Analyst: TBD
-*	Operations Lead: TBD
 
 <<<
 
