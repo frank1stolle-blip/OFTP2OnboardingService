@@ -48,6 +48,19 @@ image::sequence.jpg[]
 
 <<<
 
+== Project
+=== Timeline
+
+image::timeline.jpg[]
+ 
+=== Deliverables
+* OpenAPI Specification: A complete API definition to automatically generate the OFTP2 configuration form within the CMA.
+* IWS Workflow & Mapping: Fully configured integration flows and data mappings required to seamlessly create and update OFTP2 transports.
+* Cloud Service Deployment: Complete provisioning and delivery of the CMA ENTERPRISE extensio within the SEEBURGER Cloud.
+* Comprehensive Documentation: Tailored enablement materials, technical guides, and standard operating procedures (SOPs) for the Sales, Consulting, and Operations teams.
+
+<<<
+
 == Business
 
 === Value Proposition
@@ -129,19 +142,6 @@ Operational Costs:
 * Infrastructure: Hosted as part of existing platform — Marginal
 * Maintenance: Ongoing support — Low
 * Operations: Monitoring, updates — Low
-
-<<<
-
-== Project
-=== Timeline
-
-image::timeline.jpg[]
- 
-=== Deliverables
-* OpenAPI Specification: A complete API definition to automatically generate the OFTP2 configuration form within the CMA.
-* IWS Workflow & Mapping: Fully configured integration flows and data mappings required to seamlessly create and update OFTP2 transports.
-* Cloud Service Deployment: Complete provisioning and delivery of the CMA ENTERPRISE extensio within the SEEBURGER Cloud.
-* Comprehensive Documentation: Tailored enablement materials, technical guides, and standard operating procedures (SOPs) for the Sales, Consulting, and Operations teams.
 
 <<<
 
