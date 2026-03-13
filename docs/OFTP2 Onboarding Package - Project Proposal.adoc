@@ -22,9 +22,7 @@ image::base-enterprise.jpg[width=40%,align=left]
 *	Business Analyst: TBD
 *	Operations Lead: TBD
 
-++++
-<div style="page-break-after: always;"></div>
-++++
+<<<
 
 == Solution
 
@@ -47,6 +45,8 @@ image::architecture.jpg[]
 * Note: The CMA API is part of the CMA ENTERPRISE service but not necessarily used for OFTP2 onboardings
 
 image::sequence.jpg[]
+
+<<<
 
 == Business
 
@@ -108,9 +108,7 @@ New Pricing Model:
 
 Expected Revenue p.a.: 4.000 EUR x 12 month x 5 customer = 240.000 EUR
 
-++++
-<div style="page-break-after: always;"></div>
-++++
+<<<
 
 === Costs
 Development Project Effort:
@@ -132,6 +130,8 @@ Operational Costs:
 * Maintenance: Ongoing support — Low
 * Operations: Monitoring, updates — Low
 
+<<<
+
 == Project
 === Timeline
 
@@ -142,6 +142,8 @@ image::timeline.jpg[]
 * IWS Workflow & Mapping: Fully configured integration flows and data mappings required to seamlessly create and update OFTP2 transports.
 * Cloud Service Deployment: Complete provisioning and delivery of the CMA ENTERPRISE extensio within the SEEBURGER Cloud.
 * Comprehensive Documentation: Tailored enablement materials, technical guides, and standard operating procedures (SOPs) for the Sales, Consulting, and Operations teams.
+
+<<<
 
 == Risk Assessment
 === Business Risks
