@@ -9,3 +9,20 @@ heading:
   h6-font-size: 10.5
 base:
   font-size: 10
+footer:
+  font-size: 8
+  border-color: DDDDDD
+  border-width: 0.25
+  height: 20
+  line-height: 1
+  padding: [0, 0, 0, 0]
+  recto:
+    left:
+      content: '{author} | v{revnumber} | {revdate}'
+    right:
+      content: '{page-number} / {page-count}'
+  verso:
+    left:
+      content: '{author} | v{revnumber} | {revdate}'
+    right:
+      content: '{page-number} / {page-count}'
