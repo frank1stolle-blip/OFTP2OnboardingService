@@ -133,8 +133,6 @@ New Pricing Model:
 
 Expected Revenue p.a.: 4.000 EUR x 12 month x 5 customer = 240.000 EUR
 
-<<<
-
 === Costs
 
 Project Costs:
