@@ -40,7 +40,7 @@ image::architecture.jpg[]
 * For new partners: the flow retrieves an OFTP2 transport template from the customer’s BIS (including all required references and assignments), maps the partner-specific OFTP2 parameters into it, and submits it to BIS via the Transport API.
 * For updates of existing partners, the flow retrieves the last transport from BIS, applies the updated OFTP2 parameters from CMA, and sends the updated transport back to BIS via the Transport API.
 * The facade API can also be reused to integrate with other platforms or tools.
-* Note: The CMA API is part of the CMA ENTERPRISE service but not necessarily used for OFTP2 onboardings
+* Note: The CMA API access is part of the CMA ENTERPRISE service but not necessarily used for OFTP2 onboardings, therefore not adressed here
 
 image::sequence.jpg[]
 
@@ -63,10 +63,11 @@ image::timeline.jpg[]
 * IWS Workflow & Mapping: Fully configured integration flows and data mappings required to seamlessly create and update OFTP2 transports.
 * Cloud Service Deployment: Complete provisioning and delivery of the CMA ENTERPRISE extensio within the SEEBURGER Cloud.
 * Comprehensive Documentation: Tailored enablement materials, technical guides, and standard operating procedures (SOPs) for the Sales, Consulting, and Operations teams.
+* Development and deployment of the CMA API feature is excluded
 
 === Effort
 
-* 90 days development
+* 90 days development 
 ** 15 days refinement
 ** 15 days design
 ** 35 days implementation
