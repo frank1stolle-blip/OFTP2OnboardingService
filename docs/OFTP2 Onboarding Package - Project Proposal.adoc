@@ -14,7 +14,7 @@ toc::[]
 == Project Vision
 Manual partner onboarding for complex communication protocols such as OFTP2 is time-consuming and prone to errors. Seeburger provides CMA to support partner onboarding; however, preparing onboarding packages with CMA still requires significant effort. To increase customer adoption of CMA, an out-of-the-box solution is needed that minimizes configuration effort and enables a short time-to-value for productive use.
 
-This project aims to provide a low-effort onboarding path for OFTP2 partners for customers operating BIS 6.7 (iPaaS or on-premises) using CMA.The primary objective is to minimize customer-side development and avoid any additional installation on the customer’s BIS runtime.
+This project aims to provide a low-effort onboarding path for OFTP2 partners for customers operating BIS 6.7 (iPaaS or on-premises) using CMA. The primary objective is to minimize customer-side development and avoid any additional installation on the customer's BIS runtime.
 
 Customers will be able to get the OFTP2 onboarding package in the SEEBURGER Cloud as part of the CMA ENTERPRISE service. The ENTERPRISE service includes the new OFTP2 onboarding package as well as unlimited number of onboardings, access to the CMA API, and all future onboarding packages.
 
@@ -33,14 +33,14 @@ image::architecture.jpg[]
 
 === Breakdown
 
-* BIS 6.7 Transport API is usedc to bundle the creation, update, and assignment of all components required for an OFTP2 partner setup into a single API call. The Transport API also provides built-in rollback, reverting all changes if an error occurs.
-* The business logic around the BIS Transport API encapsulated in an Integrator Workspace (IWS) flow, which acts as a facade API callable by any client (in our case, CMA) and avoids any installation on the customer’s BIS 6 system
+* BIS 6.7 Transport API is used to bundle the creation, update, and assignment of all components required for an OFTP2 partner setup into a single API call. The Transport API also provides built-in rollback, reverting all changes if an error occurs.
+* The business logic around the BIS Transport API is encapsulated in an Integrator Workspace (IWS) flow, which acts as a facade API callable by any client (in our case, CMA) and avoids any installation on the customer's BIS 6 system
 * CMA’s new API Integration feature is used to auto-generate a CMA form for OFTP2 and connect it to the IWS flow.
 * The IWS flow receives the relevant OFTP2 parameters from the CMA form and creates the payload for the BIS Transport API.
 * For new partners: the flow retrieves an OFTP2 transport template from the customer’s BIS (including all required references and assignments), maps the partner-specific OFTP2 parameters into it, and submits it to BIS via the Transport API.
 * For updates of existing partners, the flow retrieves the last transport from BIS, applies the updated OFTP2 parameters from CMA, and sends the updated transport back to BIS via the Transport API.
 * The facade API can also be reused to integrate with other platforms or tools.
-* Note: The CMA API access is part of the CMA ENTERPRISE service but not necessarily used for OFTP2 onboardings, therefore not adressed here
+* Note: The CMA API access is part of the CMA ENTERPRISE service but not necessarily used for OFTP2 onboardings, therefore not addressed here
 
 image::sequence.jpg[]
 
@@ -61,9 +61,12 @@ image::timeline.jpg[]
 === Deliverables
 * OpenAPI Specification: A complete API definition to automatically generate the OFTP2 configuration form within the CMA.
 * IWS Workflow & Mapping: Fully configured integration flows and data mappings required to seamlessly create and update OFTP2 transports.
-* Cloud Service Deployment: Complete provisioning and delivery of the CMA ENTERPRISE extensio within the SEEBURGER Cloud.
+* Cloud Service Deployment: Complete provisioning and delivery of the CMA ENTERPRISE extension within the SEEBURGER Cloud.
 * Comprehensive Documentation: Tailored enablement materials, technical guides, and standard operating procedures (SOPs) for the Sales, Consulting, and Operations teams.
-* Development and deployment of the CMA API feature is excluded
+
+=== Exclusions
+
+* Development and deployment of the CMA API feature
 
 === Effort
 
@@ -88,7 +91,7 @@ For Customers:
 
 * Out-of-the-Box: Replaces manual onboarding preparation (via CMA) with a ready-to-use, standardized package.
 * Accelerated Time-to-Value: Drastically reduces time-to-value from months to merely days.
-* Cost Reduction: As part of the ENTERPRISE extension of the CMA service A budget-friendly subscription model replaces high upfront development costs.
+* Cost Reduction: As part of the ENTERPRISE extension of the CMA service, a budget-friendly subscription model replaces high upfront development costs.
 * Error Reduction: A standardized cloud service minimizes the errors often associated with on-premise installations and highly customized solutions.
 * Convenience: Requires zero software installation and handles all updates automatically.
 
@@ -118,7 +121,7 @@ Tertiary:
 
 * BIS 6.7 any deployment: with CMA subscription, migrating to cloud services
 
-Industry Verticals - Industries where OFTP2 is comon:
+Industry Verticals - Industries where OFTP2 is common:
 
 * Automotive industry (OEMs, Tier 1-2 suppliers)
 * Manufacturing companies
